@@ -90,6 +90,107 @@
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
       font-size: 12px;
     }
+    /* --- Mobile polish + fluid scaling (add after your existing CSS) --- */
+
+/* Better sizing behavior on mobile browsers */
+html{
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Smooth, fluid type/spacing without breaking desktop */
+:root{
+  --padX: clamp(14px, 3.5vw, 18px);
+  --padY: clamp(16px, 3.5vw, 22px);
+  --gap:  clamp(12px, 2.5vw, 18px);
+}
+
+.wrap{
+  padding: clamp(16px, 4vw, 28px) var(--padX) clamp(40px, 7vw, 64px);
+}
+
+/* Prevent long links/emails from blowing up layout */
+header, section, .item{
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Make hover transforms not cause weird taps on mobile */
+@media (hover: none){
+  .btn:hover{ transform:none; }
+}
+
+/* 960px and below: already single-column main; tighten spacing */
+@media (max-width: 960px){
+  header{ padding: var(--padY); gap: var(--gap); }
+  section{ padding: clamp(14px, 3.2vw, 18px); }
+}
+
+/* Phone layout */
+@media (max-width: 640px){
+  /* Header stacks cleanly */
+  header{
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  /* Keep name readable but not huge */
+  .name{
+    font-size: clamp(24px, 6.5vw, 32px);
+    line-height: 1.15;
+  }
+
+  .tag{
+    font-size: clamp(14px, 3.8vw, 16px);
+  }
+
+  /* Pills wrap nicer and have better touch size */
+  .meta{
+    gap: 10px;
+  }
+  .pill{
+    font-size: 13px;
+    padding: 8px 10px;
+    max-width: 100%;
+  }
+
+  /* Buttons become full width and easier to tap */
+  .actions{
+    width: 100%;
+    gap: 10px;
+  }
+  .btn{
+    width: 100%;
+    justify-content: center;
+    padding: 12px 14px; /* bigger tap target */
+  }
+
+  /* Reduce indentation so lists don’t waste horizontal space */
+  ul{ margin-left: 16px; }
+
+  /* Section headings scale down slightly */
+  h2{
+    font-size: 13px;
+    letter-spacing: .25px;
+  }
+  h3{
+    font-size: 14px;
+  }
+
+  /* Grid becomes single column earlier (already at 560, but this helps mid-size phones) */
+  .grid2{
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer spacing */
+  footer{ margin-top: 14px; }
+}
+
+/* Very small phones */
+@media (max-width: 380px){
+  .wrap{ padding-left: 12px; padding-right: 12px; }
+  .pill{ font-size: 12.5px; }
+}
   </style>
 
   <!-- Simple JSON-LD (edit URLs once you have them) -->
