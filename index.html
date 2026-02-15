@@ -191,6 +191,61 @@ header, section, .item{
   .wrap{ padding-left: 12px; padding-right: 12px; }
   .pill{ font-size: 12.5px; }
 }
+    /* Add-on styles that match your existing CSS variables */
+.section-head { margin-bottom: 12px; }
+.section-head p { margin: 0; }
+
+/* Responsive grid that fits your layout */
+.labs-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px; /* matches your .grid2 */
+  margin-top: 10px;
+}
+@media (max-width: 560px){
+  .labs-grid{ grid-template-columns: 1fr; }
+}
+
+/* Card polish aligned with your .item + overall theme */
+.item.lab{
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px;
+  box-shadow: none; /* keep consistent with other items */
+}
+
+.lab-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap: 10px;
+}
+.lab-top h3{ margin: 0; }
+.item.lab p{ margin: 6px 0 0; }
+
+/* Action buttons */
+.lab-actions{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+/* Make buttons behave nicely inside cards */
+.lab-actions .btn{
+  padding: 10px 12px;
+  border-radius: 12px;
+}
+
+/* Better tap targets on phones */
+@media (max-width: 640px){
+  .lab-actions .btn{
+    width: 100%;
+    justify-content: center;
+    padding: 12px 14px;
+  }
+}
   </style>
 
   <!-- Simple JSON-LD (edit URLs once you have them) -->
@@ -297,6 +352,109 @@ header, section, .item{
 
         
         </section>
+
+        <section id="security-tools">
+  <div class="section-head">
+    <h2>Security Tools & Interactive Labs</h2>
+    <p class="muted small">Live demos that show real-world security workflows, deployment ability, and product-minded engineering.</p>
+  </div>
+
+  <div class="labs-grid">
+    <article class="item lab">
+      <div class="lab-top">
+        <h3>Browser-Based Python Editor</h3>
+        <span class="pill small">Sandbox</span>
+      </div>
+      <p class="muted small">
+        Cloud-hosted Python execution environment for safe experimentation, scripting labs, and quick prototyping.
+      </p>
+      <div class="lab-actions">
+        <a class="btn primary" href="https://pyforge-ai-advanced-python-sandbox-810187719410.us-west1.run.app/" target="_blank" rel="noopener noreferrer">Launch Tool</a>
+        <a class="btn" href="https://pyforge-ai-advanced-python-sandbox-810187719410.us-west1.run.app/" target="_blank" rel="noopener noreferrer">Open Link</a>
+      </div>
+    </article>
+
+    <article class="item lab">
+      <div class="lab-top">
+        <h3>Personal Anti-Surveillance Video Site</h3>
+        <span class="pill small">Resources</span>
+      </div>
+      <p class="muted small">
+        Privacy-first hub focused on operational security, anti-surveillance practices, and practical personal cyber hygiene.
+      </p>
+      <div class="lab-actions">
+        <a class="btn primary" href="https://darkfiresecurity.com" target="_blank" rel="noopener noreferrer">Visit Site</a>
+        <a class="btn" href="https://darkfiresecurity.com" target="_blank" rel="noopener noreferrer">Open Link</a>
+      </div>
+    </article>
+
+    <article class="item lab">
+      <div class="lab-top">
+        <h3>Personal Landing Page (Resume & Ebook)</h3>
+        <span class="pill small">Portfolio</span>
+      </div>
+      <p class="muted small">
+        Resume and portfolio landing page highlighting projects, experience, and published content.
+      </p>
+      <div class="lab-actions">
+        <a class="btn primary" href="https://personal-landing-theta-steel.vercel.app/" target="_blank" rel="noopener noreferrer">View Page</a>
+        <a class="btn" href="https://personal-landing-theta-steel.vercel.app/" target="_blank" rel="noopener noreferrer">Open Link</a>
+      </div>
+    </article>
+
+    <article class="item lab">
+      <div class="lab-top">
+        <h3>Phish Detector</h3>
+        <span class="pill small">SOC</span>
+      </div>
+      <p class="muted small">
+        Email triage simulator for training phishing recognition and SOC-style classification decisions.
+      </p>
+      <div class="lab-actions">
+        <a class="btn primary" href="https://phishcheck-soc-analyzer-1044572571760.us-west1.run.app" target="_blank" rel="noopener noreferrer">Launch Demo</a>
+        <a class="btn" href="https://phishcheck-soc-analyzer-1044572571760.us-west1.run.app" target="_blank" rel="noopener noreferrer">Open Link</a>
+      </div>
+    </article>
+
+    <article class="item lab">
+      <div class="lab-top">
+        <h3>Small Business Risk Report</h3>
+        <span class="pill small">Assessment</span>
+      </div>
+      <p class="muted small">
+        Client intake + risk scoring flow that outputs structured security posture summaries for small businesses.
+      </p>
+      <div class="lab-actions">
+        <a class="btn primary" href="https://small-business-security-intake-risk-report-293799863337.us-west1.run.app" target="_blank" rel="noopener noreferrer">Generate Report</a>
+        <a class="btn" href="https://small-business-security-intake-risk-report-293799863337.us-west1.run.app" target="_blank" rel="noopener noreferrer">Open Link</a>
+      </div>
+    </article>
+
+    <article class="item lab">
+      <div class="lab-top">
+        <h3>DarkChef (CyberChef Clone)</h3>
+        <span class="pill small">Forensics</span>
+      </div>
+      <p class="muted small">
+        Browser-based data transformation toolkit for encoding/decoding and IR-style data manipulation workflows.
+      </p>
+      <div class="lab-actions">
+        <a class="btn primary" href="https://darkchef-professional-data-alchemy-1044572571760.us-west1.run.app" target="_blank" rel="noopener noreferrer">Open DarkChef</a>
+        <a class="btn" href="https://darkchef-professional-data-alchemy-1044572571760.us-west1.run.app" target="_blank" rel="noopener noreferrer">Open Link</a>
+      </div>
+    </article>
+  </div>
+
+  <div class="split">
+    <div class="muted small">
+      Tip: Put your top 2–3 tools first on the page for recruiter skimming.
+    </div>
+    <div class="muted small">
+      Keep links short on PDF resumes (use a single portfolio shortlink if you make one).
+    </div>
+  </div>
+</section>
+
 
         <section>
           <h2>Professional Experience</h2>
