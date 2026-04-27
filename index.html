@@ -1,707 +1,657 @@
 <!DOCTYPE html>
-
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark light">
 <title>Chance Cummings | IT Field Technician & Cybersecurity</title>
+
+<!-- Favicon — embedded SVG (works in all modern browsers) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSI+CiAgPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiMwNDA4MTAiLz4KICA8cG9seWdvbiBwb2ludHM9IjE2LDIgMjcsOC41IDI3LDIzLjUgMTYsMzAgNSwyMy41IDUsOC41IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMGQ0ZTgiIHN0cm9rZS13aWR0aD0iMS4yIiBvcGFjaXR5PSIwLjYiLz4KICA8cGF0aCBkPSJNMTYgNiBMMjQgOS41IEwyNCAxNyBDMjQgMjEuNSAyMC41IDI0LjggMTYgMjYuNSBDMTEuNSAyNC44IDggMjEuNSA4IDE3IEw4IDkuNSBaIiBmaWxsPSIjMGQxODI5IiBzdHJva2U9IiMwMGQ0ZTgiIHN0cm9rZS13aWR0aD0iMSIvPgogIDxwYXRoIGQ9Ik0xNiAyMiBDMTMgMjIgMTEgMTkuNSAxMSAxNyBDMTEgMTUgMTIgMTQgMTMgMTMgQzEzIDE1IDE0IDE1LjUgMTQuNSAxNSBDMTQuNSAxMyAxNSAxMSAxNiA5LjUgQzE3IDExIDE3IDEzLjUgMTguNSAxMy41IEMxOC41IDEyLjUgMTkgMTIgMTkuNSAxMS41IEMyMC41IDEzIDIxIDE1IDIxIDE3IEMyMSAxOS41IDE5IDIyIDE2IDIyIFoiIGZpbGw9IiNmZjhjMDAiLz4KICA8cGF0aCBkPSJNMTYgMjEgQzE0LjUgMjEgMTMuNSAxOS41IDEzLjUgMTggQzEzLjUgMTYuNSAxNC41IDE1LjUgMTUgMTUgQzE1IDE2IDE1LjUgMTYuNSAxNiAxNiBDMTYuNSAxNS41IDE3IDE1IDE3IDEzLjUgQzE3LjUgMTQuNSAxOC41IDE2IDE4LjUgMTggQzE4LjUgMTkuNSAxNy41IDIxIDE2IDIxIFoiIGZpbGw9IiMwMGQ0ZTgiLz4KICA8ZWxsaXBzZSBjeD0iMTYiIGN5PSIxOC41IiByeD0iMS4yIiByeT0iMS44IiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC43Ii8+Cjwvc3ZnPgo=">
+<!-- Fallback ICO for older browsers -->
+<link rel="shortcut icon" href="assets/favicon.ico">
+<!-- Apple touch icon -->
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSI+CiAgPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiMwNDA4MTAiLz4KICA8cG9seWdvbiBwb2ludHM9IjE2LDIgMjcsOC41IDI3LDIzLjUgMTYsMzAgNSwyMy41IDUsOC41IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMGQ0ZTgiIHN0cm9rZS13aWR0aD0iMS4yIiBvcGFjaXR5PSIwLjYiLz4KICA8cGF0aCBkPSJNMTYgNiBMMjQgOS41IEwyNCAxNyBDMjQgMjEuNSAyMC41IDI0LjggMTYgMjYuNSBDMTEuNSAyNC44IDggMjEuNSA4IDE3IEw4IDkuNSBaIiBmaWxsPSIjMGQxODI5IiBzdHJva2U9IiMwMGQ0ZTgiIHN0cm9rZS13aWR0aD0iMSIvPgogIDxwYXRoIGQ9Ik0xNiAyMiBDMTMgMjIgMTEgMTkuNSAxMSAxNyBDMTEgMTUgMTIgMTQgMTMgMTMgQzEzIDE1IDE0IDE1LjUgMTQuNSAxNSBDMTQuNSAxMyAxNSAxMSAxNiA5LjUgQzE3IDExIDE3IDEzLjUgMTguNSAxMy41IEMxOC41IDEyLjUgMTkgMTIgMTkuNSAxMS41IEMyMC41IDEzIDIxIDE1IDIxIDE3IEMyMSAxOS41IDE5IDIyIDE2IDIyIFoiIGZpbGw9IiNmZjhjMDAiLz4KICA8cGF0aCBkPSJNMTYgMjEgQzE0LjUgMjEgMTMuNSAxOS41IDEzLjUgMTggQzEzLjUgMTYuNSAxNC41IDE1LjUgMTUgMTUgQzE1IDE2IDE1LjUgMTYuNSAxNiAxNiBDMTYuNSAxNS41IDE3IDE1IDE3IDEzLjUgQzE3LjUgMTQuNSAxOC41IDE2IDE4LjUgMTggQzE4LjUgMTkuNSAxNy41IDIxIDE2IDIxIFoiIGZpbGw9IiMwMGQ0ZTgiLz4KICA8ZWxsaXBzZSBjeD0iMTYiIGN5PSIxOC41IiByeD0iMS4yIiByeT0iMS44IiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC43Ii8+Cjwvc3ZnPgo=">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Share+Tech+Mono&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
-  :root {
-    --cyan: #00f5ff;
-    --green: #00ff88;
-    --red: #ff2244;
-    --orange: #ff7700;
-    --bg: #040810;
-    --bg2: #080f1a;
-    --bg3: #0c1526;
-    --grid: rgba(0,245,255,0.04);
-    --border: rgba(0,245,255,0.15);
-    --border-bright: rgba(0,245,255,0.4);
-    --text: #c8d8e8;
-    --text-dim: #6a7f95;
-  }
+/* ═══════════════════════════════════════════════════════════════
+   THEME TOKENS — single source of truth, zero hardcoded colors
+   Dark:  deep navy bg, cyan/green/orange accents, light text
+   Light: slate-white bg, navy/teal/burnt accents, dark text
+   All WCAG AA compliant (4.5:1+ body text, 3:1+ UI/large text)
+════════════════════════════════════════════════════════════════ */
 
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg-base:        #040810;
+  --bg-surface:     #080f1a;
+  --bg-raised:      #0d1829;
+  --bg-overlay:     rgba(4,8,16,0.95);
+  --border-subtle:  rgba(0,200,220,0.10);
+  --border-default: rgba(0,200,220,0.22);
+  --border-strong:  rgba(0,200,220,0.50);
+  --text-primary:   #e8f2ff;
+  --text-secondary: #8ba5c0;
+  --text-muted:     #506878;
+  --text-on-accent: #040810;
+  --accent-cyan:    #00d4e8;
+  --accent-green:   #00cc77;
+  --accent-orange:  #ff8c00;
+  --accent-red:     #ff3355;
+  --status-active:  #00cc77;
+  --status-progress:#ff8c00;
+  --status-info:    #00d4e8;
+  --grid-color:     rgba(0,212,232,0.04);
+  --glow-cyan:      rgba(0,212,232,0.25);
+  --glow-orange:    rgba(255,140,0,0.25);
+  --toggle-track:   #0d1829;
+  --toggle-thumb:   #00d4e8;
+  --toggle-shadow:  rgba(0,212,232,0.5);
+  --terminal-bg:    #020609;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --bg-base:        #f2f6fa;
+  --bg-surface:     #ffffff;
+  --bg-raised:      #e8f0f8;
+  --bg-overlay:     rgba(242,246,250,0.97);
+  --border-subtle:  rgba(0,80,140,0.10);
+  --border-default: rgba(0,80,140,0.20);
+  --border-strong:  rgba(0,80,140,0.42);
+  --text-primary:   #0d1f33;
+  --text-secondary: #3a5470;
+  --text-muted:     #6888a0;
+  --text-on-accent: #ffffff;
+  --accent-cyan:    #006fa8;
+  --accent-green:   #006640;
+  --accent-orange:  #b85000;
+  --accent-red:     #b8001f;
+  --status-active:  #006640;
+  --status-progress:#b85000;
+  --status-info:    #006fa8;
+  --grid-color:     rgba(0,80,140,0.06);
+  --glow-cyan:      rgba(0,111,168,0.12);
+  --glow-orange:    rgba(184,80,0,0.12);
+  --toggle-track:   #d0dcea;
+  --toggle-thumb:   #b85000;
+  --toggle-shadow:  rgba(184,80,0,0.4);
+  --terminal-bg:    #f8fafc;
+}
+
+/* ═══════════════════ RESET ═══════════════════ */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
 html { scroll-behavior: smooth; }
 
 body {
-background: var(–bg);
-color: var(–text);
-font-family: ‘IBM Plex Mono’, monospace;
-font-size: 14px;
-line-height: 1.7;
-overflow-x: hidden;
-cursor: crosshair;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14px;
+  line-height: 1.7;
+  overflow-x: hidden;
+  cursor: crosshair;
+  transition: background 0.3s, color 0.3s;
 }
 
-/* ═══════════════════════════ BACKGROUND ═══════════════════════════ */
+/* ═══════════════════ GRID BG ═══════════════════ */
 body::before {
-content: ‘’;
-position: fixed;
-inset: 0;
-background-image:
-linear-gradient(var(–grid) 1px, transparent 1px),
-linear-gradient(90deg, var(–grid) 1px, transparent 1px);
-background-size: 40px 40px;
-pointer-events: none;
-z-index: 0;
+  content: '';
+  position: fixed; inset: 0;
+  background-image:
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
 }
-
 body::after {
-content: ‘’;
-position: fixed;
-inset: 0;
-background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,245,255,0.05) 0%, transparent 70%);
-pointer-events: none;
-z-index: 0;
+  content: '';
+  position: fixed; inset: 0;
+  background: radial-gradient(ellipse 80% 50% at 50% 0%, var(--glow-cyan), transparent 65%);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.5;
 }
 
-/* ═══════════════════════════ SCANLINE ═══════════════════════════ */
+/* ═══════════════════ SCANLINE + NOISE (dark only) ═══════════════════ */
 .scanline {
-position: fixed;
-top: 0; left: 0; right: 0;
-height: 2px;
-background: linear-gradient(90deg, transparent, var(–cyan), transparent);
-animation: scan 6s linear infinite;
-opacity: 0.3;
-z-index: 999;
-pointer-events: none;
+  position: fixed; top: -2px; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+  animation: scan 6s linear infinite;
+  opacity: 0.22;
+  z-index: 999;
+  pointer-events: none;
 }
+[data-theme="light"] .scanline,
+[data-theme="light"] .noise { display: none; }
 @keyframes scan { 0%{top:-2px} 100%{top:100vh} }
 
-/* ═══════════════════════════ NOISE ═══════════════════════════ */
 .noise {
-position: fixed;
-inset: 0;
-opacity: 0.025;
-background-image: url(“data:image/svg+xml,%3Csvg viewBox=‘0 0 256 256’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cfilter id=‘noise’%3E%3CfeTurbulence type=‘fractalNoise’ baseFrequency=‘0.9’ numOctaves=‘4’ stitchTiles=‘stitch’/%3E%3C/filter%3E%3Crect width=‘100%25’ height=‘100%25’ filter=‘url(%23noise)’/%3E%3C/svg%3E”);
-pointer-events: none;
-z-index: 1;
+  position: fixed; inset: 0;
+  opacity: 0.018;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
 }
 
-/* ═══════════════════════════ WRAPPER ═══════════════════════════ */
+/* ═══════════════════ WRAPPER ═══════════════════ */
 .wrapper {
-position: relative;
-z-index: 2;
-max-width: 960px;
-margin: 0 auto;
-padding: 0 24px 80px;
+  position: relative; z-index: 2;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px 80px;
 }
 
-/* ═══════════════════════════ NAVBAR ═══════════════════════════ */
+/* ═══════════════════ NAV ═══════════════════ */
 nav {
-position: sticky;
-top: 0;
-z-index: 100;
-background: rgba(4,8,16,0.92);
-backdrop-filter: blur(12px);
-border-bottom: 1px solid var(–border);
-padding: 14px 24px;
-display: flex;
-align-items: center;
-justify-content: space-between;
-gap: 16px;
+  position: sticky; top: 0; z-index: 100;
+  background: var(--bg-overlay);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-default);
+  padding: 13px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  transition: background 0.3s, border-color 0.3s;
 }
 
-.nav-logo {
-font-family: ‘Orbitron’, sans-serif;
-font-size: 13px;
-font-weight: 700;
-color: var(–cyan);
-letter-spacing: 2px;
-white-space: nowrap;
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
 }
-.nav-logo span { color: var(–green); }
+.nav-favicon {
+  width: 24px; height: 24px;
+  flex-shrink: 0;
+}
+.nav-logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+.nav-logo span { color: var(--accent-green); }
 
 .nav-links {
-display: flex;
-gap: 20px;
-list-style: none;
-flex-wrap: wrap;
+  display: flex; gap: 18px;
+  list-style: none;
+  flex-wrap: wrap;
 }
 .nav-links a {
-color: var(–text-dim);
-text-decoration: none;
-font-size: 11px;
-letter-spacing: 1.5px;
-text-transform: uppercase;
-transition: color 0.2s;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: color 0.2s;
 }
-.nav-links a:hover { color: var(–cyan); }
+.nav-links a:hover { color: var(--accent-cyan); }
 
-/* ═══════════════════════════ HERO ═══════════════════════════ */
-.hero {
-padding: 80px 0 60px;
-position: relative;
+/* ═══════════════════ THEME TOGGLE ═══════════════════ */
+.theme-toggle {
+  display: flex; align-items: center; gap: 9px;
+  flex-shrink: 0; cursor: pointer;
+  user-select: none;
 }
+.toggle-mode-label {
+  font-size: 10px; letter-spacing: 1.5px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  display: none;
+  transition: color 0.3s;
+  white-space: nowrap;
+}
+@media (min-width: 560px) { .toggle-mode-label { display: block; } }
+
+.toggle-pill {
+  position: relative;
+  width: 46px; height: 26px;
+  background: var(--toggle-track);
+  border: 1px solid var(--border-strong);
+  border-radius: 13px;
+  transition: background 0.3s, border-color 0.3s;
+  flex-shrink: 0;
+}
+.toggle-icon {
+  position: absolute; top: 50%;
+  transform: translateY(-50%);
+  font-size: 11px; line-height: 1;
+  pointer-events: none; opacity: 0.4;
+  transition: opacity 0.3s;
+}
+.toggle-icon.moon { right: 5px; }
+.toggle-icon.sun  { left: 5px; }
+[data-theme="dark"]  .toggle-icon.moon { opacity: 0.95; }
+[data-theme="light"] .toggle-icon.sun  { opacity: 0.95; }
+
+.toggle-dot {
+  position: absolute; top: 4px; left: 4px;
+  width: 16px; height: 16px; border-radius: 50%;
+  background: var(--toggle-thumb);
+  box-shadow: 0 0 8px var(--toggle-shadow);
+  transition: transform 0.3s cubic-bezier(.34,1.56,.64,1),
+              background 0.3s, box-shadow 0.3s;
+}
+[data-theme="light"] .toggle-dot { transform: translateX(20px); }
+
+/* ═══════════════════ HERO ═══════════════════ */
+.hero { padding: 80px 0 60px; position: relative; }
 
 .hero-tag {
-display: inline-block;
-font-size: 11px;
-letter-spacing: 3px;
-color: var(–green);
-text-transform: uppercase;
-margin-bottom: 20px;
-padding: 6px 14px;
-border: 1px solid rgba(0,255,136,0.3);
-background: rgba(0,255,136,0.05);
+  display: inline-block;
+  font-size: 11px; letter-spacing: 3px;
+  color: var(--accent-green);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  padding: 6px 14px;
+  border: 1px solid var(--border-default);
+  background: var(--bg-surface);
 }
-.hero-tag::before { content: ’> ’; opacity: 0.6; }
+.hero-tag::before { content: '> '; opacity: 0.5; }
 
 .hero h1 {
-font-family: ‘Orbitron’, sans-serif;
-font-size: clamp(32px, 6vw, 64px);
-font-weight: 900;
-line-height: 1.1;
-color: #fff;
-letter-spacing: -1px;
-margin-bottom: 8px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: clamp(30px, 6vw, 62px);
+  font-weight: 900; line-height: 1.1;
+  color: var(--text-primary);
+  letter-spacing: -1px; margin-bottom: 10px;
 }
-.hero h1 .accent { color: var(–cyan); }
+.hero h1 .accent { color: var(--accent-cyan); }
+[data-theme="dark"] .hero h1 .accent { text-shadow: 0 0 32px var(--glow-cyan); }
 
-.hero-title {
-font-family: ‘Share Tech Mono’, monospace;
-font-size: clamp(14px, 2vw, 18px);
-color: var(–text-dim);
-margin-bottom: 28px;
-letter-spacing: 1px;
+.hero-subtitle {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: clamp(13px, 2vw, 17px);
+  color: var(--text-secondary);
+  margin-bottom: 26px; letter-spacing: 0.8px;
 }
-.hero-title .role { color: var(–cyan); }
-.hero-title .org { color: var(–green); }
+.hero-subtitle .role { color: var(--accent-cyan); }
+.hero-subtitle .org  { color: var(--accent-green); }
 
 .hero-desc {
-max-width: 640px;
-color: var(–text);
-font-size: 14px;
-line-height: 1.8;
-margin-bottom: 36px;
-border-left: 2px solid var(–border-bright);
-padding-left: 18px;
+  max-width: 640px;
+  color: var(--text-secondary);
+  font-size: 14px; line-height: 1.85;
+  margin-bottom: 32px;
+  border-left: 2px solid var(--accent-cyan);
+  padding-left: 18px;
 }
 
 .hero-meta {
-display: flex;
-flex-wrap: wrap;
-gap: 16px;
-margin-bottom: 36px;
-font-size: 12px;
-color: var(–text-dim);
+  display: flex; flex-wrap: wrap;
+  gap: 16px; margin-bottom: 36px;
+  font-size: 12px; color: var(--text-secondary);
 }
-.hero-meta span { display: flex; align-items: center; gap: 6px; }
-.hero-meta .dot {
-width: 6px; height: 6px; border-radius: 50%;
-background: var(–green);
-animation: pulse 2s ease-in-out infinite;
+.hero-meta span { display: flex; align-items: center; gap: 7px; }
+.pulse-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--accent-green); flex-shrink: 0;
+  animation: pulse 2.2s ease-in-out infinite;
 }
-@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.3;transform:scale(0.8)} }
 
-.hero-actions {
-display: flex;
-flex-wrap: wrap;
-gap: 12px;
-}
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
+/* ═══════════════════ BUTTONS ═══════════════════ */
 .btn {
-display: inline-flex;
-align-items: center;
-gap: 8px;
-padding: 12px 24px;
-font-family: ‘Share Tech Mono’, monospace;
-font-size: 12px;
-letter-spacing: 1.5px;
-text-transform: uppercase;
-text-decoration: none;
-border: 1px solid;
-transition: all 0.2s;
-cursor: pointer;
-background: transparent;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 22px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 12px; letter-spacing: 1.5px;
+  text-transform: uppercase; text-decoration: none;
+  border: 1px solid; transition: all 0.2s;
+  cursor: pointer; background: transparent;
 }
-.btn-primary {
-border-color: var(–cyan);
-color: var(–cyan);
-}
+.btn-primary   { border-color: var(--accent-cyan);   color: var(--accent-cyan); }
+.btn-secondary { border-color: var(--border-default); color: var(--text-secondary); }
+.btn-brand     { border-color: var(--accent-orange);  color: var(--accent-orange); }
+
 .btn-primary:hover {
-background: var(–cyan);
-color: var(–bg);
-box-shadow: 0 0 24px rgba(0,245,255,0.4);
+  background: var(--accent-cyan); color: var(--text-on-accent);
+  box-shadow: 0 0 20px var(--glow-cyan);
 }
-.btn-secondary {
-border-color: var(–border);
-color: var(–text-dim);
-}
-.btn-secondary:hover {
-border-color: var(–green);
-color: var(–green);
-}
-.btn-ghost {
-border-color: rgba(255,119,0,0.4);
-color: var(–orange);
-}
-.btn-ghost:hover {
-background: rgba(255,119,0,0.1);
-box-shadow: 0 0 16px rgba(255,119,0,0.3);
+.btn-secondary:hover { border-color: var(--accent-green); color: var(--accent-green); }
+.btn-brand:hover {
+  background: var(--accent-orange); color: var(--text-on-accent);
+  box-shadow: 0 0 20px var(--glow-orange);
 }
 
-/* ═══════════════════════════ STATUS BAR ═══════════════════════════ */
+/* ═══════════════════ STATUS BAR ═══════════════════ */
 .status-bar {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-gap: 1px;
-background: var(–border);
-border: 1px solid var(–border);
-margin: 48px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1px;
+  background: var(--border-default);
+  border: 1px solid var(--border-default);
+  margin: 48px 0;
 }
 .status-item {
-background: var(–bg2);
-padding: 20px 24px;
-position: relative;
+  background: var(--bg-surface);
+  padding: 20px 22px; position: relative;
+  transition: background 0.2s;
 }
-.status-item::before {
-content: ‘’;
-position: absolute;
-top: 0; left: 0; right: 0;
-height: 2px;
-background: var(–cyan);
-transform: scaleX(0);
-transform-origin: left;
-transition: transform 0.4s;
+.status-item::after {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: var(--accent-cyan);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.35s;
 }
-.status-item:hover::before { transform: scaleX(1); }
+.status-item:hover { background: var(--bg-raised); }
+.status-item:hover::after { transform: scaleX(1); }
 .status-label {
-font-size: 10px;
-letter-spacing: 2px;
-text-transform: uppercase;
-color: var(–text-dim);
-margin-bottom: 6px;
+  font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px;
 }
 .status-value {
-font-family: ‘Orbitron’, sans-serif;
-font-size: 18px;
-font-weight: 700;
-color: var(–cyan);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 15px; font-weight: 700;
+  color: var(--accent-cyan); margin-bottom: 3px;
 }
-.status-sub {
-font-size: 11px;
-color: var(–text-dim);
-margin-top: 2px;
-}
+.status-value.orange { color: var(--accent-orange); }
+.status-sub { font-size: 11px; color: var(--text-secondary); }
 
-/* ═══════════════════════════ SECTIONS ═══════════════════════════ */
+/* ═══════════════════ SECTION HEADERS ═══════════════════ */
 section { margin-bottom: 64px; }
-
 .section-header {
-display: flex;
-align-items: center;
-gap: 16px;
-margin-bottom: 32px;
+  display: flex; align-items: center; gap: 14px; margin-bottom: 28px;
 }
 .section-label {
-font-family: ‘Orbitron’, sans-serif;
-font-size: 11px;
-font-weight: 700;
-color: var(–cyan);
-letter-spacing: 3px;
-text-transform: uppercase;
-white-space: nowrap;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 11px; font-weight: 700;
+  color: var(--accent-cyan); letter-spacing: 3px;
+  text-transform: uppercase; white-space: nowrap;
 }
 .section-line {
-flex: 1;
-height: 1px;
-background: linear-gradient(90deg, var(–border-bright), transparent);
+  flex: 1; height: 1px;
+  background: linear-gradient(90deg, var(--border-strong), transparent);
 }
-.section-num {
-font-size: 11px;
-color: var(–text-dim);
-letter-spacing: 1px;
-}
+.section-num { font-size: 11px; color: var(--text-muted); letter-spacing: 1px; }
 
-/* ═══════════════════════════ CARDS ═══════════════════════════ */
-.card {
-background: var(–bg2);
-border: 1px solid var(–border);
-padding: 24px;
-position: relative;
-transition: border-color 0.2s, transform 0.2s;
+/* ═══════════════════ TERMINAL ═══════════════════ */
+.terminal {
+  background: var(--terminal-bg);
+  border: 1px solid var(--border-default);
+  border-left: 3px solid var(--accent-cyan);
+  padding: 20px 24px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 12px; line-height: 2;
+  transition: background 0.3s, border-color 0.3s;
 }
-.card:hover {
-border-color: var(–border-bright);
-transform: translateY(-2px);
-}
-.card::after {
-content: ‘’;
-position: absolute;
-inset: 0;
-background: linear-gradient(135deg, rgba(0,245,255,0.02), transparent 60%);
-pointer-events: none;
-}
+.terminal-bar { display: flex; gap: 6px; margin-bottom: 16px; }
+.td { width: 10px; height: 10px; border-radius: 50%; }
+.td-r { background: #ff5f57; }
+.td-y { background: #febc2e; }
+.td-g { background: #28c840; }
+.t-prompt { color: var(--accent-green); font-weight: 500; }
+.t-cmd    { color: var(--text-primary); }
+.t-key    { color: var(--text-muted); }
+.t-val    { color: var(--accent-cyan); }
+.t-flag   { color: var(--accent-orange); }
+.t-live   { color: var(--accent-green); }
 
-/* ═══════════════════════════ EXPERIENCE ═══════════════════════════ */
+/* ═══════════════════ EXPERIENCE ═══════════════════ */
 .timeline { display: flex; flex-direction: column; gap: 2px; }
 
 .exp-card {
-background: var(–bg2);
-border: 1px solid var(–border);
-border-left: 3px solid var(–border-bright);
-padding: 24px;
-position: relative;
-transition: all 0.2s;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-left: 3px solid var(--border-default);
+  padding: 24px; position: relative;
+  transition: background 0.2s, border-left-color 0.2s;
 }
-.exp-card:hover {
-border-left-color: var(–cyan);
-background: var(–bg3);
-}
-.exp-card.current { border-left-color: var(–green); }
-.exp-card.current::before {
-content: ‘● CURRENT’;
-position: absolute;
-top: 16px; right: 16px;
-font-size: 10px;
-letter-spacing: 2px;
-color: var(–green);
-animation: pulse 2s ease-in-out infinite;
+.exp-card:hover { background: var(--bg-raised); border-left-color: var(--accent-cyan); }
+.exp-card.current { border-left-color: var(--accent-green); }
+.exp-card.current::after {
+  content: '● CURRENT';
+  position: absolute; top: 18px; right: 18px;
+  font-size: 9px; letter-spacing: 2px;
+  color: var(--accent-green);
+  animation: pulse 2.2s ease-in-out infinite;
 }
 
-.exp-header {
-display: flex;
-flex-wrap: wrap;
-gap: 8px;
-align-items: baseline;
-margin-bottom: 6px;
-}
+.exp-header { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; margin-bottom: 4px; }
 .exp-title {
-font-family: ‘Orbitron’, sans-serif;
-font-size: 14px;
-font-weight: 600;
-color: #fff;
-letter-spacing: 0.5px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px; font-weight: 600;
+  color: var(--text-primary); letter-spacing: 0.3px;
 }
-.exp-org {
-font-size: 12px;
-color: var(–cyan);
-letter-spacing: 1px;
-}
-.exp-date {
-font-size: 11px;
-color: var(–text-dim);
-margin-left: auto;
-}
-.exp-loc {
-font-size: 11px;
-color: var(–text-dim);
-margin-bottom: 14px;
-}
-.exp-bullets {
-list-style: none;
-display: flex;
-flex-direction: column;
-gap: 6px;
-}
+.exp-org   { font-size: 12px; color: var(--accent-cyan); letter-spacing: 0.5px; }
+.exp-date  { font-size: 11px; color: var(--text-muted); margin-left: auto; }
+.exp-loc   { font-size: 11px; color: var(--text-muted); margin-bottom: 14px; }
+
+.exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 7px; }
 .exp-bullets li {
-font-size: 13px;
-color: var(–text);
-padding-left: 16px;
-position: relative;
+  font-size: 13px; color: var(--text-secondary);
+  padding-left: 16px; position: relative;
 }
 .exp-bullets li::before {
-content: ‘▸’;
-position: absolute;
-left: 0;
-color: var(–cyan);
-font-size: 10px;
-top: 3px;
+  content: '▸'; position: absolute; left: 0;
+  color: var(--accent-cyan); font-size: 10px; top: 4px;
 }
+.exp-bullets li strong { color: var(--text-primary); font-weight: 500; }
 
-/* ═══════════════════════════ PROJECTS ═══════════════════════════ */
+/* ═══════════════════ PROJECTS ═══════════════════ */
 .projects-grid {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+  gap: 14px;
 }
-
 .proj-card {
-background: var(–bg2);
-border: 1px solid var(–border);
-padding: 24px;
-position: relative;
-transition: all 0.25s;
-display: flex;
-flex-direction: column;
-gap: 12px;
-}
-.proj-card:hover {
-border-color: var(–cyan);
-transform: translateY(-3px);
-box-shadow: 0 8px 32px rgba(0,245,255,0.1);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  padding: 22px; display: flex;
+  flex-direction: column; gap: 11px;
+  position: relative; overflow: hidden;
+  transition: all 0.22s;
 }
 .proj-card::before {
-content: ‘’;
-position: absolute;
-top: 0; left: 0; right: 0;
-height: 2px;
-background: linear-gradient(90deg, var(–cyan), var(–green));
-opacity: 0;
-transition: opacity 0.25s;
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-green));
+  opacity: 0; transition: opacity 0.22s;
+}
+.proj-card:hover {
+  border-color: var(--border-strong);
+  background: var(--bg-raised);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px var(--glow-cyan);
 }
 .proj-card:hover::before { opacity: 1; }
-
-.proj-icon {
-font-size: 24px;
-line-height: 1;
-}
+.proj-icon { font-size: 22px; line-height: 1; }
 .proj-name {
-font-family: ‘Orbitron’, sans-serif;
-font-size: 13px;
-font-weight: 600;
-color: #fff;
-letter-spacing: 0.5px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 12px; font-weight: 600;
+  color: var(--text-primary); letter-spacing: 0.3px;
 }
-.proj-desc {
-font-size: 12px;
-color: var(–text-dim);
-line-height: 1.6;
-flex: 1;
-}
-.proj-tags {
-display: flex;
-flex-wrap: wrap;
-gap: 6px;
-}
+.proj-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.65; flex: 1; }
+.proj-tags { display: flex; flex-wrap: wrap; gap: 5px; }
 .tag {
-font-size: 10px;
-padding: 3px 8px;
-border: 1px solid var(–border);
-color: var(–text-dim);
-letter-spacing: 1px;
-text-transform: uppercase;
+  font-size: 10px; padding: 3px 8px;
+  border: 1px solid var(--border-default);
+  color: var(--text-secondary);
+  letter-spacing: 0.8px; text-transform: uppercase;
 }
-.tag.cyan { border-color: rgba(0,245,255,0.3); color: var(–cyan); }
-.tag.green { border-color: rgba(0,255,136,0.3); color: var(–green); }
-.tag.orange { border-color: rgba(255,119,0,0.3); color: var(–orange); }
+.tag.cyan   { border-color: var(--accent-cyan);   color: var(--accent-cyan); }
+.tag.green  { border-color: var(--accent-green);  color: var(--accent-green); }
+.tag.orange { border-color: var(--accent-orange); color: var(--accent-orange); }
 
 .proj-link {
-display: inline-flex;
-align-items: center;
-gap: 6px;
-font-size: 11px;
-color: var(–cyan);
-text-decoration: none;
-letter-spacing: 1px;
-text-transform: uppercase;
-margin-top: auto;
-transition: gap 0.2s;
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 11px; color: var(--accent-cyan);
+  text-decoration: none; letter-spacing: 1px;
+  text-transform: uppercase; margin-top: auto;
+  transition: gap 0.18s;
 }
-.proj-link:hover { gap: 10px; }
-.proj-link::after { content: ‘→’; }
+.proj-link:hover { gap: 9px; }
+.proj-link::after { content: '→'; }
 
-/* ═══════════════════════════ SKILLS ═══════════════════════════ */
+/* ═══════════════════ SKILLS ═══════════════════ */
 .skills-grid {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-gap: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
+  gap: 12px;
 }
-
 .skill-block {
-background: var(–bg2);
-border: 1px solid var(–border);
-padding: 20px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  padding: 18px;
+  transition: border-color 0.2s, background 0.2s;
 }
+.skill-block:hover { border-color: var(--border-default); background: var(--bg-raised); }
 .skill-block-title {
-font-size: 10px;
-letter-spacing: 2px;
-text-transform: uppercase;
-color: var(–cyan);
-margin-bottom: 14px;
-padding-bottom: 10px;
-border-bottom: 1px solid var(–border);
+  font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--accent-cyan);
+  margin-bottom: 12px; padding-bottom: 9px;
+  border-bottom: 1px solid var(--border-default);
 }
-.skill-list {
-display: flex;
-flex-wrap: wrap;
-gap: 8px;
-}
+.skill-list { display: flex; flex-wrap: wrap; gap: 6px; }
 .skill-pill {
-font-size: 11px;
-padding: 4px 10px;
-background: rgba(0,245,255,0.05);
-border: 1px solid rgba(0,245,255,0.1);
-color: var(–text);
-letter-spacing: 0.5px;
+  font-size: 11px; padding: 4px 9px;
+  background: var(--bg-raised);
+  border: 1px solid var(--border-default);
+  color: var(--text-secondary); letter-spacing: 0.3px;
+  transition: border-color 0.15s, color 0.15s;
 }
+.skill-pill:hover { border-color: var(--accent-cyan); color: var(--text-primary); }
 
-/* ═══════════════════════════ CERTS ═══════════════════════════ */
+/* ═══════════════════ CERTS ═══════════════════ */
 .certs-grid {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
+  gap: 10px;
 }
-
 .cert-card {
-background: var(–bg2);
-border: 1px solid var(–border);
-padding: 18px 20px;
-display: flex;
-align-items: center;
-gap: 16px;
-transition: all 0.2s;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-left: 3px solid var(--border-default);
+  padding: 16px 18px;
+  display: flex; align-items: center; gap: 14px;
+  transition: all 0.2s;
 }
-.cert-card:hover { border-color: var(–border-bright); }
-.cert-card.active { border-left: 3px solid var(–green); }
-.cert-card.progress { border-left: 3px solid var(–orange); }
-.cert-card.cdl { border-left: 3px solid var(–cyan); }
-
-.cert-icon { font-size: 22px; flex-shrink: 0; }
+.cert-card:hover { background: var(--bg-raised); border-color: var(--border-default); }
+.cert-card.s-active   { border-left-color: var(--status-active); }
+.cert-card.s-progress { border-left-color: var(--status-progress); }
+.cert-card.s-info     { border-left-color: var(--status-info); }
+.cert-icon { font-size: 20px; flex-shrink: 0; }
 .cert-name {
-font-size: 13px;
-color: #fff;
-font-family: ‘Share Tech Mono’, monospace;
-margin-bottom: 2px;
+  font-size: 13px; color: var(--text-primary);
+  font-family: 'Share Tech Mono', monospace; margin-bottom: 2px;
 }
-.cert-meta { font-size: 11px; color: var(–text-dim); }
+.cert-meta { font-size: 11px; color: var(--text-muted); }
 .cert-badge {
-margin-left: auto;
-font-size: 9px;
-padding: 3px 8px;
-letter-spacing: 1.5px;
-border: 1px solid;
-white-space: nowrap;
+  margin-left: auto; font-size: 9px;
+  padding: 3px 8px; letter-spacing: 1.5px;
+  border: 1px solid; white-space: nowrap; flex-shrink: 0;
 }
-.cert-badge.active { border-color: rgba(0,255,136,0.4); color: var(–green); }
-.cert-badge.progress { border-color: rgba(255,119,0,0.4); color: var(–orange); }
+.cert-badge.active   { border-color: var(--status-active);   color: var(--status-active); }
+.cert-badge.progress { border-color: var(--status-progress); color: var(--status-progress); }
+.cert-badge.info     { border-color: var(--status-info);     color: var(--status-info); }
 
-/* ═══════════════════════════ DARK FIRE BRAND ═══════════════════════════ */
-.brand-block {
-background: linear-gradient(135deg, rgba(255,34,68,0.05), rgba(255,119,0,0.05));
-border: 1px solid rgba(255,119,0,0.2);
-padding: 32px;
-position: relative;
-overflow: hidden;
+/* ═══════════════════ EDUCATION ═══════════════════ */
+.edu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+  gap: 10px; margin-top: 14px;
 }
-.brand-block::before {
-content: ‘DARK FIRE SECURITY’;
-position: absolute;
-top: 50%; right: -20px;
-transform: translateY(-50%) rotate(-90deg);
-font-family: ‘Orbitron’, sans-serif;
-font-size: 10px;
-letter-spacing: 4px;
-color: rgba(255,119,0,0.1);
-white-space: nowrap;
-pointer-events: none;
+.edu-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  padding: 20px 22px;
+  transition: background 0.2s;
+}
+.edu-card:hover { background: var(--bg-raised); }
+.edu-label { font-size: 10px; letter-spacing: 2px; color: var(--accent-cyan); text-transform: uppercase; margin-bottom: 8px; }
+.edu-degree { font-family: 'Share Tech Mono', monospace; font-size: 14px; color: var(--text-primary); margin-bottom: 4px; }
+.edu-school { font-size: 12px; color: var(--text-secondary); }
+
+/* ═══════════════════ DARK FIRE BRAND ═══════════════════ */
+.brand-block {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-default);
+  border-left: 4px solid var(--accent-orange);
+  padding: 32px; position: relative; overflow: hidden;
+}
+.brand-block::after {
+  content: 'DARK FIRE SECURITY';
+  position: absolute; top: 50%; right: -24px;
+  transform: translateY(-50%) rotate(-90deg);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 10px; letter-spacing: 4px;
+  color: var(--accent-orange); opacity: 0.07;
+  white-space: nowrap; pointer-events: none;
 }
 .brand-title {
-font-family: ‘Orbitron’, sans-serif;
-font-size: 22px;
-font-weight: 900;
-color: var(–orange);
-letter-spacing: 2px;
-margin-bottom: 8px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px; font-weight: 900;
+  color: var(--accent-orange); letter-spacing: 2px; margin-bottom: 6px;
 }
-.brand-subtitle {
-font-size: 12px;
-color: var(–text-dim);
-margin-bottom: 20px;
-letter-spacing: 1px;
-}
-.brand-desc {
-font-size: 13px;
-color: var(–text);
-line-height: 1.8;
-max-width: 580px;
-margin-bottom: 24px;
-}
+.brand-subtitle { font-size: 12px; color: var(--text-muted); margin-bottom: 18px; letter-spacing: 1px; }
+.brand-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.85; max-width: 580px; margin-bottom: 24px; }
 
-/* ═══════════════════════════ CONTACT ═══════════════════════════ */
+/* ═══════════════════ CONTACT ═══════════════════ */
 .contact-grid {
-display: grid;
-grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 10px;
 }
 .contact-item {
-background: var(–bg2);
-border: 1px solid var(–border);
-padding: 16px 20px;
-text-decoration: none;
-display: flex;
-align-items: center;
-gap: 12px;
-transition: all 0.2s;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  padding: 15px 18px; text-decoration: none;
+  display: flex; align-items: center; gap: 12px;
+  transition: all 0.2s;
 }
-.contact-item:hover {
-border-color: var(–cyan);
-background: rgba(0,245,255,0.04);
-}
-.contact-item-icon { font-size: 18px; flex-shrink: 0; }
-.contact-item-label { font-size: 10px; color: var(–text-dim); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 2px; }
-.contact-item-val { font-size: 12px; color: var(–cyan); }
+.contact-item:hover { border-color: var(--accent-cyan); background: var(--bg-raised); }
+.contact-icon { font-size: 18px; flex-shrink: 0; }
+.contact-label { font-size: 10px; color: var(--text-muted); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 3px; }
+.contact-val { font-size: 12px; color: var(--accent-cyan); }
 
-/* ═══════════════════════════ TERMINAL BLOCK ═══════════════════════════ */
-.terminal {
-background: #020609;
-border: 1px solid var(–border);
-padding: 20px 24px;
-font-family: ‘Share Tech Mono’, monospace;
-font-size: 12px;
-line-height: 1.9;
-position: relative;
-}
-.terminal::before {
-content: ‘●  ●  ●’;
-display: block;
-color: var(–text-dim);
-font-size: 10px;
-margin-bottom: 14px;
-letter-spacing: 4px;
-}
-.t-prompt { color: var(–green); }
-.t-cmd { color: var(–text); }
-.t-out { color: var(–text-dim); }
-.t-val { color: var(–cyan); }
-.t-flag { color: var(–orange); }
-
-/* ═══════════════════════════ FOOTER ═══════════════════════════ */
+/* ═══════════════════ FOOTER ═══════════════════ */
 footer {
-border-top: 1px solid var(–border);
-padding-top: 32px;
-display: flex;
-flex-wrap: wrap;
-justify-content: space-between;
-align-items: center;
-gap: 16px;
-font-size: 11px;
-color: var(–text-dim);
-letter-spacing: 1px;
+  border-top: 1px solid var(--border-default);
+  padding-top: 28px;
+  display: flex; flex-wrap: wrap;
+  justify-content: space-between; align-items: center;
+  gap: 14px; font-size: 11px;
+  color: var(--text-muted); letter-spacing: 1px;
 }
-footer a { color: var(–cyan); text-decoration: none; }
+footer a { color: var(--accent-orange); text-decoration: none; }
+footer a:hover { color: var(--accent-cyan); }
+.footer-status { color: var(--accent-green); font-size: 10px; letter-spacing: 2px; }
 
-/* ═══════════════════════════ ANIMATIONS ═══════════════════════════ */
+/* ═══════════════════ FADE IN ═══════════════════ */
 .fade-in {
-opacity: 0;
-transform: translateY(20px);
-animation: fadeUp 0.6s ease forwards;
+  opacity: 0; transform: translateY(18px);
+  animation: fadeUp 0.55s ease forwards;
 }
-@keyframes fadeUp {
-to { opacity: 1; transform: none; }
-}
-.fade-in:nth-child(1) { animation-delay: 0.1s; }
-.fade-in:nth-child(2) { animation-delay: 0.2s; }
-.fade-in:nth-child(3) { animation-delay: 0.3s; }
-.fade-in:nth-child(4) { animation-delay: 0.4s; }
-.fade-in:nth-child(5) { animation-delay: 0.5s; }
+@keyframes fadeUp { to { opacity:1; transform:none; } }
+.fade-in:nth-child(1){animation-delay:.05s}
+.fade-in:nth-child(2){animation-delay:.15s}
+.fade-in:nth-child(3){animation-delay:.25s}
+.fade-in:nth-child(4){animation-delay:.35s}
+.fade-in:nth-child(5){animation-delay:.45s}
 
-.glow { text-shadow: 0 0 20px rgba(0,245,255,0.5); }
-
-/* ═══════════════════════════ RESPONSIVE ═══════════════════════════ */
+/* ═══════════════════ RESPONSIVE ═══════════════════ */
 @media (max-width: 600px) {
-.nav-links { display: none; }
-.hero { padding: 50px 0 40px; }
-.status-bar { grid-template-columns: 1fr 1fr; }
-.exp-date { margin-left: 0; width: 100%; }
+  .nav-links { display: none; }
+  .hero { padding: 44px 0 32px; }
+  .status-bar { grid-template-columns: 1fr 1fr; }
+  .exp-date { margin-left: 0; width: 100%; }
+  .terminal { font-size: 11px; padding: 16px; }
+  .brand-block { padding: 22px; }
 }
 </style>
-
 </head>
 <body>
 
@@ -709,9 +659,19 @@ to { opacity: 1; transform: none; }
 <div class="noise"></div>
 
 <!-- NAV -->
-
 <nav>
-  <div class="nav-logo">CC<span>_</span>SEC</div>
+  <div class="nav-brand">
+    <!-- Inline favicon in nav for brand consistency -->
+    <svg class="nav-favicon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="16" cy="16" r="16" fill="#040810"/>
+      <polygon points="16,2 27,8.5 27,23.5 16,30 5,23.5 5,8.5" fill="none" stroke="#00d4e8" stroke-width="1.2" opacity="0.6"/>
+      <path d="M16 6 L24 9.5 L24 17 C24 21.5 20.5 24.8 16 26.5 C11.5 24.8 8 21.5 8 17 L8 9.5 Z" fill="#0d1829" stroke="#00d4e8" stroke-width="1"/>
+      <path d="M16 22 C13 22 11 19.5 11 17 C11 15 12 14 13 13 C13 15 14 15.5 14.5 15 C14.5 13 15 11 16 9.5 C17 11 17 13.5 18.5 13.5 C18.5 12.5 19 12 19.5 11.5 C20.5 13 21 15 21 17 C21 19.5 19 22 16 22 Z" fill="#ff8c00"/>
+      <path d="M16 21 C14.5 21 13.5 19.5 13.5 18 C13.5 16.5 14.5 15.5 15 15 C15 16 15.5 16.5 16 16 C16.5 15.5 17 15 17 13.5 C17.5 14.5 18.5 16 18.5 18 C18.5 19.5 17.5 21 16 21 Z" fill="#00d4e8"/>
+      <ellipse cx="16" cy="18.5" rx="1.2" ry="1.8" fill="white" opacity="0.7"/>
+    </svg>
+    <div class="nav-logo">CC<span>_</span>SEC</div>
+  </div>
   <ul class="nav-links">
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
@@ -720,23 +680,29 @@ to { opacity: 1; transform: none; }
     <li><a href="#darkfire">Dark Fire</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <div class="theme-toggle" onclick="toggleTheme()" role="button" aria-label="Toggle color theme">
+    <span class="toggle-mode-label" id="toggle-label">LIGHT</span>
+    <div class="toggle-pill">
+      <span class="toggle-icon moon">🌙</span>
+      <span class="toggle-icon sun">☀️</span>
+      <div class="toggle-dot" id="toggle-dot"></div>
+    </div>
+  </div>
 </nav>
 
 <div class="wrapper">
 
   <!-- HERO -->
-
   <section class="hero">
     <div class="fade-in">
       <div class="hero-tag">IT Field Technician · Cybersecurity Professional</div>
     </div>
     <div class="fade-in">
-      <h1>Chance<br><span class="accent glow">Cummings</span></h1>
+      <h1>Chance<br><span class="accent">Cummings</span></h1>
     </div>
     <div class="fade-in">
-      <p class="hero-title">
-        <span class="role">IT Field Service Technician</span> &nbsp;@&nbsp;
-        <span class="org">Vanderbilt University Medical Center</span>
+      <p class="hero-subtitle">
+        <span class="role">IT Field Service Technician</span>&nbsp;&nbsp;@&nbsp;&nbsp;<span class="org">Vanderbilt University Medical Center</span>
       </p>
     </div>
     <div class="fade-in">
@@ -746,24 +712,23 @@ to { opacity: 1; transform: none; }
     </div>
     <div class="fade-in">
       <div class="hero-meta">
-        <span><span class="dot"></span> Nashville / Middle Tennessee</span>
+        <span><span class="pulse-dot"></span> Nashville / Middle Tennessee</span>
         <span>📡 VUMC Expansion Project — Active</span>
         <span>🎓 B.S. Cybersecurity — WGU (In Progress)</span>
       </div>
       <div class="hero-actions">
         <a href="assets/Chance_Cummings_Resume.pdf" class="btn btn-primary" download>⬇ Resume PDF</a>
-        <a href="assets/Cybersecurity Essentials for Small Businesses.pdf" class="btn btn-ghost" download>📘 Free eBook</a>
-        <a href="mailto:thechancecummings@gmail.com?subject=Interview%20Request%20-%20IT%20Support%20%2F%20Cybersecurity" class="btn btn-secondary">✉ Email Me</a>
+        <a href="assets/Cybersecurity Essentials for Small Businesses.pdf" class="btn btn-brand" download>📘 Free eBook</a>
+        <a href="mailto:thechancecummings@gmail.com?subject=Interview%20Request" class="btn btn-secondary">✉ Email Me</a>
       </div>
     </div>
   </section>
 
   <!-- STATUS BAR -->
-
   <div class="status-bar">
     <div class="status-item">
       <div class="status-label">Current Role</div>
-      <div class="status-value" style="font-size:13px;">IT Field Tech</div>
+      <div class="status-value" style="font-size:12px;">IT Field Tech</div>
       <div class="status-sub">Vanderbilt University Medical Center</div>
     </div>
     <div class="status-item">
@@ -773,32 +738,34 @@ to { opacity: 1; transform: none; }
     </div>
     <div class="status-item">
       <div class="status-label">Security Brand</div>
-      <div class="status-value" style="color:var(--orange);font-size:13px;">Dark Fire</div>
+      <div class="status-value orange" style="font-size:12px;">Dark Fire</div>
       <div class="status-sub">darkfiresecurity.com</div>
     </div>
     <div class="status-item">
       <div class="status-label">Degree</div>
-      <div class="status-value" style="font-size:13px;">B.S. CyberSec</div>
+      <div class="status-value" style="font-size:12px;">B.S. CyberSec</div>
       <div class="status-sub">WGU — In Progress</div>
     </div>
   </div>
 
-  <!-- TERMINAL CARD -->
-
-  <div class="terminal fade-in">
-    <div><span class="t-prompt">chance@darkfire</span><span class="t-cmd">:~$ </span><span class="t-flag">whoami --verbose</span></div>
-    <div><span class="t-out">name:        </span><span class="t-val">Chance Cummings</span></div>
-    <div><span class="t-out">role:        </span><span class="t-val">IT Field Service Technician @ VUMC</span></div>
-    <div><span class="t-out">location:    </span><span class="t-val">Nashville, TN (Middle Tennessee)</span></div>
-    <div><span class="t-out">focus:       </span><span class="t-val">Healthcare IT → Cybersecurity Transition</span></div>
-    <div><span class="t-out">tools:       </span><span class="t-val">Intune MDM, VMware Horizon VDI, PowerShell, Active Directory</span></div>
-    <div><span class="t-out">certs:       </span><span class="t-val">CompTIA A+, Network+ | Security+ [IN PROGRESS]</span></div>
-    <div><span class="t-out">brand:       </span><span class="t-flag">Dark Fire Security</span><span class="t-val"> — Cybersecurity Consulting</span></div>
-    <div><span class="t-out">status:      </span><span style="color:var(--green);">AVAILABLE FOR OPPORTUNITIES ●</span></div>
+  <!-- TERMINAL -->
+  <div class="terminal">
+    <div class="terminal-bar">
+      <div class="td td-r"></div>
+      <div class="td td-y"></div>
+      <div class="td td-g"></div>
+    </div>
+    <div><span class="t-prompt">chance@darkfire</span><span class="t-cmd">:~$ whoami --verbose</span></div>
+    <div><span class="t-key">name     </span><span class="t-cmd"> → </span><span class="t-val">Chance Cummings</span></div>
+    <div><span class="t-key">role     </span><span class="t-cmd"> → </span><span class="t-val">IT Field Service Technician @ VUMC</span></div>
+    <div><span class="t-key">location </span><span class="t-cmd"> → </span><span class="t-val">Nashville, TN</span></div>
+    <div><span class="t-key">stack    </span><span class="t-cmd"> → </span><span class="t-val">Intune MDM · VMware Horizon VDI · PowerShell · Active Directory</span></div>
+    <div><span class="t-key">certs    </span><span class="t-cmd"> → </span><span class="t-val">CompTIA A+, Network+</span><span class="t-cmd"> | </span><span class="t-flag">Security+ [IN PROGRESS]</span></div>
+    <div><span class="t-key">brand    </span><span class="t-cmd"> → </span><span class="t-flag">Dark Fire Security</span><span class="t-val"> — Cybersecurity Consulting</span></div>
+    <div><span class="t-key">status   </span><span class="t-cmd"> → </span><span class="t-live">AVAILABLE FOR OPPORTUNITIES ●</span></div>
   </div>
 
   <!-- EXPERIENCE -->
-
   <section id="experience">
     <div class="section-header">
       <span class="section-label">Experience</span>
@@ -807,85 +774,81 @@ to { opacity: 1; transform: none; }
     </div>
     <div class="timeline">
 
-```
-  <div class="exp-card current">
-    <div class="exp-header">
-      <span class="exp-title">IT Field Service Technician</span>
-      <span class="exp-org">Vanderbilt University Medical Center</span>
-      <span class="exp-date">2024 – Present</span>
+      <div class="exp-card current">
+        <div class="exp-header">
+          <span class="exp-title">IT Field Service Technician</span>
+          <span class="exp-org">Vanderbilt University Medical Center</span>
+          <span class="exp-date">2024 – Present</span>
+        </div>
+        <div class="exp-loc">📍 Nashville, TN &nbsp;·&nbsp; Healthcare Enterprise IT · HIPAA Environment</div>
+        <ul class="exp-bullets">
+          <li>Provision and deploy iOS devices at scale via <strong>Microsoft Intune MDM</strong> across clinical and administrative floors.</li>
+          <li>Deploy and configure <strong>VMware Horizon VDI</strong> thin client workstations supporting multi-floor expansion project.</li>
+          <li>Manage hardware asset records and lifecycle documentation within enterprise ITSM systems.</li>
+          <li>Execute <strong>PowerShell</strong> scripts for network config, device enrollment validation, and endpoint diagnostics.</li>
+          <li>Support HIPAA-compliant workflows — applying field-level security practices in a regulated healthcare environment.</li>
+          <li>Primary technician on large-scale multi-floor infrastructure expansion — staging, cabling verification, go-live support.</li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <span class="exp-title">IT Technician (Contract)</span>
+          <span class="exp-org">Pawn Shop Operations</span>
+          <span class="exp-date">2024 – Present</span>
+        </div>
+        <div class="exp-loc">📍 Ashland City, TN &nbsp;·&nbsp; Break-Fix · Retail IT</div>
+        <ul class="exp-bullets">
+          <li>Diagnosed and repaired laptops/desktops with boot failures, OS corruption, and hardware faults.</li>
+          <li>Performed clean Windows installs, recovery environment troubleshooting, and OS resets.</li>
+          <li>Executed secure data destruction using <strong>ShredOS</strong> with verification certificates and chain-of-custody docs.</li>
+          <li>Reimaged systems for resale and provided pre-sale usability validation.</li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <span class="exp-title">Owner / Operator</span>
+          <span class="exp-org">Double C Solutions, LLC</span>
+          <span class="exp-date">2023 – Present</span>
+        </div>
+        <div class="exp-loc">📍 Ashland City, TN &nbsp;·&nbsp; Small Business IT & Services</div>
+        <ul class="exp-bullets">
+          <li>Run scheduling, invoicing, client communication, and service delivery alongside full-time employment.</li>
+          <li>Manage business technology including email systems, website tools, and IT troubleshooting for clients.</li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <span class="exp-title">Sales Assistant</span>
+          <span class="exp-org">A1 Pawn</span>
+          <span class="exp-date">Present</span>
+        </div>
+        <div class="exp-loc">📍 Springfield, TN</div>
+        <ul class="exp-bullets">
+          <li>Facilitate high-volume sales, loans, and financial transactions with focus on data accuracy.</li>
+          <li>Manage social media and digital presence — contributed to county "Top Pawn Shop" award multiple years running.</li>
+        </ul>
+      </div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <span class="exp-title">Feeder Operator / CDL Driver</span>
+          <span class="exp-org">UPS</span>
+          <span class="exp-date">Jul 2021 – 2023</span>
+        </div>
+        <div class="exp-loc">📍 Nashville, TN</div>
+        <ul class="exp-bullets">
+          <li>Operated commercial vehicles in high-pressure logistics environment with strong safety record.</li>
+          <li>Coordinated with dispatch to meet strict deadlines in fast-paced hub operations.</li>
+        </ul>
+      </div>
+
     </div>
-    <div class="exp-loc">📍 Nashville, TN &nbsp;|&nbsp; Healthcare Enterprise IT · HIPAA Environment</div>
-    <ul class="exp-bullets">
-      <li>Provision and deploy iOS devices at scale via <strong>Microsoft Intune MDM</strong> across clinical and administrative floors.</li>
-      <li>Deploy and configure <strong>VMware Horizon VDI</strong> thin client workstations supporting multi-floor expansion and relocation project.</li>
-      <li>Manage hardware asset records and lifecycle documentation within enterprise ITSM systems.</li>
-      <li>Execute PowerShell scripts for network configuration, device enrollment validation, and endpoint diagnostics.</li>
-      <li>Support HIPAA-compliant workflows — applying field-level security practices in regulated healthcare environment.</li>
-      <li>Serving as primary tech on large-scale multi-floor infrastructure expansion — coordinating workstation staging, cabling verification, and go-live support.</li>
-    </ul>
-  </div>
-
-  <div class="exp-card">
-    <div class="exp-header">
-      <span class="exp-title">IT Technician (Contract)</span>
-      <span class="exp-org">Pawn Shop Operations</span>
-      <span class="exp-date">2024 – Present</span>
-    </div>
-    <div class="exp-loc">📍 Ashland City, TN &nbsp;|&nbsp; Break-Fix · Retail IT</div>
-    <ul class="exp-bullets">
-      <li>Diagnosed and repaired laptops/desktops with boot failures, OS corruption, and hardware faults.</li>
-      <li>Performed clean Windows installs, recovery environment troubleshooting, and OS resets.</li>
-      <li>Executed secure data destruction using <strong>ShredOS</strong> with verification certificates and chain-of-custody documentation.</li>
-      <li>Reimaged systems for resale and provided pre-sale usability validation.</li>
-    </ul>
-  </div>
-
-  <div class="exp-card">
-    <div class="exp-header">
-      <span class="exp-title">Owner / Operator</span>
-      <span class="exp-org">Double C Solutions, LLC</span>
-      <span class="exp-date">2023 – Present</span>
-    </div>
-    <div class="exp-loc">📍 Ashland City, TN &nbsp;|&nbsp; Small Business IT & Services</div>
-    <ul class="exp-bullets">
-      <li>Run scheduling, invoicing, client communication, and service delivery while pursuing full-time education and work.</li>
-      <li>Manage business technology including email systems, website tools, and IT troubleshooting for clients.</li>
-    </ul>
-  </div>
-
-  <div class="exp-card">
-    <div class="exp-header">
-      <span class="exp-title">Sales Assistant</span>
-      <span class="exp-org">A1 Pawn</span>
-      <span class="exp-date">Present</span>
-    </div>
-    <div class="exp-loc">📍 Springfield, TN</div>
-    <ul class="exp-bullets">
-      <li>Facilitate high-volume sales, loans, and financial transactions with focus on data accuracy.</li>
-      <li>Manage social media and digital presence — contributed to "Top Pawn Shop" county award for multiple consecutive years.</li>
-    </ul>
-  </div>
-
-  <div class="exp-card">
-    <div class="exp-header">
-      <span class="exp-title">Feeder Operator / CDL Driver</span>
-      <span class="exp-org">UPS</span>
-      <span class="exp-date">Jul 2021 – 2023</span>
-    </div>
-    <div class="exp-loc">📍 Nashville, TN</div>
-    <ul class="exp-bullets">
-      <li>Operated commercial vehicles in high-pressure logistics environment with strong safety record.</li>
-      <li>Coordinated with dispatch to meet strict deadlines in fast-paced hub operations.</li>
-    </ul>
-  </div>
-
-</div>
-```
-
   </section>
 
   <!-- PROJECTS -->
-
   <section id="projects">
     <div class="section-header">
       <span class="section-label">Projects & Tools</span>
@@ -893,107 +856,66 @@ to { opacity: 1; transform: none; }
       <span class="section-num">02</span>
     </div>
     <div class="projects-grid">
-
-```
-  <div class="proj-card">
-    <div class="proj-icon">🛡️</div>
-    <div class="proj-name">SENTINEL SOC Dashboard</div>
-    <div class="proj-desc">Dark-themed network threat intelligence dashboard simulating real SOC workflows — live threat feeds, alert triage, and incident tracking.</div>
-    <div class="proj-tags">
-      <span class="tag cyan">SOC</span>
-      <span class="tag green">Threat Intel</span>
-      <span class="tag">HTML/CSS/JS</span>
+      <div class="proj-card">
+        <div class="proj-icon">🛡️</div>
+        <div class="proj-name">SENTINEL SOC Dashboard</div>
+        <div class="proj-desc">Dark-themed network threat intelligence dashboard simulating real SOC workflows — live threat feeds, alert triage, and incident tracking.</div>
+        <div class="proj-tags"><span class="tag cyan">SOC</span><span class="tag green">Threat Intel</span><span class="tag">HTML/JS</span></div>
+        <a href="https://darkfiresecurity.com" class="proj-link" target="_blank">Live Demo</a>
+      </div>
+      <div class="proj-card">
+        <div class="proj-icon">🎣</div>
+        <div class="proj-name">PhishGuard Elite</div>
+        <div class="proj-desc">Email triage simulator for training phishing recognition and SOC-style classification decisions. Interactive scenarios with scoring.</div>
+        <div class="proj-tags"><span class="tag cyan">Security Awareness</span><span class="tag orange">Training</span></div>
+        <a href="https://phishguard-elite-immersive-cyber-awareness-traini-293799863337.us-west1.run.app" class="proj-link" target="_blank">Open Tool</a>
+      </div>
+      <div class="proj-card">
+        <div class="proj-icon">⚗️</div>
+        <div class="proj-name">DarkChef</div>
+        <div class="proj-desc">CyberChef-style browser-based data transformation toolkit for encoding, decoding, and IR-style data manipulation workflows.</div>
+        <div class="proj-tags"><span class="tag cyan">DFIR</span><span class="tag green">Data Transform</span></div>
+        <a href="https://darkchef-professional-data-alchemy-1044572571760.us-west1.run.app" class="proj-link" target="_blank">Open Tool</a>
+      </div>
+      <div class="proj-card">
+        <div class="proj-icon">📊</div>
+        <div class="proj-name">Small Business Risk Report</div>
+        <div class="proj-desc">Client intake + risk scoring flow outputting structured security posture summaries for small businesses. Designed for non-technical stakeholders.</div>
+        <div class="proj-tags"><span class="tag orange">Consulting</span><span class="tag">Risk Assessment</span></div>
+        <a href="https://small-business-security-intake-risk-report-293799863337.us-west1.run.app" class="proj-link" target="_blank">Open Tool</a>
+      </div>
+      <div class="proj-card">
+        <div class="proj-icon">🌐</div>
+        <div class="proj-name">NetProbe — IP Inspector</div>
+        <div class="proj-desc">Privacy-first public IP inspector built in Next.js. Displays network intelligence without logging or tracking visitors.</div>
+        <div class="proj-tags"><span class="tag cyan">Privacy</span><span class="tag green">Next.js</span><span class="tag">Vercel</span></div>
+        <a href="https://darkfiresecurity.com" class="proj-link" target="_blank">View Project</a>
+      </div>
+      <div class="proj-card">
+        <div class="proj-icon">🐍</div>
+        <div class="proj-name">PyForge AI Sandbox</div>
+        <div class="proj-desc">Cloud-hosted Python execution environment for safe scripting labs, security automation prototyping, and quick experiments.</div>
+        <div class="proj-tags"><span class="tag green">Python</span><span class="tag">Cloud Run</span><span class="tag">Automation</span></div>
+        <a href="https://pyforge-ai-advanced-python-sandbox-810187719410.us-west1.run.app/" class="proj-link" target="_blank">Open Tool</a>
+      </div>
+      <div class="proj-card">
+        <div class="proj-icon">🏥</div>
+        <div class="proj-name">WingTech Ops Academy</div>
+        <div class="proj-desc">Hospital IT field technician training platform — interactive modules covering MDM, VDI deployment, and HIPAA-relevant procedures.</div>
+        <div class="proj-tags"><span class="tag cyan">Healthcare IT</span><span class="tag orange">Training</span></div>
+        <a href="#" class="proj-link">View Project</a>
+      </div>
+      <div class="proj-card">
+        <div class="proj-icon">🏗️</div>
+        <div class="proj-name">Wade King Construction</div>
+        <div class="proj-desc">Professional website for a local construction company — part of a website-flipping project targeting local tradespeople in Middle Tennessee.</div>
+        <div class="proj-tags"><span class="tag green">Web Dev</span><span class="tag">Local Business</span><span class="tag">Vercel</span></div>
+        <a href="#" class="proj-link">View Site</a>
+      </div>
     </div>
-    <a href="https://darkfiresecurity.com" class="proj-link" target="_blank">Live Demo</a>
-  </div>
-
-  <div class="proj-card">
-    <div class="proj-icon">🎣</div>
-    <div class="proj-name">PhishGuard Elite</div>
-    <div class="proj-desc">Email triage simulator for training phishing recognition and SOC-style classification decisions. Interactive scenarios with scoring.</div>
-    <div class="proj-tags">
-      <span class="tag cyan">Security Awareness</span>
-      <span class="tag orange">Training</span>
-    </div>
-    <a href="https://phishguard-elite-immersive-cyber-awareness-traini-293799863337.us-west1.run.app" class="proj-link" target="_blank">Open Tool</a>
-  </div>
-
-  <div class="proj-card">
-    <div class="proj-icon">⚗️</div>
-    <div class="proj-name">DarkChef</div>
-    <div class="proj-desc">CyberChef-style browser-based data transformation toolkit for encoding, decoding, and IR-style data manipulation workflows.</div>
-    <div class="proj-tags">
-      <span class="tag cyan">DFIR</span>
-      <span class="tag green">Data Transform</span>
-    </div>
-    <a href="https://darkchef-professional-data-alchemy-1044572571760.us-west1.run.app" class="proj-link" target="_blank">Open Tool</a>
-  </div>
-
-  <div class="proj-card">
-    <div class="proj-icon">📊</div>
-    <div class="proj-name">Small Business Risk Report</div>
-    <div class="proj-desc">Client intake + risk scoring flow outputting structured security posture summaries for small businesses. Designed for non-technical stakeholders.</div>
-    <div class="proj-tags">
-      <span class="tag orange">Consulting</span>
-      <span class="tag">Risk Assessment</span>
-    </div>
-    <a href="https://small-business-security-intake-risk-report-293799863337.us-west1.run.app" class="proj-link" target="_blank">Open Tool</a>
-  </div>
-
-  <div class="proj-card">
-    <div class="proj-icon">🌐</div>
-    <div class="proj-name">NetProbe — IP Inspector</div>
-    <div class="proj-desc">Privacy-first public IP inspector built in Next.js. Displays network intelligence without logging or tracking visitors.</div>
-    <div class="proj-tags">
-      <span class="tag cyan">Privacy</span>
-      <span class="tag green">Next.js</span>
-      <span class="tag">Vercel</span>
-    </div>
-    <a href="https://darkfiresecurity.com" class="proj-link" target="_blank">View Project</a>
-  </div>
-
-  <div class="proj-card">
-    <div class="proj-icon">🐍</div>
-    <div class="proj-name">PyForge AI Sandbox</div>
-    <div class="proj-desc">Cloud-hosted Python execution environment for safe scripting labs, security automation prototyping, and quick experiments.</div>
-    <div class="proj-tags">
-      <span class="tag green">Python</span>
-      <span class="tag">Cloud Run</span>
-      <span class="tag">Automation</span>
-    </div>
-    <a href="https://pyforge-ai-advanced-python-sandbox-810187719410.us-west1.run.app/" class="proj-link" target="_blank">Open Tool</a>
-  </div>
-
-  <div class="proj-card">
-    <div class="proj-icon">🏥</div>
-    <div class="proj-name">WingTech Ops Academy</div>
-    <div class="proj-desc">Hospital IT field technician training platform — interactive modules covering MDM, VDI deployment, and HIPAA-relevant procedures.</div>
-    <div class="proj-tags">
-      <span class="tag cyan">Healthcare IT</span>
-      <span class="tag orange">Training</span>
-    </div>
-    <a href="#" class="proj-link">View Project</a>
-  </div>
-
-  <div class="proj-card">
-    <div class="proj-icon">🏗️</div>
-    <div class="proj-name">Wade King Construction</div>
-    <div class="proj-desc">Professional website built for a local construction company in Middle Tennessee — part of the website-flipping side hustle targeting local tradespeople.</div>
-    <div class="proj-tags">
-      <span class="tag green">Web Dev</span>
-      <span class="tag">Local Business</span>
-      <span class="tag">Vercel</span>
-    </div>
-    <a href="#" class="proj-link">View Site</a>
-  </div>
-
-</div>
-```
-
   </section>
 
-  <!-- DARK FIRE SECTION -->
-
+  <!-- DARK FIRE -->
   <section id="darkfire">
     <div class="section-header">
       <span class="section-label">Dark Fire Security</span>
@@ -1007,14 +929,13 @@ to { opacity: 1; transform: none; }
         Dark Fire Security is my cybersecurity consulting brand — built to help small businesses, healthcare organizations, and tradespeople defend against modern threats without enterprise-sized budgets. From security awareness training and phishing simulations to risk assessments and posture reviews, Dark Fire brings real security to the people who need it most.
       </p>
       <div style="display:flex;flex-wrap:wrap;gap:12px;">
-        <a href="https://darkfiresecurity.com" class="btn btn-ghost" target="_blank">🔥 Visit darkfiresecurity.com</a>
+        <a href="https://darkfiresecurity.com" class="btn btn-brand" target="_blank">🔥 Visit darkfiresecurity.com</a>
         <a href="assets/Cybersecurity Essentials for Small Businesses.pdf" class="btn btn-secondary" download>📘 Download Free eBook</a>
       </div>
     </div>
   </section>
 
   <!-- SKILLS -->
-
   <section id="skills">
     <div class="section-header">
       <span class="section-label">Technical Skills</span>
@@ -1027,7 +948,7 @@ to { opacity: 1; transform: none; }
         <div class="skill-list">
           <span class="skill-pill">Microsoft Intune</span>
           <span class="skill-pill">VMware Horizon VDI</span>
-          <span class="skill-pill">iOS Device Provisioning</span>
+          <span class="skill-pill">iOS Provisioning</span>
           <span class="skill-pill">Thin Client Deploy</span>
           <span class="skill-pill">Asset Management</span>
           <span class="skill-pill">ITSM Ticketing</span>
@@ -1092,7 +1013,6 @@ to { opacity: 1; transform: none; }
   </section>
 
   <!-- CERTS -->
-
   <section id="certs">
     <div class="section-header">
       <span class="section-label">Certifications</span>
@@ -1100,76 +1020,52 @@ to { opacity: 1; transform: none; }
       <span class="section-num">05</span>
     </div>
     <div class="certs-grid">
-      <div class="cert-card active">
+      <div class="cert-card s-active">
         <div class="cert-icon">🏅</div>
-        <div>
-          <div class="cert-name">CompTIA A+</div>
-          <div class="cert-meta">Valid 2024–2027</div>
-        </div>
+        <div><div class="cert-name">CompTIA A+</div><div class="cert-meta">Valid 2024–2027</div></div>
         <span class="cert-badge active">ACTIVE</span>
       </div>
-      <div class="cert-card active">
+      <div class="cert-card s-active">
         <div class="cert-icon">🌐</div>
-        <div>
-          <div class="cert-name">CompTIA Network+</div>
-          <div class="cert-meta">Passed March 2025</div>
-        </div>
+        <div><div class="cert-name">CompTIA Network+</div><div class="cert-meta">Passed March 2025</div></div>
         <span class="cert-badge active">ACTIVE</span>
       </div>
-      <div class="cert-card progress">
+      <div class="cert-card s-progress">
         <div class="cert-icon">🔐</div>
-        <div>
-          <div class="cert-name">CompTIA Security+ (SY0-701)</div>
-          <div class="cert-meta">Actively Studying</div>
-        </div>
+        <div><div class="cert-name">CompTIA Security+ (SY0-701)</div><div class="cert-meta">Actively Studying</div></div>
         <span class="cert-badge progress">IN PROGRESS</span>
       </div>
-      <div class="cert-card active">
+      <div class="cert-card s-active">
         <div class="cert-icon">🎓</div>
-        <div>
-          <div class="cert-name">Google IT Support Pro</div>
-          <div class="cert-meta">2024</div>
-        </div>
+        <div><div class="cert-name">Google IT Support Pro</div><div class="cert-meta">2024</div></div>
         <span class="cert-badge active">ACTIVE</span>
       </div>
-      <div class="cert-card cdl">
+      <div class="cert-card s-info">
         <div class="cert-icon">🚛</div>
-        <div>
-          <div class="cert-name">CDL Class A</div>
-          <div class="cert-meta">Commercial Driver's License</div>
-        </div>
-        <span class="cert-badge" style="border-color:rgba(0,245,255,0.3);color:var(--cyan);">ACTIVE</span>
+        <div><div class="cert-name">CDL Class A</div><div class="cert-meta">Commercial Driver's License</div></div>
+        <span class="cert-badge info">ACTIVE</span>
       </div>
-      <div class="cert-card active">
+      <div class="cert-card s-active">
         <div class="cert-icon">🌿</div>
-        <div>
-          <div class="cert-name">Certified Lawn Care Pro</div>
-          <div class="cert-meta">University of Tennessee · 2024–2026</div>
-        </div>
+        <div><div class="cert-name">Certified Lawn Care Pro</div><div class="cert-meta">University of Tennessee · 2024–2026</div></div>
         <span class="cert-badge active">ACTIVE</span>
       </div>
     </div>
-
-```
-<!-- Education -->
-<div style="margin-top:20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;">
-  <div class="card">
-    <div style="font-size:10px;letter-spacing:2px;color:var(--cyan);text-transform:uppercase;margin-bottom:10px;">Education</div>
-    <div style="font-family:'Share Tech Mono',monospace;color:#fff;margin-bottom:4px;">B.S. Cybersecurity</div>
-    <div style="font-size:12px;color:var(--text-dim);">Western Governors University &nbsp;·&nbsp; In Progress</div>
-  </div>
-  <div class="card">
-    <div style="font-size:10px;letter-spacing:2px;color:var(--cyan);text-transform:uppercase;margin-bottom:10px;">Prior Education</div>
-    <div style="font-family:'Share Tech Mono',monospace;color:#fff;margin-bottom:4px;">Agriculture Business Coursework</div>
-    <div style="font-size:12px;color:var(--text-dim);">Austin Peay State University &nbsp;·&nbsp; 2015–2019</div>
-  </div>
-</div>
-```
-
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-label">Education</div>
+        <div class="edu-degree">B.S. Cybersecurity</div>
+        <div class="edu-school">Western Governors University &nbsp;·&nbsp; In Progress</div>
+      </div>
+      <div class="edu-card">
+        <div class="edu-label">Prior Education</div>
+        <div class="edu-degree">Agriculture Business Coursework</div>
+        <div class="edu-school">Austin Peay State University &nbsp;·&nbsp; 2015–2019</div>
+      </div>
+    </div>
   </section>
 
   <!-- CONTACT -->
-
   <section id="contact">
     <div class="section-header">
       <span class="section-label">Contact</span>
@@ -1177,47 +1073,29 @@ to { opacity: 1; transform: none; }
       <span class="section-num">06</span>
     </div>
     <div class="contact-grid">
-      <a href="mailto:thechancecummings@gmail.com?subject=Interview%20Request%20-%20IT%20Support%20%2F%20Cybersecurity" class="contact-item">
-        <span class="contact-item-icon">✉</span>
-        <div>
-          <div class="contact-item-label">Email</div>
-          <div class="contact-item-val">thechancecummings@gmail.com</div>
-        </div>
+      <a href="mailto:thechancecummings@gmail.com?subject=Interview%20Request" class="contact-item">
+        <span class="contact-icon">✉️</span>
+        <div><div class="contact-label">Email</div><div class="contact-val">thechancecummings@gmail.com</div></div>
       </a>
       <a href="tel:+16156931113" class="contact-item">
-        <span class="contact-item-icon">📞</span>
-        <div>
-          <div class="contact-item-label">Phone</div>
-          <div class="contact-item-val">615-693-1113</div>
-        </div>
+        <span class="contact-icon">📞</span>
+        <div><div class="contact-label">Phone</div><div class="contact-val">615-693-1113</div></div>
       </a>
       <a href="https://github.com/jazzy216" class="contact-item" target="_blank">
-        <span class="contact-item-icon">🐙</span>
-        <div>
-          <div class="contact-item-label">GitHub</div>
-          <div class="contact-item-val">github.com/jazzy216</div>
-        </div>
+        <span class="contact-icon">🐙</span>
+        <div><div class="contact-label">GitHub</div><div class="contact-val">github.com/jazzy216</div></div>
       </a>
       <a href="https://linkedin.com/in/chance-cummings" class="contact-item" target="_blank">
-        <span class="contact-item-icon">💼</span>
-        <div>
-          <div class="contact-item-label">LinkedIn</div>
-          <div class="contact-item-val">linkedin.com/in/chance-cummings</div>
-        </div>
+        <span class="contact-icon">💼</span>
+        <div><div class="contact-label">LinkedIn</div><div class="contact-val">linkedin.com/in/chance-cummings</div></div>
       </a>
       <a href="https://darkfiresecurity.com" class="contact-item" target="_blank">
-        <span class="contact-item-icon">🔥</span>
-        <div>
-          <div class="contact-item-label">Security Brand</div>
-          <div class="contact-item-val">darkfiresecurity.com</div>
-        </div>
+        <span class="contact-icon">🔥</span>
+        <div><div class="contact-label">Security Brand</div><div class="contact-val">darkfiresecurity.com</div></div>
       </a>
       <a href="assets/Chance_Cummings_Resume.pdf" class="contact-item" download>
-        <span class="contact-item-icon">📄</span>
-        <div>
-          <div class="contact-item-label">Resume</div>
-          <div class="contact-item-val">Download PDF</div>
-        </div>
+        <span class="contact-icon">📄</span>
+        <div><div class="contact-label">Resume</div><div class="contact-val">Download PDF</div></div>
       </a>
     </div>
   </section>
@@ -1225,49 +1103,70 @@ to { opacity: 1; transform: none; }
 </div>
 
 <!-- FOOTER -->
-
 <div class="wrapper" style="padding-top:0;">
   <footer>
     <span>© Chance Cummings &nbsp;·&nbsp; Nashville, TN &nbsp;·&nbsp; <a href="https://darkfiresecurity.com" target="_blank">Dark Fire Security</a></span>
-    <span style="color:var(--green);font-size:10px;letter-spacing:2px;">● OPEN TO OPPORTUNITIES</span>
+    <span class="footer-status">● OPEN TO OPPORTUNITIES</span>
   </footer>
 </div>
 
 <script>
-  // Intersection observer for subtle entrance animations
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.style.opacity = '1';
-        e.target.style.transform = 'none';
-        e.target.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-      }
-    });
-  }, { threshold: 0.1 });
+/* ── Theme engine ─────────────────────────────────────── */
+const html = document.documentElement;
 
-  document.querySelectorAll('.exp-card, .proj-card, .cert-card, .skill-block, .contact-item').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(16px)';
-    observer.observe(el);
+function applyTheme(theme) {
+  html.setAttribute('data-theme', theme);
+  const lbl = document.getElementById('toggle-label');
+  if (lbl) lbl.textContent = theme === 'dark' ? 'LIGHT' : 'DARK';
+}
+
+function toggleTheme() {
+  const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  applyTheme(next);
+  try { localStorage.setItem('cc-theme', next); } catch(e){}
+}
+
+// Default dark; restore user pref if set
+try {
+  const saved = localStorage.getItem('cc-theme');
+  applyTheme(saved || 'dark');
+} catch(e) {
+  applyTheme('dark');
+}
+
+/* ── Scroll-reveal ────────────────────────────────────── */
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.opacity = '1';
+      e.target.style.transform = 'translateY(0)';
+      revealObs.unobserve(e.target);
+    }
   });
+}, { threshold: 0.07 });
 
-  // Glitch effect on name hover
-  const h1 = document.querySelector('h1 .accent');
-  if (h1) {
-    h1.addEventListener('mouseover', () => {
-      h1.style.animation = 'none';
-      const chars = h1.textContent.split('');
-      const glitch = () => {
-        h1.textContent = chars.map(c => Math.random() > 0.85 ? '█▓░'[Math.floor(Math.random()*3)] : c).join('');
-      };
-      const interval = setInterval(glitch, 60);
-      setTimeout(() => {
-        clearInterval(interval);
-        h1.textContent = 'Cummings';
-      }, 500);
-    });
-  }
+document.querySelectorAll(
+  '.exp-card,.proj-card,.cert-card,.skill-block,.contact-item,.edu-card,.brand-block,.terminal,.status-item'
+).forEach(el => {
+  el.style.cssText += 'opacity:0;transform:translateY(12px);transition:opacity 0.42s ease,transform 0.42s ease;';
+  revealObs.observe(el);
+});
+
+/* ── Glitch on name hover ─────────────────────────────── */
+const accent = document.querySelector('h1 .accent');
+if (accent) {
+  const orig = accent.textContent;
+  let glitchTimer;
+  accent.addEventListener('mouseenter', () => {
+    let t = 0;
+    glitchTimer = setInterval(() => {
+      accent.textContent = orig.split('').map(c =>
+        Math.random() > 0.8 ? '▓█░'[Math.floor(Math.random()*3)] : c
+      ).join('');
+      if (++t > 8) { clearInterval(glitchTimer); accent.textContent = orig; }
+    }, 55);
+  });
+}
 </script>
-
 </body>
 </html>
