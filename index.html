@@ -1,575 +1,1273 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Chance Cummings — IT Support & Cybersecurity. CompTIA A+. Windows/Linux. Hands-on labs and projects." />
-  <title>Chance Cummings | IT Support & Cybersecurity</title>
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Chance Cummings | IT Support & Cybersecurity" />
-  <meta property="og:description" content="CompTIA A+ | Windows/Linux | Networking fundamentals | Hands-on labs and projects" />
-  <meta property="og:type" content="website" />
-
-  <style>
-    :root{
-      --bg:#0b0f14;
-      --card:#121a24;
-      --muted:#9fb0c3;
-      --text:#e7eef7;
-      --accent:#4aa3ff;
-      --border:rgba(255,255,255,.08);
-      --shadow: 0 12px 30px rgba(0,0,0,.35);
-      --radius: 16px;
-      --max: 1060px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background: radial-gradient(1200px 600px at 20% 0%, rgba(74,163,255,.18), transparent 55%),
-                  radial-gradient(900px 500px at 90% 20%, rgba(74,163,255,.12), transparent 55%),
-                  var(--bg);
-      color:var(--text);
-      line-height:1.5;
-    }
-    a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 64px}
-    header{
-      display:flex; gap:18px; align-items:flex-start; justify-content:space-between; flex-wrap:wrap;
-      padding:22px; border:1px solid var(--border); border-radius:var(--radius); background:rgba(18,26,36,.75);
-      box-shadow:var(--shadow);
-      backdrop-filter: blur(10px);
-    }
-    .name{font-size:32px; margin:0 0 6px; letter-spacing:.2px}
-    .tag{margin:0; color:var(--muted)}
-    .meta{display:flex; gap:12px; flex-wrap:wrap; margin-top:10px}
-    .pill{
-      display:inline-flex; gap:8px; align-items:center;
-      padding:8px 10px; border:1px solid var(--border); border-radius:999px;
-      background: rgba(255,255,255,.03);
-      color:var(--muted);
-      font-size:13px;
-    }
-    .actions{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:10px 14px; border-radius:12px; border:1px solid var(--border);
-      background: rgba(255,255,255,.03);
-      text-decoration:none; color:var(--text); font-weight:600;
-    }
-    .btn.primary{background: rgba(74,163,255,.18); border-color: rgba(74,163,255,.35)}
-    .btn:hover{transform: translateY(-1px)}
-    main{margin-top:18px; display:grid; grid-template-columns: 1.2fr .8fr; gap:16px}
-    @media (max-width: 960px){ main{grid-template-columns: 1fr} }
-    section{
-      padding:18px; border:1px solid var(--border); border-radius:var(--radius);
-      background: rgba(18,26,36,.55); backdrop-filter: blur(10px);
-    }
-    h2{margin:0 0 10px; font-size:16px; letter-spacing:.3px; text-transform:uppercase; color:#d7e6ff}
-    h3{margin:14px 0 6px; font-size:15px}
-    .muted{color:var(--muted)}
-    ul{margin:10px 0 0 18px; padding:0}
-    li{margin:6px 0}
-    .grid2{display:grid; grid-template-columns: 1fr 1fr; gap:10px}
-    @media (max-width: 560px){ .grid2{grid-template-columns:1fr} }
-    .item{
-      padding:12px; border:1px solid var(--border); border-radius:14px;
-      background: rgba(255,255,255,.03);
-    }
-    .k{font-weight:700}
-    .small{font-size:13px}
-    .split{
-      display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; align-items:baseline;
-      border-top:1px dashed rgba(255,255,255,.12); padding-top:12px; margin-top:12px;
-    }
-    footer{margin-top:16px; color:var(--muted); font-size:13px; text-align:center}
-    code.inline{
-      padding:2px 6px; border:1px solid var(--border); border-radius:8px; background: rgba(255,255,255,.03);
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
-      font-size: 12px;
-    }
-    /* --- Mobile polish + fluid scaling (add after your existing CSS) --- */
-
-/* Better sizing behavior on mobile browsers */
-html{
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
-
-/* Smooth, fluid type/spacing without breaking desktop */
-:root{
-  --padX: clamp(14px, 3.5vw, 18px);
-  --padY: clamp(16px, 3.5vw, 22px);
-  --gap:  clamp(12px, 2.5vw, 18px);
-}
-
-.wrap{
-  padding: clamp(16px, 4vw, 28px) var(--padX) clamp(40px, 7vw, 64px);
-}
-
-/* Prevent long links/emails from blowing up layout */
-header, section, .item{
-  overflow-wrap: anywhere;
-  word-break: break-word;
-}
-
-/* Make hover transforms not cause weird taps on mobile */
-@media (hover: none){
-  .btn:hover{ transform:none; }
-}
-
-/* 960px and below: already single-column main; tighten spacing */
-@media (max-width: 960px){
-  header{ padding: var(--padY); gap: var(--gap); }
-  section{ padding: clamp(14px, 3.2vw, 18px); }
-}
-
-/* Phone layout */
-@media (max-width: 640px){
-  /* Header stacks cleanly */
-  header{
-    flex-direction: column;
-    align-items: stretch;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chance Cummings | IT Field Technician & Cybersecurity</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Share+Tech+Mono&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cyan: #00f5ff;
+    --green: #00ff88;
+    --red: #ff2244;
+    --orange: #ff7700;
+    --bg: #040810;
+    --bg2: #080f1a;
+    --bg3: #0c1526;
+    --grid: rgba(0,245,255,0.04);
+    --border: rgba(0,245,255,0.15);
+    --border-bright: rgba(0,245,255,0.4);
+    --text: #c8d8e8;
+    --text-dim: #6a7f95;
   }
 
-  /* Keep name readable but not huge */
-  .name{
-    font-size: clamp(24px, 6.5vw, 32px);
-    line-height: 1.15;
-  }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  .tag{
-    font-size: clamp(14px, 3.8vw, 16px);
-  }
+html { scroll-behavior: smooth; }
 
-  /* Pills wrap nicer and have better touch size */
-  .meta{
-    gap: 10px;
-  }
-  .pill{
-    font-size: 13px;
-    padding: 8px 10px;
-    max-width: 100%;
-  }
-
-  /* Buttons become full width and easier to tap */
-  .actions{
-    width: 100%;
-    gap: 10px;
-  }
-  .btn{
-    width: 100%;
-    justify-content: center;
-    padding: 12px 14px; /* bigger tap target */
-  }
-
-  /* Reduce indentation so lists don’t waste horizontal space */
-  ul{ margin-left: 16px; }
-
-  /* Section headings scale down slightly */
-  h2{
-    font-size: 13px;
-    letter-spacing: .25px;
-  }
-  h3{
-    font-size: 14px;
-  }
-
-  /* Grid becomes single column earlier (already at 560, but this helps mid-size phones) */
-  .grid2{
-    grid-template-columns: 1fr;
-  }
-
-  /* Footer spacing */
-  footer{ margin-top: 14px; }
+body {
+background: var(–bg);
+color: var(–text);
+font-family: ‘IBM Plex Mono’, monospace;
+font-size: 14px;
+line-height: 1.7;
+overflow-x: hidden;
+cursor: crosshair;
 }
 
-/* Very small phones */
-@media (max-width: 380px){
-  .wrap{ padding-left: 12px; padding-right: 12px; }
-  .pill{ font-size: 12.5px; }
-}
-    /* Add-on styles that match your existing CSS variables */
-.section-head { margin-bottom: 12px; }
-.section-head p { margin: 0; }
-
-/* Responsive grid that fits your layout */
-.labs-grid{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px; /* matches your .grid2 */
-  margin-top: 10px;
-}
-@media (max-width: 560px){
-  .labs-grid{ grid-template-columns: 1fr; }
+/* ═══════════════════════════ BACKGROUND ═══════════════════════════ */
+body::before {
+content: ‘’;
+position: fixed;
+inset: 0;
+background-image:
+linear-gradient(var(–grid) 1px, transparent 1px),
+linear-gradient(90deg, var(–grid) 1px, transparent 1px);
+background-size: 40px 40px;
+pointer-events: none;
+z-index: 0;
 }
 
-/* Card polish aligned with your .item + overall theme */
-.item.lab{
-  background: rgba(255,255,255,.03);
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 12px;
-  box-shadow: none; /* keep consistent with other items */
+body::after {
+content: ‘’;
+position: fixed;
+inset: 0;
+background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0,245,255,0.05) 0%, transparent 70%);
+pointer-events: none;
+z-index: 0;
 }
 
-.lab-top{
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
-  gap: 10px;
+/* ═══════════════════════════ SCANLINE ═══════════════════════════ */
+.scanline {
+position: fixed;
+top: 0; left: 0; right: 0;
+height: 2px;
+background: linear-gradient(90deg, transparent, var(–cyan), transparent);
+animation: scan 6s linear infinite;
+opacity: 0.3;
+z-index: 999;
+pointer-events: none;
 }
-.lab-top h3{ margin: 0; }
-.item.lab p{ margin: 6px 0 0; }
+@keyframes scan { 0%{top:-2px} 100%{top:100vh} }
 
-/* Action buttons */
-.lab-actions{
-  display:flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 12px;
+/* ═══════════════════════════ NOISE ═══════════════════════════ */
+.noise {
+position: fixed;
+inset: 0;
+opacity: 0.025;
+background-image: url(“data:image/svg+xml,%3Csvg viewBox=‘0 0 256 256’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cfilter id=‘noise’%3E%3CfeTurbulence type=‘fractalNoise’ baseFrequency=‘0.9’ numOctaves=‘4’ stitchTiles=‘stitch’/%3E%3C/filter%3E%3Crect width=‘100%25’ height=‘100%25’ filter=‘url(%23noise)’/%3E%3C/svg%3E”);
+pointer-events: none;
+z-index: 1;
 }
 
-/* Make buttons behave nicely inside cards */
-.lab-actions .btn{
-  padding: 10px 12px;
-  border-radius: 12px;
+/* ═══════════════════════════ WRAPPER ═══════════════════════════ */
+.wrapper {
+position: relative;
+z-index: 2;
+max-width: 960px;
+margin: 0 auto;
+padding: 0 24px 80px;
 }
 
-/* Better tap targets on phones */
-@media (max-width: 640px){
-  .lab-actions .btn{
-    width: 100%;
-    justify-content: center;
-    padding: 12px 14px;
-  }
+/* ═══════════════════════════ NAVBAR ═══════════════════════════ */
+nav {
+position: sticky;
+top: 0;
+z-index: 100;
+background: rgba(4,8,16,0.92);
+backdrop-filter: blur(12px);
+border-bottom: 1px solid var(–border);
+padding: 14px 24px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 16px;
 }
-  </style>
 
-  <!-- Simple JSON-LD (edit URLs once you have them) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Chance Cummings",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Ashland City",
-      "addressRegion": "TN",
-      "postalCode": "37015",
-      "addressCountry": "US"
-    },
-    "email": "mailto:thechancecummings@gmail.com",
-    "telephone": "+1-615-693-1113",
-    "jobTitle": "IT Support & Cybersecurity",
-    "knowsAbout": ["IT Support", "Windows", "Linux", "Networking", "Incident Response", "IAM"]
-  }
-  </script>
+.nav-logo {
+font-family: ‘Orbitron’, sans-serif;
+font-size: 13px;
+font-weight: 700;
+color: var(–cyan);
+letter-spacing: 2px;
+white-space: nowrap;
+}
+.nav-logo span { color: var(–green); }
+
+.nav-links {
+display: flex;
+gap: 20px;
+list-style: none;
+flex-wrap: wrap;
+}
+.nav-links a {
+color: var(–text-dim);
+text-decoration: none;
+font-size: 11px;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+transition: color 0.2s;
+}
+.nav-links a:hover { color: var(–cyan); }
+
+/* ═══════════════════════════ HERO ═══════════════════════════ */
+.hero {
+padding: 80px 0 60px;
+position: relative;
+}
+
+.hero-tag {
+display: inline-block;
+font-size: 11px;
+letter-spacing: 3px;
+color: var(–green);
+text-transform: uppercase;
+margin-bottom: 20px;
+padding: 6px 14px;
+border: 1px solid rgba(0,255,136,0.3);
+background: rgba(0,255,136,0.05);
+}
+.hero-tag::before { content: ’> ’; opacity: 0.6; }
+
+.hero h1 {
+font-family: ‘Orbitron’, sans-serif;
+font-size: clamp(32px, 6vw, 64px);
+font-weight: 900;
+line-height: 1.1;
+color: #fff;
+letter-spacing: -1px;
+margin-bottom: 8px;
+}
+.hero h1 .accent { color: var(–cyan); }
+
+.hero-title {
+font-family: ‘Share Tech Mono’, monospace;
+font-size: clamp(14px, 2vw, 18px);
+color: var(–text-dim);
+margin-bottom: 28px;
+letter-spacing: 1px;
+}
+.hero-title .role { color: var(–cyan); }
+.hero-title .org { color: var(–green); }
+
+.hero-desc {
+max-width: 640px;
+color: var(–text);
+font-size: 14px;
+line-height: 1.8;
+margin-bottom: 36px;
+border-left: 2px solid var(–border-bright);
+padding-left: 18px;
+}
+
+.hero-meta {
+display: flex;
+flex-wrap: wrap;
+gap: 16px;
+margin-bottom: 36px;
+font-size: 12px;
+color: var(–text-dim);
+}
+.hero-meta span { display: flex; align-items: center; gap: 6px; }
+.hero-meta .dot {
+width: 6px; height: 6px; border-radius: 50%;
+background: var(–green);
+animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+.hero-actions {
+display: flex;
+flex-wrap: wrap;
+gap: 12px;
+}
+
+.btn {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+padding: 12px 24px;
+font-family: ‘Share Tech Mono’, monospace;
+font-size: 12px;
+letter-spacing: 1.5px;
+text-transform: uppercase;
+text-decoration: none;
+border: 1px solid;
+transition: all 0.2s;
+cursor: pointer;
+background: transparent;
+}
+.btn-primary {
+border-color: var(–cyan);
+color: var(–cyan);
+}
+.btn-primary:hover {
+background: var(–cyan);
+color: var(–bg);
+box-shadow: 0 0 24px rgba(0,245,255,0.4);
+}
+.btn-secondary {
+border-color: var(–border);
+color: var(–text-dim);
+}
+.btn-secondary:hover {
+border-color: var(–green);
+color: var(–green);
+}
+.btn-ghost {
+border-color: rgba(255,119,0,0.4);
+color: var(–orange);
+}
+.btn-ghost:hover {
+background: rgba(255,119,0,0.1);
+box-shadow: 0 0 16px rgba(255,119,0,0.3);
+}
+
+/* ═══════════════════════════ STATUS BAR ═══════════════════════════ */
+.status-bar {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 1px;
+background: var(–border);
+border: 1px solid var(–border);
+margin: 48px 0;
+}
+.status-item {
+background: var(–bg2);
+padding: 20px 24px;
+position: relative;
+}
+.status-item::before {
+content: ‘’;
+position: absolute;
+top: 0; left: 0; right: 0;
+height: 2px;
+background: var(–cyan);
+transform: scaleX(0);
+transform-origin: left;
+transition: transform 0.4s;
+}
+.status-item:hover::before { transform: scaleX(1); }
+.status-label {
+font-size: 10px;
+letter-spacing: 2px;
+text-transform: uppercase;
+color: var(–text-dim);
+margin-bottom: 6px;
+}
+.status-value {
+font-family: ‘Orbitron’, sans-serif;
+font-size: 18px;
+font-weight: 700;
+color: var(–cyan);
+}
+.status-sub {
+font-size: 11px;
+color: var(–text-dim);
+margin-top: 2px;
+}
+
+/* ═══════════════════════════ SECTIONS ═══════════════════════════ */
+section { margin-bottom: 64px; }
+
+.section-header {
+display: flex;
+align-items: center;
+gap: 16px;
+margin-bottom: 32px;
+}
+.section-label {
+font-family: ‘Orbitron’, sans-serif;
+font-size: 11px;
+font-weight: 700;
+color: var(–cyan);
+letter-spacing: 3px;
+text-transform: uppercase;
+white-space: nowrap;
+}
+.section-line {
+flex: 1;
+height: 1px;
+background: linear-gradient(90deg, var(–border-bright), transparent);
+}
+.section-num {
+font-size: 11px;
+color: var(–text-dim);
+letter-spacing: 1px;
+}
+
+/* ═══════════════════════════ CARDS ═══════════════════════════ */
+.card {
+background: var(–bg2);
+border: 1px solid var(–border);
+padding: 24px;
+position: relative;
+transition: border-color 0.2s, transform 0.2s;
+}
+.card:hover {
+border-color: var(–border-bright);
+transform: translateY(-2px);
+}
+.card::after {
+content: ‘’;
+position: absolute;
+inset: 0;
+background: linear-gradient(135deg, rgba(0,245,255,0.02), transparent 60%);
+pointer-events: none;
+}
+
+/* ═══════════════════════════ EXPERIENCE ═══════════════════════════ */
+.timeline { display: flex; flex-direction: column; gap: 2px; }
+
+.exp-card {
+background: var(–bg2);
+border: 1px solid var(–border);
+border-left: 3px solid var(–border-bright);
+padding: 24px;
+position: relative;
+transition: all 0.2s;
+}
+.exp-card:hover {
+border-left-color: var(–cyan);
+background: var(–bg3);
+}
+.exp-card.current { border-left-color: var(–green); }
+.exp-card.current::before {
+content: ‘● CURRENT’;
+position: absolute;
+top: 16px; right: 16px;
+font-size: 10px;
+letter-spacing: 2px;
+color: var(–green);
+animation: pulse 2s ease-in-out infinite;
+}
+
+.exp-header {
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+align-items: baseline;
+margin-bottom: 6px;
+}
+.exp-title {
+font-family: ‘Orbitron’, sans-serif;
+font-size: 14px;
+font-weight: 600;
+color: #fff;
+letter-spacing: 0.5px;
+}
+.exp-org {
+font-size: 12px;
+color: var(–cyan);
+letter-spacing: 1px;
+}
+.exp-date {
+font-size: 11px;
+color: var(–text-dim);
+margin-left: auto;
+}
+.exp-loc {
+font-size: 11px;
+color: var(–text-dim);
+margin-bottom: 14px;
+}
+.exp-bullets {
+list-style: none;
+display: flex;
+flex-direction: column;
+gap: 6px;
+}
+.exp-bullets li {
+font-size: 13px;
+color: var(–text);
+padding-left: 16px;
+position: relative;
+}
+.exp-bullets li::before {
+content: ‘▸’;
+position: absolute;
+left: 0;
+color: var(–cyan);
+font-size: 10px;
+top: 3px;
+}
+
+/* ═══════════════════════════ PROJECTS ═══════════════════════════ */
+.projects-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+gap: 16px;
+}
+
+.proj-card {
+background: var(–bg2);
+border: 1px solid var(–border);
+padding: 24px;
+position: relative;
+transition: all 0.25s;
+display: flex;
+flex-direction: column;
+gap: 12px;
+}
+.proj-card:hover {
+border-color: var(–cyan);
+transform: translateY(-3px);
+box-shadow: 0 8px 32px rgba(0,245,255,0.1);
+}
+.proj-card::before {
+content: ‘’;
+position: absolute;
+top: 0; left: 0; right: 0;
+height: 2px;
+background: linear-gradient(90deg, var(–cyan), var(–green));
+opacity: 0;
+transition: opacity 0.25s;
+}
+.proj-card:hover::before { opacity: 1; }
+
+.proj-icon {
+font-size: 24px;
+line-height: 1;
+}
+.proj-name {
+font-family: ‘Orbitron’, sans-serif;
+font-size: 13px;
+font-weight: 600;
+color: #fff;
+letter-spacing: 0.5px;
+}
+.proj-desc {
+font-size: 12px;
+color: var(–text-dim);
+line-height: 1.6;
+flex: 1;
+}
+.proj-tags {
+display: flex;
+flex-wrap: wrap;
+gap: 6px;
+}
+.tag {
+font-size: 10px;
+padding: 3px 8px;
+border: 1px solid var(–border);
+color: var(–text-dim);
+letter-spacing: 1px;
+text-transform: uppercase;
+}
+.tag.cyan { border-color: rgba(0,245,255,0.3); color: var(–cyan); }
+.tag.green { border-color: rgba(0,255,136,0.3); color: var(–green); }
+.tag.orange { border-color: rgba(255,119,0,0.3); color: var(–orange); }
+
+.proj-link {
+display: inline-flex;
+align-items: center;
+gap: 6px;
+font-size: 11px;
+color: var(–cyan);
+text-decoration: none;
+letter-spacing: 1px;
+text-transform: uppercase;
+margin-top: auto;
+transition: gap 0.2s;
+}
+.proj-link:hover { gap: 10px; }
+.proj-link::after { content: ‘→’; }
+
+/* ═══════════════════════════ SKILLS ═══════════════════════════ */
+.skills-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+gap: 16px;
+}
+
+.skill-block {
+background: var(–bg2);
+border: 1px solid var(–border);
+padding: 20px;
+}
+.skill-block-title {
+font-size: 10px;
+letter-spacing: 2px;
+text-transform: uppercase;
+color: var(–cyan);
+margin-bottom: 14px;
+padding-bottom: 10px;
+border-bottom: 1px solid var(–border);
+}
+.skill-list {
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+}
+.skill-pill {
+font-size: 11px;
+padding: 4px 10px;
+background: rgba(0,245,255,0.05);
+border: 1px solid rgba(0,245,255,0.1);
+color: var(–text);
+letter-spacing: 0.5px;
+}
+
+/* ═══════════════════════════ CERTS ═══════════════════════════ */
+.certs-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+gap: 12px;
+}
+
+.cert-card {
+background: var(–bg2);
+border: 1px solid var(–border);
+padding: 18px 20px;
+display: flex;
+align-items: center;
+gap: 16px;
+transition: all 0.2s;
+}
+.cert-card:hover { border-color: var(–border-bright); }
+.cert-card.active { border-left: 3px solid var(–green); }
+.cert-card.progress { border-left: 3px solid var(–orange); }
+.cert-card.cdl { border-left: 3px solid var(–cyan); }
+
+.cert-icon { font-size: 22px; flex-shrink: 0; }
+.cert-name {
+font-size: 13px;
+color: #fff;
+font-family: ‘Share Tech Mono’, monospace;
+margin-bottom: 2px;
+}
+.cert-meta { font-size: 11px; color: var(–text-dim); }
+.cert-badge {
+margin-left: auto;
+font-size: 9px;
+padding: 3px 8px;
+letter-spacing: 1.5px;
+border: 1px solid;
+white-space: nowrap;
+}
+.cert-badge.active { border-color: rgba(0,255,136,0.4); color: var(–green); }
+.cert-badge.progress { border-color: rgba(255,119,0,0.4); color: var(–orange); }
+
+/* ═══════════════════════════ DARK FIRE BRAND ═══════════════════════════ */
+.brand-block {
+background: linear-gradient(135deg, rgba(255,34,68,0.05), rgba(255,119,0,0.05));
+border: 1px solid rgba(255,119,0,0.2);
+padding: 32px;
+position: relative;
+overflow: hidden;
+}
+.brand-block::before {
+content: ‘DARK FIRE SECURITY’;
+position: absolute;
+top: 50%; right: -20px;
+transform: translateY(-50%) rotate(-90deg);
+font-family: ‘Orbitron’, sans-serif;
+font-size: 10px;
+letter-spacing: 4px;
+color: rgba(255,119,0,0.1);
+white-space: nowrap;
+pointer-events: none;
+}
+.brand-title {
+font-family: ‘Orbitron’, sans-serif;
+font-size: 22px;
+font-weight: 900;
+color: var(–orange);
+letter-spacing: 2px;
+margin-bottom: 8px;
+}
+.brand-subtitle {
+font-size: 12px;
+color: var(–text-dim);
+margin-bottom: 20px;
+letter-spacing: 1px;
+}
+.brand-desc {
+font-size: 13px;
+color: var(–text);
+line-height: 1.8;
+max-width: 580px;
+margin-bottom: 24px;
+}
+
+/* ═══════════════════════════ CONTACT ═══════════════════════════ */
+.contact-grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+gap: 12px;
+}
+.contact-item {
+background: var(–bg2);
+border: 1px solid var(–border);
+padding: 16px 20px;
+text-decoration: none;
+display: flex;
+align-items: center;
+gap: 12px;
+transition: all 0.2s;
+}
+.contact-item:hover {
+border-color: var(–cyan);
+background: rgba(0,245,255,0.04);
+}
+.contact-item-icon { font-size: 18px; flex-shrink: 0; }
+.contact-item-label { font-size: 10px; color: var(–text-dim); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 2px; }
+.contact-item-val { font-size: 12px; color: var(–cyan); }
+
+/* ═══════════════════════════ TERMINAL BLOCK ═══════════════════════════ */
+.terminal {
+background: #020609;
+border: 1px solid var(–border);
+padding: 20px 24px;
+font-family: ‘Share Tech Mono’, monospace;
+font-size: 12px;
+line-height: 1.9;
+position: relative;
+}
+.terminal::before {
+content: ‘●  ●  ●’;
+display: block;
+color: var(–text-dim);
+font-size: 10px;
+margin-bottom: 14px;
+letter-spacing: 4px;
+}
+.t-prompt { color: var(–green); }
+.t-cmd { color: var(–text); }
+.t-out { color: var(–text-dim); }
+.t-val { color: var(–cyan); }
+.t-flag { color: var(–orange); }
+
+/* ═══════════════════════════ FOOTER ═══════════════════════════ */
+footer {
+border-top: 1px solid var(–border);
+padding-top: 32px;
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+align-items: center;
+gap: 16px;
+font-size: 11px;
+color: var(–text-dim);
+letter-spacing: 1px;
+}
+footer a { color: var(–cyan); text-decoration: none; }
+
+/* ═══════════════════════════ ANIMATIONS ═══════════════════════════ */
+.fade-in {
+opacity: 0;
+transform: translateY(20px);
+animation: fadeUp 0.6s ease forwards;
+}
+@keyframes fadeUp {
+to { opacity: 1; transform: none; }
+}
+.fade-in:nth-child(1) { animation-delay: 0.1s; }
+.fade-in:nth-child(2) { animation-delay: 0.2s; }
+.fade-in:nth-child(3) { animation-delay: 0.3s; }
+.fade-in:nth-child(4) { animation-delay: 0.4s; }
+.fade-in:nth-child(5) { animation-delay: 0.5s; }
+
+.glow { text-shadow: 0 0 20px rgba(0,245,255,0.5); }
+
+/* ═══════════════════════════ RESPONSIVE ═══════════════════════════ */
+@media (max-width: 600px) {
+.nav-links { display: none; }
+.hero { padding: 50px 0 40px; }
+.status-bar { grid-template-columns: 1fr 1fr; }
+.exp-date { margin-left: 0; width: 100%; }
+}
+</style>
+
 </head>
-
 <body>
-  <div class="wrap">
-    <header>
-      <div>
-        <h1 class="name">Chance Cummings</h1>
-        <p class="tag">IT Support & Cybersecurity • CompTIA A+</p>
 
-        <div class="meta">
-          <span class="pill">Ashland City, TN</span>
-          <span class="pill"><a href="tel:+16156931113">615-693-1113</a></span>
-          <span class="pill"><a href="mailto:thechancecummings@gmail.com">thechancecummings@gmail.com</a></span>
-        </div>
+<div class="scanline"></div>
+<div class="noise"></div>
 
-        <div class="meta">
-          <!-- Replace with your real links -->
-          <span class="pill">GitHub: <a href="https://github.com/" target="_blank" rel="noopener">github.com/&lt;jazzy216&gt;</a></span>
-          <span class="pill">LinkedIn: <a href="https://www.linkedin.com/" target="_blank" rel="noopener">linkedin.com/in/&lt;chance-cummings&gt;</a></span>
-        </div>
-      </div>
+<!-- NAV -->
 
-      <div class="actions">
-        <a class="btn primary" href="assets/Cybersecurity Essentials for Small Businesses.pdf" 
-   download="Cybersecurity Essentials for Small Businesses">Download eBook PDF</a>
-        <a class="btn primary" href="assets/Chance_Cummings_Resume.pdf" 
-   download="Chance_Cummings_Resume">Download Resume PDF</a>
-        <a class="btn" href="mailto:thechancecummings@gmail.com?subject=Interview%20Request%20-%20IT%20Support%20%2F%20Cybersecurity">Email Me</a>
-      </div>
-    </header>
+<nav>
+  <div class="nav-logo">CC<span>_</span>SEC</div>
+  <ul class="nav-links">
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#certs">Certs</a></li>
+    <li><a href="#darkfire">Dark Fire</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-    <main>
-      <div>
-        <section>
-          <h2>Professional Summary</h2>
-          <p class="muted">
-            IT Support and Cybersecurity professional with a CompTIA A+ certification and a strong foundation in
-            technical troubleshooting, logistics, and customer service. Proficient in Windows, Linux, and networking
-            fundamentals. Recognized for reliability in fast-paced environments and committed to continuous learning.
-          </p>
-        </section>
+<div class="wrapper">
 
-        <section>
-          <h2>Key Projects & Hands-on Labs</h2>
+  <!-- HERO -->
 
-          <div class="grid2">
-            <div class="item">
-              <div class="k">Network Security & Recon Labs</div>
-              <ul class="small muted">
-                <li>Subnet discovery, host enumeration, service fingerprinting using <code class="inline">nmap</code>.</li>
-                <li>Documented remediation steps for router/internal exposure.</li>
-                <li>Focused on TCP/IP, ports, services, and basic hardening.</li>
-              </ul>
-            </div>
-
-            <div class="item">
-              <div class="k">Home & Small Business Security Lab</div>
-              <ul class="small muted">
-                <li>Multi-OS lab: Windows 11 + Linux (Ubuntu/Debian) + virtualization.</li>
-                <li>DNS filtering/monitoring concepts using Pi-hole approach.</li>
-                <li>Log review and basic incident response workflows.</li>
-              </ul>
-            </div>
-
-            <div class="item">
-              <div class="k">Cybersecurity Web Apps (Solo)</div>
-              <ul class="small muted">
-                <li>Built security-focused apps with HTML/CSS/JS.</li>
-                <li>Cyber Risk Intake & Scoring web app.</li>
-                <li>Phishing awareness/detection educational site.</li>
-                <li>Cyber risk report generator for non-technical users.</li>
-              </ul>
-            </div>
-
-            <div class="item">
-              <div class="k">DarkChef (CyberChef-style Tool)</div>
-              <ul class="small muted">
-                <li>Encoding/decoding/encryption workflows.</li>
-                <li>Demonstrates data handling and transformation pipelines.</li>
-              </ul>
-            </div>
-          </div>
-
-        
-        </section>
-
-        <section id="security-tools">
-  <div class="section-head">
-    <h2>Security Tools & Interactive Labs</h2>
-    <p class="muted small">Live demos that show real-world security workflows, deployment ability, and product-minded engineering.</p>
-  </div>
-
-  <div class="labs-grid">
-    <article class="item lab">
-      <div class="lab-top">
-        <h3>Browser-Based Python Editor</h3>
-
-      </div>
-      <p class="muted small">
-        Cloud-hosted Python execution environment for safe experimentation, scripting labs, and quick prototyping.
-      </p>
-      <div class="lab-actions">
-        <a class="btn" href="https://pyforge-ai-advanced-python-sandbox-810187719410.us-west1.run.app/" target="_blank" rel="noopener noreferrer">Open Link</a>
-      </div>
-    </article>
-
-    <article class="item lab">
-      <div class="lab-top">
-        <h3>Personal Anti-Surveillance Video Site</h3>
-        
-      </div>
-      <p class="muted small">
-        Privacy-first hub focused on operational security, anti-surveillance practices, and practical personal cyber hygiene.
-      </p>
-      <div class="lab-actions">
-        <a class="btn" href="https://darkfiresecurity.com" target="_blank" rel="noopener noreferrer">Open Link</a>
-      </div>
-    </article>
-
-    <article class="item lab">
-      <div class="lab-top">
-        <h3>Personal Landing Page (Resume & Ebook)</h3>
-        
-      </div>
-      <p class="muted small">
-        Resume and portfolio landing page highlighting projects, experience, and published content.
-      </p>
-      <div class="lab-actions">
-        <a class="btn" href="https://personal-landing-theta-steel.vercel.app/" target="_blank" rel="noopener noreferrer">Open Link</a>
-      </div>
-    </article>
-
-    <article class="item lab">
-      <div class="lab-top">
-        <h3>Phish Detector</h3>
-        
-      </div>
-      <p class="muted small">
-        Email triage simulator for training phishing recognition and SOC-style classification decisions.
-      </p>
-      <div class="lab-actions">
-        <a class="btn" href="https://phishguard-elite-immersive-cyber-awareness-traini-293799863337.us-west1.run.app" target="_blank" rel="noopener noreferrer">Open Link</a>
-      </div>
-    </article>
-
-    <article class="item lab">
-      <div class="lab-top">
-        <h3>Small Business Risk Report</h3>
-      </div>
-      <p class="muted small">
-        Client intake + risk scoring flow that outputs structured security posture summaries for small businesses.
-      </p>
-      <div class="lab-actions">
-        <a class="btn" href="https://small-business-security-intake-risk-report-293799863337.us-west1.run.app" target="_blank" rel="noopener noreferrer">Open Link</a>
-      </div>
-    </article>
-
-    <article class="item lab">
-      <div class="lab-top">
-        <h3>DarkChef (CyberChef Clone)</h3>
-
-      </div>
-      <p class="muted small">
-        Browser-based data transformation toolkit for encoding/decoding and IR-style data manipulation workflows.
-      </p>
-      <div class="lab-actions">
-        <a class="btn" href="https://darkchef-professional-data-alchemy-1044572571760.us-west1.run.app" target="_blank" rel="noopener noreferrer">Open Link</a>
-      </div>
-    </article>
-  </div>
-
-  <div class="split">
-    <div class="muted small">
-      Tip: Put your top 2–3 tools first on the page for recruiter skimming.
+  <section class="hero">
+    <div class="fade-in">
+      <div class="hero-tag">IT Field Technician · Cybersecurity Professional</div>
     </div>
-    <div class="muted small">
-      Keep links short on PDF resumes (use a single portfolio shortlink if you make one).
+    <div class="fade-in">
+      <h1>Chance<br><span class="accent glow">Cummings</span></h1>
+    </div>
+    <div class="fade-in">
+      <p class="hero-title">
+        <span class="role">IT Field Service Technician</span> &nbsp;@&nbsp;
+        <span class="org">Vanderbilt University Medical Center</span>
+      </p>
+    </div>
+    <div class="fade-in">
+      <p class="hero-desc">
+        Healthcare IT professional specializing in enterprise endpoint deployment, MDM, and VDI infrastructure — actively transitioning into cybersecurity. Building Dark Fire Security to help small businesses and healthcare orgs defend their digital perimeter. CompTIA A+ &amp; Network+ certified. Security+ in progress.
+      </p>
+    </div>
+    <div class="fade-in">
+      <div class="hero-meta">
+        <span><span class="dot"></span> Nashville / Middle Tennessee</span>
+        <span>📡 VUMC Expansion Project — Active</span>
+        <span>🎓 B.S. Cybersecurity — WGU (In Progress)</span>
+      </div>
+      <div class="hero-actions">
+        <a href="assets/Chance_Cummings_Resume.pdf" class="btn btn-primary" download>⬇ Resume PDF</a>
+        <a href="assets/Cybersecurity Essentials for Small Businesses.pdf" class="btn btn-ghost" download>📘 Free eBook</a>
+        <a href="mailto:thechancecummings@gmail.com?subject=Interview%20Request%20-%20IT%20Support%20%2F%20Cybersecurity" class="btn btn-secondary">✉ Email Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATUS BAR -->
+
+  <div class="status-bar">
+    <div class="status-item">
+      <div class="status-label">Current Role</div>
+      <div class="status-value" style="font-size:13px;">IT Field Tech</div>
+      <div class="status-sub">Vanderbilt University Medical Center</div>
+    </div>
+    <div class="status-item">
+      <div class="status-label">Certifications</div>
+      <div class="status-value">A+ · Net+</div>
+      <div class="status-sub">Security+ — In Progress</div>
+    </div>
+    <div class="status-item">
+      <div class="status-label">Security Brand</div>
+      <div class="status-value" style="color:var(--orange);font-size:13px;">Dark Fire</div>
+      <div class="status-sub">darkfiresecurity.com</div>
+    </div>
+    <div class="status-item">
+      <div class="status-label">Degree</div>
+      <div class="status-value" style="font-size:13px;">B.S. CyberSec</div>
+      <div class="status-sub">WGU — In Progress</div>
     </div>
   </div>
-</section>
 
+  <!-- TERMINAL CARD -->
 
-        <section>
-          <h2>Professional Experience</h2>
-
-          <div class="item">
-            <h3>A1 Pawn — Springfield, TN <span class="muted small">| Sales Assistant | Present</span></h3>
-            <ul class="small muted">
-              <li>Facilitate high-volume sales, loans, and financial transactions with a focus on data accuracy and customer service.</li>
-              <li>Manage social media and digital presence, increasing business visibility and community engagement.</li>
-              <li>Contributed to being awarded “Top Pawn Shop” in the county for multiple consecutive years.</li>
-            </ul>
-          </div>
-
-          <div class="item" style="margin-top:10px;">
-            <h3>Pawn Shop Operations — Ashland City, TN <span class="muted small">| IT Technician (Contract / Family Business) | 2024–Present</span></h3>
-            <ul class="small muted">
-              <li>Diagnosed and repaired laptops/desktops with boot failures, OS corruption, and hardware/software issues.</li>
-              <li>Performed OS resets, clean Windows installs, and recovery environment troubleshooting.</li>
-              <li>Restored network connectivity issues (Wi-Fi driver repair, TCP/IP reset, configuration troubleshooting).</li>
-              <li>Executed secure data destruction on legacy drives using ShredOS with verification certificates and chain-of-custody documentation.</li>
-              <li>Reimaged systems for resale using wipe + reinstall workflows.</li>
-              <li>Evaluated incoming hardware and determined repair vs replacement viability.</li>
-              <li>Maintained turnaround workflow for retail-ready systems under time constraints.</li>
-              <li>Provided end-user support and usability validation pre-sale.</li>
-            </ul>
-          </div>
-
-          <div class="item" style="margin-top:10px;">
-            <h3>Jumpp Logistics LLC — Nashville, TN <span class="muted small">| Independent Contractor / Delivery Driver | Apr 2023–2024</span></h3>
-            <ul class="small muted">
-              <li>Managed complex delivery routes and schedules to ensure on-time fulfillment.</li>
-              <li>Used logistics apps to track inventory and document deliveries.</li>
-            </ul>
-          </div>
-
-          <div class="item" style="margin-top:10px;">
-            <h3>UPS — Nashville, TN <span class="muted small">| Feeder Operator / CDL Driver | Jul 2021–2023</span></h3>
-            <ul class="small muted">
-              <li>Operated commercial vehicles with strong safety record in high-pressure environments.</li>
-              <li>Coordinated with hub operations/dispatch to meet strict deadlines.</li>
-            </ul>
-          </div>
-
-          <div class="item" style="margin-top:10px;">
-            <h3>Double C Solutions, LLC — Ashland City, TN <span class="muted small">| Owner / Operator | 2023–Present</span></h3>
-            <ul class="small muted">
-              <li>Run scheduling, invoicing, customer communication, and service delivery while attending school.</li>
-              <li>Manage business technology needs including email, website tools, and basic IT troubleshooting.</li>
-              <li>Track expenses, equipment, and records while maintaining professional client relationships.</li>
-            </ul>
-          </div>
-
-          <p class="small muted" style="margin-top:10px;">
-            <span class="k">Earlier experience:</span> Montgomery Farmers Co-Op; Riley Brothers Farms — mechanical aptitude, inventory management, equipment assembly, sales, field operations.
-          </p>
-        </section>
-      </div>
-
-      <div>
-        <section>
-          <h2>Core Competencies</h2>
-          <div class="grid2">
-            <div class="item small muted"><span class="k">Technical Support:</span> Help Desk, Troubleshooting, Ticketing & Documentation</div>
-            <div class="item small muted"><span class="k">Networking:</span> TCP/IP, DNS, DHCP, VPN basics</div>
-            <div class="item small muted"><span class="k">Systems:</span> Windows, Linux (Ubuntu/Debian), macOS, AD fundamentals</div>
-            <div class="item small muted"><span class="k">Security:</span> IR fundamentals, IAM basics</div>
-            <div class="item small muted"><span class="k">Soft Skills:</span> Client relations, time management, collaboration, problem solving</div>
-            <div class="item small muted"><span class="k">AI & Automation Tools</span> ChatGPT, prompt engineering, AI-assisted troubleshooting, workflow automation, LLM-assisted documentation</div>
-          </div>
-        </section>
-
-        <section>
-          <h2>Technical Skills</h2>
-          <ul class="small muted">
-            <li><span class="k">OS:</span> Windows 10/11, Linux, macOS, iOS</li>
-            <li><span class="k">Tools:</span> GitHub, VMware, VS Code, Active Directory</li>
-            <li><span class="k">Cloud/DB:</span> Intro to AWS, SaaS tools, SQL/MySQL</li>
-            <li><span class="k">Scripting/Web:</span> Python (Basics), PowerShell (Basics), HTML/CSS</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>Certifications & Licenses</h2>
-          <ul class="small muted">
-            <li>CompTIA A+ (Valid 2024–2027)</li>
-            <li>Google IT Support Professional Certificate (2024)</li>
-            <li>Google IT Specialist: Technical Support, Systems Admin, & Networking</li>
-            <li>Commercial Driver’s License (CDL Class A)</li>
-            <li>Certified Lawn Care Professional — University of Tennessee (2024–2026)</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>Education</h2>
-          <ul class="small muted">
-            <li><span class="k">B.S. Cybersecurity</span> — Western Governors University (In Progress)</li>
-            <li><span class="k">Agriculture Business Coursework</span> — Austin Peay State University (2015–2019)</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>Languages</h2>
-          <ul class="small muted">
-            <li>English: Native</li>
-            <li>Spanish: Basic conversational</li>
-          </ul>
-        </section>
-        
-        <section>
-          <h2>Listen to my audiobook here:</h2>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/NLEVx-Qx3K0?si=G6_kB3SHtn81JoTZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-       </section>
-      </div>
-    </main>
-
-    <footer>
-      <div>© <span id="y"></span> Chance Cummings • Built for fast recruiter scanning • One-page portfolio landing</div>
-    </footer>
+  <div class="terminal fade-in">
+    <div><span class="t-prompt">chance@darkfire</span><span class="t-cmd">:~$ </span><span class="t-flag">whoami --verbose</span></div>
+    <div><span class="t-out">name:        </span><span class="t-val">Chance Cummings</span></div>
+    <div><span class="t-out">role:        </span><span class="t-val">IT Field Service Technician @ VUMC</span></div>
+    <div><span class="t-out">location:    </span><span class="t-val">Nashville, TN (Middle Tennessee)</span></div>
+    <div><span class="t-out">focus:       </span><span class="t-val">Healthcare IT → Cybersecurity Transition</span></div>
+    <div><span class="t-out">tools:       </span><span class="t-val">Intune MDM, VMware Horizon VDI, PowerShell, Active Directory</span></div>
+    <div><span class="t-out">certs:       </span><span class="t-val">CompTIA A+, Network+ | Security+ [IN PROGRESS]</span></div>
+    <div><span class="t-out">brand:       </span><span class="t-flag">Dark Fire Security</span><span class="t-val"> — Cybersecurity Consulting</span></div>
+    <div><span class="t-out">status:      </span><span style="color:var(--green);">AVAILABLE FOR OPPORTUNITIES ●</span></div>
   </div>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+  <!-- EXPERIENCE -->
+
+  <section id="experience">
+    <div class="section-header">
+      <span class="section-label">Experience</span>
+      <div class="section-line"></div>
+      <span class="section-num">01</span>
+    </div>
+    <div class="timeline">
+
+```
+  <div class="exp-card current">
+    <div class="exp-header">
+      <span class="exp-title">IT Field Service Technician</span>
+      <span class="exp-org">Vanderbilt University Medical Center</span>
+      <span class="exp-date">2024 – Present</span>
+    </div>
+    <div class="exp-loc">📍 Nashville, TN &nbsp;|&nbsp; Healthcare Enterprise IT · HIPAA Environment</div>
+    <ul class="exp-bullets">
+      <li>Provision and deploy iOS devices at scale via <strong>Microsoft Intune MDM</strong> across clinical and administrative floors.</li>
+      <li>Deploy and configure <strong>VMware Horizon VDI</strong> thin client workstations supporting multi-floor expansion and relocation project.</li>
+      <li>Manage hardware asset records and lifecycle documentation within enterprise ITSM systems.</li>
+      <li>Execute PowerShell scripts for network configuration, device enrollment validation, and endpoint diagnostics.</li>
+      <li>Support HIPAA-compliant workflows — applying field-level security practices in regulated healthcare environment.</li>
+      <li>Serving as primary tech on large-scale multi-floor infrastructure expansion — coordinating workstation staging, cabling verification, and go-live support.</li>
+    </ul>
+  </div>
+
+  <div class="exp-card">
+    <div class="exp-header">
+      <span class="exp-title">IT Technician (Contract)</span>
+      <span class="exp-org">Pawn Shop Operations</span>
+      <span class="exp-date">2024 – Present</span>
+    </div>
+    <div class="exp-loc">📍 Ashland City, TN &nbsp;|&nbsp; Break-Fix · Retail IT</div>
+    <ul class="exp-bullets">
+      <li>Diagnosed and repaired laptops/desktops with boot failures, OS corruption, and hardware faults.</li>
+      <li>Performed clean Windows installs, recovery environment troubleshooting, and OS resets.</li>
+      <li>Executed secure data destruction using <strong>ShredOS</strong> with verification certificates and chain-of-custody documentation.</li>
+      <li>Reimaged systems for resale and provided pre-sale usability validation.</li>
+    </ul>
+  </div>
+
+  <div class="exp-card">
+    <div class="exp-header">
+      <span class="exp-title">Owner / Operator</span>
+      <span class="exp-org">Double C Solutions, LLC</span>
+      <span class="exp-date">2023 – Present</span>
+    </div>
+    <div class="exp-loc">📍 Ashland City, TN &nbsp;|&nbsp; Small Business IT & Services</div>
+    <ul class="exp-bullets">
+      <li>Run scheduling, invoicing, client communication, and service delivery while pursuing full-time education and work.</li>
+      <li>Manage business technology including email systems, website tools, and IT troubleshooting for clients.</li>
+    </ul>
+  </div>
+
+  <div class="exp-card">
+    <div class="exp-header">
+      <span class="exp-title">Sales Assistant</span>
+      <span class="exp-org">A1 Pawn</span>
+      <span class="exp-date">Present</span>
+    </div>
+    <div class="exp-loc">📍 Springfield, TN</div>
+    <ul class="exp-bullets">
+      <li>Facilitate high-volume sales, loans, and financial transactions with focus on data accuracy.</li>
+      <li>Manage social media and digital presence — contributed to "Top Pawn Shop" county award for multiple consecutive years.</li>
+    </ul>
+  </div>
+
+  <div class="exp-card">
+    <div class="exp-header">
+      <span class="exp-title">Feeder Operator / CDL Driver</span>
+      <span class="exp-org">UPS</span>
+      <span class="exp-date">Jul 2021 – 2023</span>
+    </div>
+    <div class="exp-loc">📍 Nashville, TN</div>
+    <ul class="exp-bullets">
+      <li>Operated commercial vehicles in high-pressure logistics environment with strong safety record.</li>
+      <li>Coordinated with dispatch to meet strict deadlines in fast-paced hub operations.</li>
+    </ul>
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- PROJECTS -->
+
+  <section id="projects">
+    <div class="section-header">
+      <span class="section-label">Projects & Tools</span>
+      <div class="section-line"></div>
+      <span class="section-num">02</span>
+    </div>
+    <div class="projects-grid">
+
+```
+  <div class="proj-card">
+    <div class="proj-icon">🛡️</div>
+    <div class="proj-name">SENTINEL SOC Dashboard</div>
+    <div class="proj-desc">Dark-themed network threat intelligence dashboard simulating real SOC workflows — live threat feeds, alert triage, and incident tracking.</div>
+    <div class="proj-tags">
+      <span class="tag cyan">SOC</span>
+      <span class="tag green">Threat Intel</span>
+      <span class="tag">HTML/CSS/JS</span>
+    </div>
+    <a href="https://darkfiresecurity.com" class="proj-link" target="_blank">Live Demo</a>
+  </div>
+
+  <div class="proj-card">
+    <div class="proj-icon">🎣</div>
+    <div class="proj-name">PhishGuard Elite</div>
+    <div class="proj-desc">Email triage simulator for training phishing recognition and SOC-style classification decisions. Interactive scenarios with scoring.</div>
+    <div class="proj-tags">
+      <span class="tag cyan">Security Awareness</span>
+      <span class="tag orange">Training</span>
+    </div>
+    <a href="https://phishguard-elite-immersive-cyber-awareness-traini-293799863337.us-west1.run.app" class="proj-link" target="_blank">Open Tool</a>
+  </div>
+
+  <div class="proj-card">
+    <div class="proj-icon">⚗️</div>
+    <div class="proj-name">DarkChef</div>
+    <div class="proj-desc">CyberChef-style browser-based data transformation toolkit for encoding, decoding, and IR-style data manipulation workflows.</div>
+    <div class="proj-tags">
+      <span class="tag cyan">DFIR</span>
+      <span class="tag green">Data Transform</span>
+    </div>
+    <a href="https://darkchef-professional-data-alchemy-1044572571760.us-west1.run.app" class="proj-link" target="_blank">Open Tool</a>
+  </div>
+
+  <div class="proj-card">
+    <div class="proj-icon">📊</div>
+    <div class="proj-name">Small Business Risk Report</div>
+    <div class="proj-desc">Client intake + risk scoring flow outputting structured security posture summaries for small businesses. Designed for non-technical stakeholders.</div>
+    <div class="proj-tags">
+      <span class="tag orange">Consulting</span>
+      <span class="tag">Risk Assessment</span>
+    </div>
+    <a href="https://small-business-security-intake-risk-report-293799863337.us-west1.run.app" class="proj-link" target="_blank">Open Tool</a>
+  </div>
+
+  <div class="proj-card">
+    <div class="proj-icon">🌐</div>
+    <div class="proj-name">NetProbe — IP Inspector</div>
+    <div class="proj-desc">Privacy-first public IP inspector built in Next.js. Displays network intelligence without logging or tracking visitors.</div>
+    <div class="proj-tags">
+      <span class="tag cyan">Privacy</span>
+      <span class="tag green">Next.js</span>
+      <span class="tag">Vercel</span>
+    </div>
+    <a href="https://darkfiresecurity.com" class="proj-link" target="_blank">View Project</a>
+  </div>
+
+  <div class="proj-card">
+    <div class="proj-icon">🐍</div>
+    <div class="proj-name">PyForge AI Sandbox</div>
+    <div class="proj-desc">Cloud-hosted Python execution environment for safe scripting labs, security automation prototyping, and quick experiments.</div>
+    <div class="proj-tags">
+      <span class="tag green">Python</span>
+      <span class="tag">Cloud Run</span>
+      <span class="tag">Automation</span>
+    </div>
+    <a href="https://pyforge-ai-advanced-python-sandbox-810187719410.us-west1.run.app/" class="proj-link" target="_blank">Open Tool</a>
+  </div>
+
+  <div class="proj-card">
+    <div class="proj-icon">🏥</div>
+    <div class="proj-name">WingTech Ops Academy</div>
+    <div class="proj-desc">Hospital IT field technician training platform — interactive modules covering MDM, VDI deployment, and HIPAA-relevant procedures.</div>
+    <div class="proj-tags">
+      <span class="tag cyan">Healthcare IT</span>
+      <span class="tag orange">Training</span>
+    </div>
+    <a href="#" class="proj-link">View Project</a>
+  </div>
+
+  <div class="proj-card">
+    <div class="proj-icon">🏗️</div>
+    <div class="proj-name">Wade King Construction</div>
+    <div class="proj-desc">Professional website built for a local construction company in Middle Tennessee — part of the website-flipping side hustle targeting local tradespeople.</div>
+    <div class="proj-tags">
+      <span class="tag green">Web Dev</span>
+      <span class="tag">Local Business</span>
+      <span class="tag">Vercel</span>
+    </div>
+    <a href="#" class="proj-link">View Site</a>
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <!-- DARK FIRE SECTION -->
+
+  <section id="darkfire">
+    <div class="section-header">
+      <span class="section-label">Dark Fire Security</span>
+      <div class="section-line"></div>
+      <span class="section-num">03</span>
+    </div>
+    <div class="brand-block">
+      <div class="brand-title">🔥 DARK FIRE SECURITY</div>
+      <div class="brand-subtitle">Cybersecurity Consulting · Small Business Defense · Security Awareness</div>
+      <p class="brand-desc">
+        Dark Fire Security is my cybersecurity consulting brand — built to help small businesses, healthcare organizations, and tradespeople defend against modern threats without enterprise-sized budgets. From security awareness training and phishing simulations to risk assessments and posture reviews, Dark Fire brings real security to the people who need it most.
+      </p>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;">
+        <a href="https://darkfiresecurity.com" class="btn btn-ghost" target="_blank">🔥 Visit darkfiresecurity.com</a>
+        <a href="assets/Cybersecurity Essentials for Small Businesses.pdf" class="btn btn-secondary" download>📘 Download Free eBook</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+    <div class="section-header">
+      <span class="section-label">Technical Skills</span>
+      <div class="section-line"></div>
+      <span class="section-num">04</span>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-block">
+        <div class="skill-block-title">Enterprise IT / MDM</div>
+        <div class="skill-list">
+          <span class="skill-pill">Microsoft Intune</span>
+          <span class="skill-pill">VMware Horizon VDI</span>
+          <span class="skill-pill">iOS Device Provisioning</span>
+          <span class="skill-pill">Thin Client Deploy</span>
+          <span class="skill-pill">Asset Management</span>
+          <span class="skill-pill">ITSM Ticketing</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title">Networking</div>
+        <div class="skill-list">
+          <span class="skill-pill">TCP/IP</span>
+          <span class="skill-pill">DNS / DHCP</span>
+          <span class="skill-pill">VPN / WireGuard</span>
+          <span class="skill-pill">DNS-over-HTTPS</span>
+          <span class="skill-pill">Nmap / Recon</span>
+          <span class="skill-pill">OpenWrt</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title">Security</div>
+        <div class="skill-list">
+          <span class="skill-pill">IR Fundamentals</span>
+          <span class="skill-pill">Phishing Simulation</span>
+          <span class="skill-pill">Pi-hole / AdGuard</span>
+          <span class="skill-pill">Secure Data Destruction</span>
+          <span class="skill-pill">HIPAA Awareness</span>
+          <span class="skill-pill">Risk Assessment</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title">Systems & Tools</div>
+        <div class="skill-list">
+          <span class="skill-pill">Windows 10/11</span>
+          <span class="skill-pill">Linux (Ubuntu/Debian)</span>
+          <span class="skill-pill">Active Directory</span>
+          <span class="skill-pill">PowerShell</span>
+          <span class="skill-pill">VMware</span>
+          <span class="skill-pill">GitHub / VS Code</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title">Web & Dev</div>
+        <div class="skill-list">
+          <span class="skill-pill">HTML / CSS / JS</span>
+          <span class="skill-pill">Next.js</span>
+          <span class="skill-pill">Python (Basics)</span>
+          <span class="skill-pill">Vercel Deploy</span>
+          <span class="skill-pill">GitHub Pages</span>
+          <span class="skill-pill">Google Cloud Run</span>
+        </div>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title">Home Lab</div>
+        <div class="skill-list">
+          <span class="skill-pill">Dell Optiplex Lab</span>
+          <span class="skill-pill">GL.iNet WiFi 6</span>
+          <span class="skill-pill">OpenWrt Router</span>
+          <span class="skill-pill">ProtonVPN</span>
+          <span class="skill-pill">Pi-hole</span>
+          <span class="skill-pill">AdGuard Home</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTS -->
+
+  <section id="certs">
+    <div class="section-header">
+      <span class="section-label">Certifications</span>
+      <div class="section-line"></div>
+      <span class="section-num">05</span>
+    </div>
+    <div class="certs-grid">
+      <div class="cert-card active">
+        <div class="cert-icon">🏅</div>
+        <div>
+          <div class="cert-name">CompTIA A+</div>
+          <div class="cert-meta">Valid 2024–2027</div>
+        </div>
+        <span class="cert-badge active">ACTIVE</span>
+      </div>
+      <div class="cert-card active">
+        <div class="cert-icon">🌐</div>
+        <div>
+          <div class="cert-name">CompTIA Network+</div>
+          <div class="cert-meta">Passed March 2025</div>
+        </div>
+        <span class="cert-badge active">ACTIVE</span>
+      </div>
+      <div class="cert-card progress">
+        <div class="cert-icon">🔐</div>
+        <div>
+          <div class="cert-name">CompTIA Security+ (SY0-701)</div>
+          <div class="cert-meta">Actively Studying</div>
+        </div>
+        <span class="cert-badge progress">IN PROGRESS</span>
+      </div>
+      <div class="cert-card active">
+        <div class="cert-icon">🎓</div>
+        <div>
+          <div class="cert-name">Google IT Support Pro</div>
+          <div class="cert-meta">2024</div>
+        </div>
+        <span class="cert-badge active">ACTIVE</span>
+      </div>
+      <div class="cert-card cdl">
+        <div class="cert-icon">🚛</div>
+        <div>
+          <div class="cert-name">CDL Class A</div>
+          <div class="cert-meta">Commercial Driver's License</div>
+        </div>
+        <span class="cert-badge" style="border-color:rgba(0,245,255,0.3);color:var(--cyan);">ACTIVE</span>
+      </div>
+      <div class="cert-card active">
+        <div class="cert-icon">🌿</div>
+        <div>
+          <div class="cert-name">Certified Lawn Care Pro</div>
+          <div class="cert-meta">University of Tennessee · 2024–2026</div>
+        </div>
+        <span class="cert-badge active">ACTIVE</span>
+      </div>
+    </div>
+
+```
+<!-- Education -->
+<div style="margin-top:20px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;">
+  <div class="card">
+    <div style="font-size:10px;letter-spacing:2px;color:var(--cyan);text-transform:uppercase;margin-bottom:10px;">Education</div>
+    <div style="font-family:'Share Tech Mono',monospace;color:#fff;margin-bottom:4px;">B.S. Cybersecurity</div>
+    <div style="font-size:12px;color:var(--text-dim);">Western Governors University &nbsp;·&nbsp; In Progress</div>
+  </div>
+  <div class="card">
+    <div style="font-size:10px;letter-spacing:2px;color:var(--cyan);text-transform:uppercase;margin-bottom:10px;">Prior Education</div>
+    <div style="font-family:'Share Tech Mono',monospace;color:#fff;margin-bottom:4px;">Agriculture Business Coursework</div>
+    <div style="font-size:12px;color:var(--text-dim);">Austin Peay State University &nbsp;·&nbsp; 2015–2019</div>
+  </div>
+</div>
+```
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+    <div class="section-header">
+      <span class="section-label">Contact</span>
+      <div class="section-line"></div>
+      <span class="section-num">06</span>
+    </div>
+    <div class="contact-grid">
+      <a href="mailto:thechancecummings@gmail.com?subject=Interview%20Request%20-%20IT%20Support%20%2F%20Cybersecurity" class="contact-item">
+        <span class="contact-item-icon">✉</span>
+        <div>
+          <div class="contact-item-label">Email</div>
+          <div class="contact-item-val">thechancecummings@gmail.com</div>
+        </div>
+      </a>
+      <a href="tel:+16156931113" class="contact-item">
+        <span class="contact-item-icon">📞</span>
+        <div>
+          <div class="contact-item-label">Phone</div>
+          <div class="contact-item-val">615-693-1113</div>
+        </div>
+      </a>
+      <a href="https://github.com/jazzy216" class="contact-item" target="_blank">
+        <span class="contact-item-icon">🐙</span>
+        <div>
+          <div class="contact-item-label">GitHub</div>
+          <div class="contact-item-val">github.com/jazzy216</div>
+        </div>
+      </a>
+      <a href="https://linkedin.com/in/chance-cummings" class="contact-item" target="_blank">
+        <span class="contact-item-icon">💼</span>
+        <div>
+          <div class="contact-item-label">LinkedIn</div>
+          <div class="contact-item-val">linkedin.com/in/chance-cummings</div>
+        </div>
+      </a>
+      <a href="https://darkfiresecurity.com" class="contact-item" target="_blank">
+        <span class="contact-item-icon">🔥</span>
+        <div>
+          <div class="contact-item-label">Security Brand</div>
+          <div class="contact-item-val">darkfiresecurity.com</div>
+        </div>
+      </a>
+      <a href="assets/Chance_Cummings_Resume.pdf" class="contact-item" download>
+        <span class="contact-item-icon">📄</span>
+        <div>
+          <div class="contact-item-label">Resume</div>
+          <div class="contact-item-val">Download PDF</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+
+<div class="wrapper" style="padding-top:0;">
+  <footer>
+    <span>© Chance Cummings &nbsp;·&nbsp; Nashville, TN &nbsp;·&nbsp; <a href="https://darkfiresecurity.com" target="_blank">Dark Fire Security</a></span>
+    <span style="color:var(--green);font-size:10px;letter-spacing:2px;">● OPEN TO OPPORTUNITIES</span>
+  </footer>
+</div>
+
+<script>
+  // Intersection observer for subtle entrance animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'none';
+        e.target.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.exp-card, .proj-card, .cert-card, .skill-block, .contact-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(16px)';
+    observer.observe(el);
+  });
+
+  // Glitch effect on name hover
+  const h1 = document.querySelector('h1 .accent');
+  if (h1) {
+    h1.addEventListener('mouseover', () => {
+      h1.style.animation = 'none';
+      const chars = h1.textContent.split('');
+      const glitch = () => {
+        h1.textContent = chars.map(c => Math.random() > 0.85 ? '█▓░'[Math.floor(Math.random()*3)] : c).join('');
+      };
+      const interval = setInterval(glitch, 60);
+      setTimeout(() => {
+        clearInterval(interval);
+        h1.textContent = 'Cummings';
+      }, 500);
+    });
+  }
+</script>
+
 </body>
 </html>
