@@ -1,1172 +1,1692 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="dark light">
-<title>Chance Cummings | IT Field Technician & Cybersecurity</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Chance Cummings | IT Field Technician & Cybersecurity</title>
+  <meta name="description" content="IT Field Service Technician at VUMC · CompTIA A+ & Network+ · Dark Fire Security · Security+ in progress · Nashville, TN" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ── TOKENS ──────────────────────────────────────────────── */
+    :root {
+      --bg:        #0d0f12;
+      --bg2:       #111318;
+      --bg3:       #181b22;
+      --surface:   #1c2029;
+      --border:    #252930;
+      --border2:   #2e3340;
+      --accent:    #e8622a;
+      --accent2:   #f07a42;
+      --muted:     #4a5060;
+      --muted2:    #6b7280;
+      --text:      #e4e6eb;
+      --text2:     #9ca3af;
+      --text3:     #6b7280;
+      --green:     #22c55e;
+      --amber:     #f59e0b;
+      --font:      'Geist', system-ui, sans-serif;
+      --mono:      'Geist Mono', 'Menlo', monospace;
+      --radius:    10px;
+      --radius-lg: 16px;
+      --ease:      cubic-bezier(0.16, 1, 0.3, 1);
+      --t300:      0.3s var(--ease);
+    }
+    [data-theme="light"] {
+      --bg:      #f8f9fa;
+      --bg2:     #f1f3f5;
+      --bg3:     #e9ecef;
+      --surface: #ffffff;
+      --border:  #dee2e6;
+      --border2: #ced4da;
+      --muted:   #868e96;
+      --muted2:  #6c757d;
+      --text:    #212529;
+      --text2:   #495057;
+      --text3:   #868e96;
+    }
 
-<!-- Favicon — embedded SVG (works in all modern browsers) -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSI+CiAgPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiMwNDA4MTAiLz4KICA8cG9seWdvbiBwb2ludHM9IjE2LDIgMjcsOC41IDI3LDIzLjUgMTYsMzAgNSwyMy41IDUsOC41IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMGQ0ZTgiIHN0cm9rZS13aWR0aD0iMS4yIiBvcGFjaXR5PSIwLjYiLz4KICA8cGF0aCBkPSJNMTYgNiBMMjQgOS41IEwyNCAxNyBDMjQgMjEuNSAyMC41IDI0LjggMTYgMjYuNSBDMTEuNSAyNC44IDggMjEuNSA4IDE3IEw4IDkuNSBaIiBmaWxsPSIjMGQxODI5IiBzdHJva2U9IiMwMGQ0ZTgiIHN0cm9rZS13aWR0aD0iMSIvPgogIDxwYXRoIGQ9Ik0xNiAyMiBDMTMgMjIgMTEgMTkuNSAxMSAxNyBDMTEgMTUgMTIgMTQgMTMgMTMgQzEzIDE1IDE0IDE1LjUgMTQuNSAxNSBDMTQuNSAxMyAxNSAxMSAxNiA5LjUgQzE3IDExIDE3IDEzLjUgMTguNSAxMy41IEMxOC41IDEyLjUgMTkgMTIgMTkuNSAxMS41IEMyMC41IDEzIDIxIDE1IDIxIDE3IEMyMSAxOS41IDE5IDIyIDE2IDIyIFoiIGZpbGw9IiNmZjhjMDAiLz4KICA8cGF0aCBkPSJNMTYgMjEgQzE0LjUgMjEgMTMuNSAxOS41IDEzLjUgMTggQzEzLjUgMTYuNSAxNC41IDE1LjUgMTUgMTUgQzE1IDE2IDE1LjUgMTYuNSAxNiAxNiBDMTYuNSAxNS41IDE3IDE1IDE3IDEzLjUgQzE3LjUgMTQuNSAxOC41IDE2IDE4LjUgMTggQzE4LjUgMTkuNSAxNy41IDIxIDE2IDIxIFoiIGZpbGw9IiMwMGQ0ZTgiLz4KICA8ZWxsaXBzZSBjeD0iMTYiIGN5PSIxOC41IiByeD0iMS4yIiByeT0iMS44IiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC43Ii8+Cjwvc3ZnPgo=">
-<!-- Fallback ICO for older browsers -->
-<link rel="shortcut icon" href="assets/favicon.ico">
-<!-- Apple touch icon -->
-<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSI+CiAgPGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTYiIGZpbGw9IiMwNDA4MTAiLz4KICA8cG9seWdvbiBwb2ludHM9IjE2LDIgMjcsOC41IDI3LDIzLjUgMTYsMzAgNSwyMy41IDUsOC41IiBmaWxsPSJub25lIiBzdHJva2U9IiMwMGQ0ZTgiIHN0cm9rZS13aWR0aD0iMS4yIiBvcGFjaXR5PSIwLjYiLz4KICA8cGF0aCBkPSJNMTYgNiBMMjQgOS41IEwyNCAxNyBDMjQgMjEuNSAyMC41IDI0LjggMTYgMjYuNSBDMTEuNSAyNC44IDggMjEuNSA4IDE3IEw4IDkuNSBaIiBmaWxsPSIjMGQxODI5IiBzdHJva2U9IiMwMGQ0ZTgiIHN0cm9rZS13aWR0aD0iMSIvPgogIDxwYXRoIGQ9Ik0xNiAyMiBDMTMgMjIgMTEgMTkuNSAxMSAxNyBDMTEgMTUgMTIgMTQgMTMgMTMgQzEzIDE1IDE0IDE1LjUgMTQuNSAxNSBDMTQuNSAxMyAxNSAxMSAxNiA5LjUgQzE3IDExIDE3IDEzLjUgMTguNSAxMy41IEMxOC41IDEyLjUgMTkgMTIgMTkuNSAxMS41IEMyMC41IDEzIDIxIDE1IDIxIDE3IEMyMSAxOS41IDE5IDIyIDE2IDIyIFoiIGZpbGw9IiNmZjhjMDAiLz4KICA8cGF0aCBkPSJNMTYgMjEgQzE0LjUgMjEgMTMuNSAxOS41IDEzLjUgMTggQzEzLjUgMTYuNSAxNC41IDE1LjUgMTUgMTUgQzE1IDE2IDE1LjUgMTYuNSAxNiAxNiBDMTYuNSAxNS41IDE3IDE1IDE3IDEzLjUgQzE3LjUgMTQuNSAxOC41IDE2IDE4LjUgMTggQzE4LjUgMTkuNSAxNy41IDIxIDE2IDIxIFoiIGZpbGw9IiMwMGQ0ZTgiLz4KICA8ZWxsaXBzZSBjeD0iMTYiIGN5PSIxOC41IiByeD0iMS4yIiByeT0iMS44IiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC43Ii8+Cjwvc3ZnPgo=">
+    /* ── RESET ───────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    img { display: block; max-width: 100%; }
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Share+Tech+Mono&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    /* ── GRAIN OVERLAY ───────────────────────────────────────── */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      pointer-events: none;
+      opacity: 0.022;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 192px;
+    }
 
-<style>
-/* ═══════════════════════════════════════════════════════════════
-   THEME TOKENS — single source of truth, zero hardcoded colors
-   Dark:  deep navy bg, cyan/green/orange accents, light text
-   Light: slate-white bg, navy/teal/burnt accents, dark text
-   All WCAG AA compliant (4.5:1+ body text, 3:1+ UI/large text)
-════════════════════════════════════════════════════════════════ */
+    /* ── NAV ─────────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2rem;
+      height: 58px;
+      background: rgba(13,15,18,0.82);
+      backdrop-filter: blur(18px) saturate(160%);
+      -webkit-backdrop-filter: blur(18px) saturate(160%);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: var(--mono);
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+    }
+    .nav-links {
+      display: flex;
+      gap: 0.25rem;
+      align-items: center;
+    }
+    .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text3);
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      transition: color var(--t300), background var(--t300);
+      letter-spacing: 0.02em;
+    }
+    .nav-links a:hover { color: var(--text); background: var(--surface); }
+    .nav-right { display: flex; align-items: center; gap: 0.75rem; }
+    .theme-toggle {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text2);
+      cursor: pointer;
+      border-radius: 7px;
+      width: 32px; height: 32px;
+      display: flex; align-items: center; justify-content: center;
+      transition: all var(--t300);
+      font-size: 0.85rem;
+    }
+    .theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+    .nav-cta {
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.35rem 1rem;
+      border-radius: 7px;
+      background: var(--accent);
+      color: #fff;
+      letter-spacing: 0.02em;
+      transition: opacity var(--t300), transform var(--t300);
+    }
+    .nav-cta:hover { opacity: 0.88; transform: translateY(-1px); }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block; width: 20px; height: 2px;
+      background: var(--text2);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 58px; left: 0; right: 0;
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+      z-index: 99;
+      padding: 1rem 1.5rem;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--text2);
+      padding: 0.6rem 0.75rem;
+      border-radius: 7px;
+      transition: all var(--t300);
+    }
+    .mobile-menu a:hover { color: var(--text); background: var(--surface); }
 
-[data-theme="dark"] {
-  color-scheme: dark;
-  --bg-base:        #040810;
-  --bg-surface:     #080f1a;
-  --bg-raised:      #0d1829;
-  --bg-overlay:     rgba(4,8,16,0.95);
-  --border-subtle:  rgba(0,200,220,0.10);
-  --border-default: rgba(0,200,220,0.22);
-  --border-strong:  rgba(0,200,220,0.50);
-  --text-primary:   #e8f2ff;
-  --text-secondary: #8ba5c0;
-  --text-muted:     #506878;
-  --text-on-accent: #040810;
-  --accent-cyan:    #00d4e8;
-  --accent-green:   #00cc77;
-  --accent-orange:  #ff8c00;
-  --accent-red:     #ff3355;
-  --status-active:  #00cc77;
-  --status-progress:#ff8c00;
-  --status-info:    #00d4e8;
-  --grid-color:     rgba(0,212,232,0.04);
-  --glow-cyan:      rgba(0,212,232,0.25);
-  --glow-orange:    rgba(255,140,0,0.25);
-  --toggle-track:   #0d1829;
-  --toggle-thumb:   #00d4e8;
-  --toggle-shadow:  rgba(0,212,232,0.5);
-  --terminal-bg:    #020609;
-}
+    /* ── HERO ────────────────────────────────────────────────── */
+    .hero {
+      min-height: 100dvh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 0 4rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      gap: 4rem;
+      padding-top: 58px;
+    }
+    .hero-left { padding-top: 2rem; }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--accent);
+      background: rgba(232,98,42,0.08);
+      border: 1px solid rgba(232,98,42,0.2);
+      border-radius: 100px;
+      padding: 0.3rem 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.75rem;
+    }
+    .status-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+    .hero-name {
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+    .hero-name span { color: var(--accent); }
+    .hero-title {
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--text2);
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+    }
+    .hero-title strong { color: var(--text); font-weight: 600; }
+    .hero-desc {
+      font-size: 0.92rem;
+      color: var(--text3);
+      line-height: 1.75;
+      max-width: 52ch;
+      margin-bottom: 2.25rem;
+    }
+    .hero-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 2.5rem; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.84rem; font-weight: 600;
+      padding: 0.65rem 1.4rem;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #fff;
+      transition: all var(--t300);
+      border: none; cursor: pointer;
+      letter-spacing: 0.02em;
+    }
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-primary:active { transform: translateY(0) scale(0.98); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.84rem; font-weight: 600;
+      padding: 0.65rem 1.4rem;
+      border-radius: 8px;
+      background: transparent;
+      color: var(--text2);
+      border: 1px solid var(--border2);
+      transition: all var(--t300);
+      cursor: pointer;
+      letter-spacing: 0.02em;
+    }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+    .btn-ghost:active { transform: translateY(0) scale(0.98); }
+    .hero-badges {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+    }
+    .badge {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      font-weight: 500;
+      padding: 0.3rem 0.7rem;
+      border-radius: 6px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text2);
+      letter-spacing: 0.04em;
+    }
+    .badge.active { border-color: rgba(34,197,94,0.3); color: var(--green); background: rgba(34,197,94,0.05); }
+    .badge.progress { border-color: rgba(245,158,11,0.3); color: var(--amber); background: rgba(245,158,11,0.05); }
 
-[data-theme="light"] {
-  color-scheme: light;
-  --bg-base:        #f2f6fa;
-  --bg-surface:     #ffffff;
-  --bg-raised:      #e8f0f8;
-  --bg-overlay:     rgba(242,246,250,0.97);
-  --border-subtle:  rgba(0,80,140,0.10);
-  --border-default: rgba(0,80,140,0.20);
-  --border-strong:  rgba(0,80,140,0.42);
-  --text-primary:   #0d1f33;
-  --text-secondary: #3a5470;
-  --text-muted:     #6888a0;
-  --text-on-accent: #ffffff;
-  --accent-cyan:    #006fa8;
-  --accent-green:   #006640;
-  --accent-orange:  #b85000;
-  --accent-red:     #b8001f;
-  --status-active:  #006640;
-  --status-progress:#b85000;
-  --status-info:    #006fa8;
-  --grid-color:     rgba(0,80,140,0.06);
-  --glow-cyan:      rgba(0,111,168,0.12);
-  --glow-orange:    rgba(184,80,0,0.12);
-  --toggle-track:   #d0dcea;
-  --toggle-thumb:   #b85000;
-  --toggle-shadow:  rgba(184,80,0,0.4);
-  --terminal-bg:    #f8fafc;
-}
+    /* Hero right – terminal card */
+    .hero-right {
+      position: relative;
+    }
+    .terminal {
+      background: var(--bg3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 32px 64px -16px rgba(0,0,0,0.5),
+                  inset 0 1px 0 rgba(255,255,255,0.04);
+    }
+    .terminal-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
+    .dot { width: 11px; height: 11px; border-radius: 50%; }
+    .dot-red   { background: #ff5f57; }
+    .dot-amber { background: #ffbd2e; }
+    .dot-green { background: #28c840; }
+    .terminal-label {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--muted);
+      margin-left: 0.25rem;
+    }
+    .terminal-body {
+      padding: 1.4rem 1.4rem 1.6rem;
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      line-height: 1.9;
+    }
+    .t-prompt { color: var(--accent); }
+    .t-cmd { color: var(--text2); }
+    .t-key { color: #7dd3fc; }
+    .t-arrow { color: var(--muted); margin: 0 0.5rem; }
+    .t-val { color: var(--text); }
+    .t-green { color: var(--green); }
+    .t-amber { color: var(--amber); }
+    .t-cursor {
+      display: inline-block;
+      width: 8px; height: 1em;
+      background: var(--accent);
+      vertical-align: text-bottom;
+      animation: blink 1.1s step-end infinite;
+    }
+    @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
 
-/* ═══════════════════ RESET ═══════════════════ */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+    /* ── SECTIONS ────────────────────────────────────────────── */
+    section {
+      padding: 5rem 0;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .section-tag {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      font-weight: 500;
+      color: var(--accent);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: var(--text);
+      margin-bottom: 0.6rem;
+      line-height: 1.15;
+    }
+    .section-sub {
+      font-size: 0.92rem;
+      color: var(--text3);
+      max-width: 55ch;
+      line-height: 1.7;
+      margin-bottom: 3rem;
+    }
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
 
-body {
-  background: var(--bg-base);
-  color: var(--text-primary);
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 14px;
-  line-height: 1.7;
-  overflow-x: hidden;
-  cursor: crosshair;
-  transition: background 0.3s, color 0.3s;
-}
+    /* ── EXPERIENCE ──────────────────────────────────────────── */
+    #experience { background: var(--bg); }
+    .exp-list { display: flex; flex-direction: column; gap: 0; }
+    .exp-item {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 2rem;
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .exp-item:last-child { border-bottom: none; }
+    .exp-meta {}
+    .exp-num {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      margin-bottom: 0.35rem;
+    }
+    .exp-period {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--text3);
+      margin-bottom: 0.35rem;
+    }
+    .exp-location {
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+    .exp-content {}
+    .exp-role {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.2rem;
+    }
+    .exp-company {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+    }
+    .exp-subtitle {
+      font-size: 0.78rem;
+      color: var(--muted2);
+      font-family: var(--mono);
+      margin-bottom: 1rem;
+      letter-spacing: 0.03em;
+    }
+    .exp-bullets {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+    .exp-bullets li {
+      font-size: 0.87rem;
+      color: var(--text2);
+      line-height: 1.6;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    .exp-bullets li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--muted);
+      font-size: 0.7rem;
+      top: 0.3em;
+    }
+    .exp-bullets li strong { color: var(--text); font-weight: 600; }
 
-/* ═══════════════════ GRID BG ═══════════════════ */
-body::before {
-  content: '';
-  position: fixed; inset: 0;
-  background-image:
-    linear-gradient(var(--grid-color) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
-  background-size: 40px 40px;
-  pointer-events: none;
-  z-index: 0;
-}
-body::after {
-  content: '';
-  position: fixed; inset: 0;
-  background: radial-gradient(ellipse 80% 50% at 50% 0%, var(--glow-cyan), transparent 65%);
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.5;
-}
+    /* ── SITES BUILT SHOWCASE ────────────────────────────────── */
+    #sites { background: var(--bg2); }
+    .sites-intro {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: flex-end;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    .sites-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .site-card {
+      background: var(--bg2);
+      padding: 1.75rem;
+      position: relative;
+      transition: background var(--t300);
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+    }
+    .site-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(200px circle at var(--mx,50%) var(--my,50%), rgba(232,98,42,0.06), transparent 70%);
+      opacity: 0;
+      transition: opacity 0.4s;
+      pointer-events: none;
+    }
+    .site-card:hover::after { opacity: 1; }
+    .site-card:hover { background: var(--bg3); }
+    .site-icon {
+      width: 38px; height: 38px;
+      border-radius: 9px;
+      background: rgba(232,98,42,0.1);
+      border: 1px solid rgba(232,98,42,0.18);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+    }
+    .site-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .site-desc {
+      font-size: 0.82rem;
+      color: var(--text3);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .site-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+    .tag {
+      font-family: var(--mono);
+      font-size: 0.63rem;
+      padding: 0.22rem 0.55rem;
+      border-radius: 5px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--muted2);
+      letter-spacing: 0.04em;
+    }
+    .site-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--accent);
+      transition: gap var(--t300);
+    }
+    .site-link:hover { gap: 0.6rem; }
+    .site-link svg { width: 12px; height: 12px; }
+    .site-category {
+      font-family: var(--mono);
+      font-size: 0.63rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
 
-/* ═══════════════════ SCANLINE + NOISE (dark only) ═══════════════════ */
-.scanline {
-  position: fixed; top: -2px; left: 0; right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
-  animation: scan 6s linear infinite;
-  opacity: 0.22;
-  z-index: 999;
-  pointer-events: none;
-}
-[data-theme="light"] .scanline,
-[data-theme="light"] .noise { display: none; }
-@keyframes scan { 0%{top:-2px} 100%{top:100vh} }
+    /* ── TOOLS/PROJECTS ──────────────────────────────────────── */
+    #projects { background: var(--bg); }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.25rem;
+    }
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      transition: all var(--t300);
+      position: relative;
+      overflow: hidden;
+    }
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0;
+      transition: opacity var(--t300);
+    }
+    .project-card:hover { border-color: var(--border2); transform: translateY(-2px); box-shadow: 0 16px 40px -8px rgba(0,0,0,0.4); }
+    .project-card:hover::before { opacity: 1; }
+    .project-header {
+      display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;
+    }
+    .project-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .project-badge {
+      font-family: var(--mono);
+      font-size: 0.62rem;
+      padding: 0.2rem 0.55rem;
+      border-radius: 5px;
+      background: rgba(232,98,42,0.1);
+      border: 1px solid rgba(232,98,42,0.2);
+      color: var(--accent);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .project-desc {
+      font-size: 0.83rem;
+      color: var(--text3);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+    .project-link {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.78rem; font-weight: 500;
+      color: var(--accent);
+      transition: gap var(--t300);
+      margin-top: auto;
+    }
+    .project-link:hover { gap: 0.65rem; }
 
-.noise {
-  position: fixed; inset: 0;
-  opacity: 0.018;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 1;
-}
+    /* ── DARK FIRE ───────────────────────────────────────────── */
+    #darkfire { background: var(--bg2); }
+    .darkfire-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .darkfire-content {}
+    .darkfire-logo {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .darkfire-logo span { color: var(--text); }
+    .darkfire-desc {
+      font-size: 0.9rem;
+      color: var(--text3);
+      line-height: 1.75;
+      max-width: 50ch;
+      margin-bottom: 2rem;
+    }
+    .darkfire-services {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+    }
+    .df-service {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      padding: 0.85rem 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: border-color var(--t300);
+    }
+    .df-service:hover { border-color: rgba(232,98,42,0.3); }
+    .df-icon { font-size: 1rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .df-service-name { font-size: 0.86rem; font-weight: 600; color: var(--text); }
+    .df-service-desc { font-size: 0.78rem; color: var(--text3); margin-top: 0.15rem; }
+    .darkfire-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .df-stat {
+      background: var(--bg3);
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .df-stat-num {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: -0.03em;
+      font-family: var(--mono);
+    }
+    .df-stat-label {
+      font-size: 0.75rem;
+      color: var(--text3);
+      margin-top: 0.2rem;
+    }
 
-/* ═══════════════════ WRAPPER ═══════════════════ */
-.wrapper {
-  position: relative; z-index: 2;
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 24px 80px;
-}
+    /* ── SKILLS ──────────────────────────────────────────────── */
+    #skills { background: var(--bg); }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+    .skill-group {
+      border-top: 2px solid var(--border);
+      padding-top: 1.25rem;
+    }
+    .skill-group-name {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text2);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 0.85rem;
+    }
+    .skill-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .skill-pill {
+      font-size: 0.78rem;
+      font-weight: 500;
+      padding: 0.3rem 0.7rem;
+      border-radius: 6px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text2);
+      transition: all var(--t300);
+    }
+    .skill-pill:hover {
+      border-color: rgba(232,98,42,0.4);
+      color: var(--text);
+      background: var(--bg3);
+    }
 
-/* ═══════════════════ NAV ═══════════════════ */
-nav {
-  position: sticky; top: 0; z-index: 100;
-  background: var(--bg-overlay);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid var(--border-default);
-  padding: 13px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  transition: background 0.3s, border-color 0.3s;
-}
+    /* ── CERTS ───────────────────────────────────────────────── */
+    #certs { background: var(--bg2); }
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .cert-card {
+      background: var(--bg2);
+      padding: 1.5rem 1.4rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      transition: background var(--t300);
+    }
+    .cert-card:hover { background: var(--bg3); }
+    .cert-icon {
+      width: 40px; height: 40px; flex-shrink: 0;
+      border-radius: 9px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+    }
+    .cert-icon.active { background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.2); }
+    .cert-icon.progress { background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.2); }
+    .cert-icon.other { background: var(--surface); border: 1px solid var(--border); }
+    .cert-name { font-size: 0.9rem; font-weight: 600; color: var(--text); margin-bottom: 0.2rem; }
+    .cert-detail { font-size: 0.75rem; color: var(--text3); }
+    .cert-status {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      margin-top: 0.5rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      display: inline-block;
+    }
+    .cert-status.active { color: var(--green); background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.2); }
+    .cert-status.progress { color: var(--amber); background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.2); }
 
-.nav-brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-}
-.nav-favicon {
-  width: 24px; height: 24px;
-  flex-shrink: 0;
-}
-.nav-logo {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--accent-cyan);
-  letter-spacing: 2px;
-  white-space: nowrap;
-}
-.nav-logo span { color: var(--accent-green); }
+    /* ── CONTACT ─────────────────────────────────────────────── */
+    #contact { background: var(--bg); }
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .contact-heading {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--text);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+    .contact-heading span { color: var(--accent); }
+    .contact-note {
+      font-size: 0.9rem;
+      color: var(--text3);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+    .contact-links { display: flex; flex-direction: column; gap: 0.75rem; }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.84rem;
+      color: var(--text2);
+      transition: all var(--t300);
+    }
+    .contact-link:hover {
+      border-color: rgba(232,98,42,0.3);
+      color: var(--text);
+      transform: translateX(4px);
+    }
+    .contact-link-icon {
+      width: 34px; height: 34px;
+      background: var(--bg3);
+      border-radius: 7px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    .contact-link-content {}
+    .contact-link-label { font-size: 0.7rem; color: var(--text3); font-family: var(--mono); margin-bottom: 0.1rem; letter-spacing: 0.06em; }
+    .contact-link-val { font-size: 0.85rem; font-weight: 500; color: var(--text); }
+    .availability-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      position: sticky;
+      top: 80px;
+    }
+    .availability-header {
+      display: flex; align-items: center; gap: 0.6rem;
+      font-size: 0.82rem; font-weight: 600;
+      color: var(--green);
+      margin-bottom: 1.25rem;
+      font-family: var(--mono);
+    }
+    .availability-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      margin-bottom: 0.5rem;
+    }
+    .availability-desc {
+      font-size: 0.83rem;
+      color: var(--text3);
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
+    }
+    .availability-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-bottom: 1.75rem;
+    }
+    .avail-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .avail-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .avail-key { color: var(--text3); }
+    .avail-val { font-weight: 500; color: var(--text); }
 
-.nav-links {
-  display: flex; gap: 18px;
-  list-style: none;
-  flex-wrap: wrap;
-}
-.nav-links a {
-  color: var(--text-secondary);
-  text-decoration: none;
-  font-size: 11px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  transition: color 0.2s;
-}
-.nav-links a:hover { color: var(--accent-cyan); }
+    /* ── FOOTER ──────────────────────────────────────────────── */
+    footer {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      padding: 2rem;
+      text-align: center;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-copy {
+      font-size: 0.78rem;
+      color: var(--text3);
+      font-family: var(--mono);
+    }
+    .footer-links {
+      display: flex;
+      gap: 1.25rem;
+    }
+    .footer-links a {
+      font-size: 0.78rem;
+      color: var(--text3);
+      transition: color var(--t300);
+    }
+    .footer-links a:hover { color: var(--accent); }
 
-/* ═══════════════════ THEME TOGGLE ═══════════════════ */
-.theme-toggle {
-  display: flex; align-items: center; gap: 9px;
-  flex-shrink: 0; cursor: pointer;
-  user-select: none;
-}
-.toggle-mode-label {
-  font-size: 10px; letter-spacing: 1.5px;
-  color: var(--text-muted);
-  text-transform: uppercase;
-  display: none;
-  transition: color 0.3s;
-  white-space: nowrap;
-}
-@media (min-width: 560px) { .toggle-mode-label { display: block; } }
+    /* ── SCROLL ANIMATIONS ───────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
 
-.toggle-pill {
-  position: relative;
-  width: 46px; height: 26px;
-  background: var(--toggle-track);
-  border: 1px solid var(--border-strong);
-  border-radius: 13px;
-  transition: background 0.3s, border-color 0.3s;
-  flex-shrink: 0;
-}
-.toggle-icon {
-  position: absolute; top: 50%;
-  transform: translateY(-50%);
-  font-size: 11px; line-height: 1;
-  pointer-events: none; opacity: 0.4;
-  transition: opacity 0.3s;
-}
-.toggle-icon.moon { right: 5px; }
-.toggle-icon.sun  { left: 5px; }
-[data-theme="dark"]  .toggle-icon.moon { opacity: 0.95; }
-[data-theme="light"] .toggle-icon.sun  { opacity: 0.95; }
-
-.toggle-dot {
-  position: absolute; top: 4px; left: 4px;
-  width: 16px; height: 16px; border-radius: 50%;
-  background: var(--toggle-thumb);
-  box-shadow: 0 0 8px var(--toggle-shadow);
-  transition: transform 0.3s cubic-bezier(.34,1.56,.64,1),
-              background 0.3s, box-shadow 0.3s;
-}
-[data-theme="light"] .toggle-dot { transform: translateX(20px); }
-
-/* ═══════════════════ HERO ═══════════════════ */
-.hero { padding: 80px 0 60px; position: relative; }
-
-.hero-tag {
-  display: inline-block;
-  font-size: 11px; letter-spacing: 3px;
-  color: var(--accent-green);
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  padding: 6px 14px;
-  border: 1px solid var(--border-default);
-  background: var(--bg-surface);
-}
-.hero-tag::before { content: '> '; opacity: 0.5; }
-
-.hero h1 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: clamp(30px, 6vw, 62px);
-  font-weight: 900; line-height: 1.1;
-  color: var(--text-primary);
-  letter-spacing: -1px; margin-bottom: 10px;
-}
-.hero h1 .accent { color: var(--accent-cyan); }
-[data-theme="dark"] .hero h1 .accent { text-shadow: 0 0 32px var(--glow-cyan); }
-
-.hero-subtitle {
-  font-family: 'Share Tech Mono', monospace;
-  font-size: clamp(13px, 2vw, 17px);
-  color: var(--text-secondary);
-  margin-bottom: 26px; letter-spacing: 0.8px;
-}
-.hero-subtitle .role { color: var(--accent-cyan); }
-.hero-subtitle .org  { color: var(--accent-green); }
-
-.hero-desc {
-  max-width: 640px;
-  color: var(--text-secondary);
-  font-size: 14px; line-height: 1.85;
-  margin-bottom: 32px;
-  border-left: 2px solid var(--accent-cyan);
-  padding-left: 18px;
-}
-
-.hero-meta {
-  display: flex; flex-wrap: wrap;
-  gap: 16px; margin-bottom: 36px;
-  font-size: 12px; color: var(--text-secondary);
-}
-.hero-meta span { display: flex; align-items: center; gap: 7px; }
-.pulse-dot {
-  width: 7px; height: 7px; border-radius: 50%;
-  background: var(--accent-green); flex-shrink: 0;
-  animation: pulse 2.2s ease-in-out infinite;
-}
-@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.3;transform:scale(0.8)} }
-
-.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
-
-/* ═══════════════════ BUTTONS ═══════════════════ */
-.btn {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 11px 22px;
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 12px; letter-spacing: 1.5px;
-  text-transform: uppercase; text-decoration: none;
-  border: 1px solid; transition: all 0.2s;
-  cursor: pointer; background: transparent;
-}
-.btn-primary   { border-color: var(--accent-cyan);   color: var(--accent-cyan); }
-.btn-secondary { border-color: var(--border-default); color: var(--text-secondary); }
-.btn-brand     { border-color: var(--accent-orange);  color: var(--accent-orange); }
-
-.btn-primary:hover {
-  background: var(--accent-cyan); color: var(--text-on-accent);
-  box-shadow: 0 0 20px var(--glow-cyan);
-}
-.btn-secondary:hover { border-color: var(--accent-green); color: var(--accent-green); }
-.btn-brand:hover {
-  background: var(--accent-orange); color: var(--text-on-accent);
-  box-shadow: 0 0 20px var(--glow-orange);
-}
-
-/* ═══════════════════ STATUS BAR ═══════════════════ */
-.status-bar {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-  gap: 1px;
-  background: var(--border-default);
-  border: 1px solid var(--border-default);
-  margin: 48px 0;
-}
-.status-item {
-  background: var(--bg-surface);
-  padding: 20px 22px; position: relative;
-  transition: background 0.2s;
-}
-.status-item::after {
-  content: '';
-  position: absolute; top: 0; left: 0; right: 0; height: 2px;
-  background: var(--accent-cyan);
-  transform: scaleX(0); transform-origin: left;
-  transition: transform 0.35s;
-}
-.status-item:hover { background: var(--bg-raised); }
-.status-item:hover::after { transform: scaleX(1); }
-.status-label {
-  font-size: 10px; letter-spacing: 2px;
-  text-transform: uppercase; color: var(--text-muted); margin-bottom: 6px;
-}
-.status-value {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 15px; font-weight: 700;
-  color: var(--accent-cyan); margin-bottom: 3px;
-}
-.status-value.orange { color: var(--accent-orange); }
-.status-sub { font-size: 11px; color: var(--text-secondary); }
-
-/* ═══════════════════ SECTION HEADERS ═══════════════════ */
-section { margin-bottom: 64px; }
-.section-header {
-  display: flex; align-items: center; gap: 14px; margin-bottom: 28px;
-}
-.section-label {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 11px; font-weight: 700;
-  color: var(--accent-cyan); letter-spacing: 3px;
-  text-transform: uppercase; white-space: nowrap;
-}
-.section-line {
-  flex: 1; height: 1px;
-  background: linear-gradient(90deg, var(--border-strong), transparent);
-}
-.section-num { font-size: 11px; color: var(--text-muted); letter-spacing: 1px; }
-
-/* ═══════════════════ TERMINAL ═══════════════════ */
-.terminal {
-  background: var(--terminal-bg);
-  border: 1px solid var(--border-default);
-  border-left: 3px solid var(--accent-cyan);
-  padding: 20px 24px;
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 12px; line-height: 2;
-  transition: background 0.3s, border-color 0.3s;
-}
-.terminal-bar { display: flex; gap: 6px; margin-bottom: 16px; }
-.td { width: 10px; height: 10px; border-radius: 50%; }
-.td-r { background: #ff5f57; }
-.td-y { background: #febc2e; }
-.td-g { background: #28c840; }
-.t-prompt { color: var(--accent-green); font-weight: 500; }
-.t-cmd    { color: var(--text-primary); }
-.t-key    { color: var(--text-muted); }
-.t-val    { color: var(--accent-cyan); }
-.t-flag   { color: var(--accent-orange); }
-.t-live   { color: var(--accent-green); }
-
-/* ═══════════════════ EXPERIENCE ═══════════════════ */
-.timeline { display: flex; flex-direction: column; gap: 2px; }
-
-.exp-card {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  border-left: 3px solid var(--border-default);
-  padding: 24px; position: relative;
-  transition: background 0.2s, border-left-color 0.2s;
-}
-.exp-card:hover { background: var(--bg-raised); border-left-color: var(--accent-cyan); }
-.exp-card.current { border-left-color: var(--accent-green); }
-.exp-card.current::after {
-  content: '● CURRENT';
-  position: absolute; top: 18px; right: 18px;
-  font-size: 9px; letter-spacing: 2px;
-  color: var(--accent-green);
-  animation: pulse 2.2s ease-in-out infinite;
-}
-
-.exp-header { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; margin-bottom: 4px; }
-.exp-title {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 13px; font-weight: 600;
-  color: var(--text-primary); letter-spacing: 0.3px;
-}
-.exp-org   { font-size: 12px; color: var(--accent-cyan); letter-spacing: 0.5px; }
-.exp-date  { font-size: 11px; color: var(--text-muted); margin-left: auto; }
-.exp-loc   { font-size: 11px; color: var(--text-muted); margin-bottom: 14px; }
-
-.exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 7px; }
-.exp-bullets li {
-  font-size: 13px; color: var(--text-secondary);
-  padding-left: 16px; position: relative;
-}
-.exp-bullets li::before {
-  content: '▸'; position: absolute; left: 0;
-  color: var(--accent-cyan); font-size: 10px; top: 4px;
-}
-.exp-bullets li strong { color: var(--text-primary); font-weight: 500; }
-
-/* ═══════════════════ PROJECTS ═══════════════════ */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
-  gap: 14px;
-}
-.proj-card {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  padding: 22px; display: flex;
-  flex-direction: column; gap: 11px;
-  position: relative; overflow: hidden;
-  transition: all 0.22s;
-}
-.proj-card::before {
-  content: ''; position: absolute;
-  top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-green));
-  opacity: 0; transition: opacity 0.22s;
-}
-.proj-card:hover {
-  border-color: var(--border-strong);
-  background: var(--bg-raised);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 24px var(--glow-cyan);
-}
-.proj-card:hover::before { opacity: 1; }
-.proj-icon { font-size: 22px; line-height: 1; }
-.proj-name {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 12px; font-weight: 600;
-  color: var(--text-primary); letter-spacing: 0.3px;
-}
-.proj-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.65; flex: 1; }
-.proj-tags { display: flex; flex-wrap: wrap; gap: 5px; }
-.tag {
-  font-size: 10px; padding: 3px 8px;
-  border: 1px solid var(--border-default);
-  color: var(--text-secondary);
-  letter-spacing: 0.8px; text-transform: uppercase;
-}
-.tag.cyan   { border-color: var(--accent-cyan);   color: var(--accent-cyan); }
-.tag.green  { border-color: var(--accent-green);  color: var(--accent-green); }
-.tag.orange { border-color: var(--accent-orange); color: var(--accent-orange); }
-
-.proj-link {
-  display: inline-flex; align-items: center; gap: 5px;
-  font-size: 11px; color: var(--accent-cyan);
-  text-decoration: none; letter-spacing: 1px;
-  text-transform: uppercase; margin-top: auto;
-  transition: gap 0.18s;
-}
-.proj-link:hover { gap: 9px; }
-.proj-link::after { content: '→'; }
-
-/* ═══════════════════ SKILLS ═══════════════════ */
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(235px, 1fr));
-  gap: 12px;
-}
-.skill-block {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  padding: 18px;
-  transition: border-color 0.2s, background 0.2s;
-}
-.skill-block:hover { border-color: var(--border-default); background: var(--bg-raised); }
-.skill-block-title {
-  font-size: 10px; letter-spacing: 2px;
-  text-transform: uppercase; color: var(--accent-cyan);
-  margin-bottom: 12px; padding-bottom: 9px;
-  border-bottom: 1px solid var(--border-default);
-}
-.skill-list { display: flex; flex-wrap: wrap; gap: 6px; }
-.skill-pill {
-  font-size: 11px; padding: 4px 9px;
-  background: var(--bg-raised);
-  border: 1px solid var(--border-default);
-  color: var(--text-secondary); letter-spacing: 0.3px;
-  transition: border-color 0.15s, color 0.15s;
-}
-.skill-pill:hover { border-color: var(--accent-cyan); color: var(--text-primary); }
-
-/* ═══════════════════ CERTS ═══════════════════ */
-.certs-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(255px, 1fr));
-  gap: 10px;
-}
-.cert-card {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  border-left: 3px solid var(--border-default);
-  padding: 16px 18px;
-  display: flex; align-items: center; gap: 14px;
-  transition: all 0.2s;
-}
-.cert-card:hover { background: var(--bg-raised); border-color: var(--border-default); }
-.cert-card.s-active   { border-left-color: var(--status-active); }
-.cert-card.s-progress { border-left-color: var(--status-progress); }
-.cert-card.s-info     { border-left-color: var(--status-info); }
-.cert-icon { font-size: 20px; flex-shrink: 0; }
-.cert-name {
-  font-size: 13px; color: var(--text-primary);
-  font-family: 'Share Tech Mono', monospace; margin-bottom: 2px;
-}
-.cert-meta { font-size: 11px; color: var(--text-muted); }
-.cert-badge {
-  margin-left: auto; font-size: 9px;
-  padding: 3px 8px; letter-spacing: 1.5px;
-  border: 1px solid; white-space: nowrap; flex-shrink: 0;
-}
-.cert-badge.active   { border-color: var(--status-active);   color: var(--status-active); }
-.cert-badge.progress { border-color: var(--status-progress); color: var(--status-progress); }
-.cert-badge.info     { border-color: var(--status-info);     color: var(--status-info); }
-
-/* ═══════════════════ EDUCATION ═══════════════════ */
-.edu-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
-  gap: 10px; margin-top: 14px;
-}
-.edu-card {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  padding: 20px 22px;
-  transition: background 0.2s;
-}
-.edu-card:hover { background: var(--bg-raised); }
-.edu-label { font-size: 10px; letter-spacing: 2px; color: var(--accent-cyan); text-transform: uppercase; margin-bottom: 8px; }
-.edu-degree { font-family: 'Share Tech Mono', monospace; font-size: 14px; color: var(--text-primary); margin-bottom: 4px; }
-.edu-school { font-size: 12px; color: var(--text-secondary); }
-
-/* ═══════════════════ DARK FIRE BRAND ═══════════════════ */
-.brand-block {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-default);
-  border-left: 4px solid var(--accent-orange);
-  padding: 32px; position: relative; overflow: hidden;
-}
-.brand-block::after {
-  content: 'DARK FIRE SECURITY';
-  position: absolute; top: 50%; right: -24px;
-  transform: translateY(-50%) rotate(-90deg);
-  font-family: 'Orbitron', sans-serif;
-  font-size: 10px; letter-spacing: 4px;
-  color: var(--accent-orange); opacity: 0.07;
-  white-space: nowrap; pointer-events: none;
-}
-.brand-title {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 20px; font-weight: 900;
-  color: var(--accent-orange); letter-spacing: 2px; margin-bottom: 6px;
-}
-.brand-subtitle { font-size: 12px; color: var(--text-muted); margin-bottom: 18px; letter-spacing: 1px; }
-.brand-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.85; max-width: 580px; margin-bottom: 24px; }
-
-/* ═══════════════════ CONTACT ═══════════════════ */
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
-  gap: 10px;
-}
-.contact-item {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  padding: 15px 18px; text-decoration: none;
-  display: flex; align-items: center; gap: 12px;
-  transition: all 0.2s;
-}
-.contact-item:hover { border-color: var(--accent-cyan); background: var(--bg-raised); }
-.contact-icon { font-size: 18px; flex-shrink: 0; }
-.contact-label { font-size: 10px; color: var(--text-muted); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 3px; }
-.contact-val { font-size: 12px; color: var(--accent-cyan); }
-
-/* ═══════════════════ FOOTER ═══════════════════ */
-footer {
-  border-top: 1px solid var(--border-default);
-  padding-top: 28px;
-  display: flex; flex-wrap: wrap;
-  justify-content: space-between; align-items: center;
-  gap: 14px; font-size: 11px;
-  color: var(--text-muted); letter-spacing: 1px;
-}
-footer a { color: var(--accent-orange); text-decoration: none; }
-footer a:hover { color: var(--accent-cyan); }
-.footer-status { color: var(--accent-green); font-size: 10px; letter-spacing: 2px; }
-
-/* ═══════════════════ FADE IN ═══════════════════ */
-.fade-in {
-  opacity: 0; transform: translateY(18px);
-  animation: fadeUp 0.55s ease forwards;
-}
-@keyframes fadeUp { to { opacity:1; transform:none; } }
-.fade-in:nth-child(1){animation-delay:.05s}
-.fade-in:nth-child(2){animation-delay:.15s}
-.fade-in:nth-child(3){animation-delay:.25s}
-.fade-in:nth-child(4){animation-delay:.35s}
-.fade-in:nth-child(5){animation-delay:.45s}
-
-/* ═══════════════════ RESPONSIVE ═══════════════════ */
-@media (max-width: 600px) {
-  .nav-links { display: none; }
-  .hero { padding: 44px 0 32px; }
-  .status-bar { grid-template-columns: 1fr 1fr; }
-  .exp-date { margin-left: 0; width: 100%; }
-  .terminal { font-size: 11px; padding: 16px; }
-  .brand-block { padding: 22px; }
-}
-</style>
+    /* ── RESPONSIVE ──────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .hero { grid-template-columns: 1fr; padding: 6rem 2rem 3rem; gap: 2.5rem; }
+      .hero-right { display: none; }
+      .darkfire-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .exp-item { grid-template-columns: 1fr; gap: 0.75rem; }
+      .exp-meta { display: flex; gap: 1.5rem; align-items: center; }
+      .hero-name { font-size: 2.4rem; }
+      section { padding: 3.5rem 0; }
+      .sites-intro { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 500px) {
+      nav { padding: 0 1rem; }
+      .container { padding: 0 1.25rem; }
+      .hero { padding: 5.5rem 1.25rem 2.5rem; }
+      .hero-name { font-size: 2rem; }
+    }
+  </style>
 </head>
 <body>
 
-<div class="scanline"></div>
-<div class="noise"></div>
-
-<!-- NAV -->
-<nav>
-  <div class="nav-brand">
-    <!-- Inline favicon in nav for brand consistency -->
-    <svg class="nav-favicon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="16" cy="16" r="16" fill="#040810"/>
-      <polygon points="16,2 27,8.5 27,23.5 16,30 5,23.5 5,8.5" fill="none" stroke="#00d4e8" stroke-width="1.2" opacity="0.6"/>
-      <path d="M16 6 L24 9.5 L24 17 C24 21.5 20.5 24.8 16 26.5 C11.5 24.8 8 21.5 8 17 L8 9.5 Z" fill="#0d1829" stroke="#00d4e8" stroke-width="1"/>
-      <path d="M16 22 C13 22 11 19.5 11 17 C11 15 12 14 13 13 C13 15 14 15.5 14.5 15 C14.5 13 15 11 16 9.5 C17 11 17 13.5 18.5 13.5 C18.5 12.5 19 12 19.5 11.5 C20.5 13 21 15 21 17 C21 19.5 19 22 16 22 Z" fill="#ff8c00"/>
-      <path d="M16 21 C14.5 21 13.5 19.5 13.5 18 C13.5 16.5 14.5 15.5 15 15 C15 16 15.5 16.5 16 16 C16.5 15.5 17 15 17 13.5 C17.5 14.5 18.5 16 18.5 18 C18.5 19.5 17.5 21 16 21 Z" fill="#00d4e8"/>
-      <ellipse cx="16" cy="18.5" rx="1.2" ry="1.8" fill="white" opacity="0.7"/>
-    </svg>
-    <div class="nav-logo">CC<span>_</span>SEC</div>
-  </div>
-  <ul class="nav-links">
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#certs">Certs</a></li>
-    <li><a href="#darkfire">Dark Fire</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-  <div class="theme-toggle" onclick="toggleTheme()" role="button" aria-label="Toggle color theme">
-    <span class="toggle-mode-label" id="toggle-label">LIGHT</span>
-    <div class="toggle-pill">
-      <span class="toggle-icon moon">🌙</span>
-      <span class="toggle-icon sun">☀️</span>
-      <div class="toggle-dot" id="toggle-dot"></div>
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">CC_SEC</div>
+    <div class="nav-links">
+      <a href="#experience">Experience</a>
+      <a href="#sites">Sites Built</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#certs">Certs</a>
+      <a href="#darkfire">Dark Fire</a>
+      <a href="#contact">Contact</a>
     </div>
-  </div>
-</nav>
+    <div class="nav-right">
+      <button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">◑</button>
+      <a href="mailto:thechancecummings@gmail.com?subject=Interview%20Request" class="nav-cta">Hire Me</a>
+      <button class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
-<div class="wrapper">
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#experience" onclick="toggleMenu()">Experience</a>
+    <a href="#sites" onclick="toggleMenu()">Sites Built</a>
+    <a href="#projects" onclick="toggleMenu()">Projects</a>
+    <a href="#skills" onclick="toggleMenu()">Skills</a>
+    <a href="#certs" onclick="toggleMenu()">Certs</a>
+    <a href="#darkfire" onclick="toggleMenu()">Dark Fire</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+  </div>
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="fade-in">
-      <div class="hero-tag">IT Field Technician · Cybersecurity Professional</div>
-    </div>
-    <div class="fade-in">
-      <h1>Chance<br><span class="accent">Cummings</span></h1>
-    </div>
-    <div class="fade-in">
-      <p class="hero-subtitle">
-        <span class="role">IT Field Service Technician</span>&nbsp;&nbsp;@&nbsp;&nbsp;<span class="org">Vanderbilt University Medical Center</span>
-      </p>
-    </div>
-    <div class="fade-in">
-      <p class="hero-desc">
-        Healthcare IT professional specializing in enterprise endpoint deployment, MDM, and VDI infrastructure — actively transitioning into cybersecurity. Building Dark Fire Security to help small businesses and healthcare orgs defend their digital perimeter. CompTIA A+ &amp; Network+ certified. Security+ in progress.
-      </p>
-    </div>
-    <div class="fade-in">
-      <div class="hero-meta">
-        <span><span class="pulse-dot"></span> Nashville / Middle Tennessee</span>
-        <span>📡 VUMC Expansion Project — Active</span>
-        <span>🎓 B.S. Cybersecurity — WGU (In Progress)</span>
+  <section class="hero" style="padding-top: calc(58px + 3rem);">
+    <div class="hero-left reveal">
+      <div class="hero-eyebrow">
+        <span class="status-dot"></span>
+        Open to Opportunities · Nashville, TN
       </div>
+      <h1 class="hero-name">Chance<br><span>Cummings</span></h1>
+      <p class="hero-title">
+        <strong>IT Field Service Technician (CTG)</strong> · Vanderbilt University Medical Center
+      </p>
+      <p class="hero-desc">
+        Healthcare IT professional specializing in enterprise endpoint deployment, MDM, and VDI infrastructure — actively transitioning into cybersecurity. Founder of Dark Fire Security. CompTIA A+, Network+ certified. Security+ in progress.
+      </p>
       <div class="hero-actions">
-        <a href="assets/Chance_Cummings_Resume.pdf" class="btn btn-primary" download>⬇ Resume PDF</a>
-        <a href="assets/Cybersecurity Essentials for Small Businesses.pdf" class="btn btn-brand" download>📘 Free eBook</a>
-        <a href="mailto:thechancecummings@gmail.com?subject=Interview%20Request" class="btn btn-secondary">✉ Email Me</a>
+        <a href="assets/Chance_Cummings_Resume.pdf" class="btn-primary" download>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Resume PDF
+        </a>
+        <a href="assets/Cybersecurity Essentials for Small Businesses.pdf" class="btn-ghost" download>
+          Free eBook
+        </a>
+        <a href="mailto:thechancecummings@gmail.com?subject=Interview%20Request" class="btn-ghost">
+          Email Me
+        </a>
+      </div>
+      <div class="hero-badges">
+        <span class="badge active">CompTIA A+</span>
+        <span class="badge active">Network+</span>
+        <span class="badge progress">Security+ (In Progress)</span>
+        <span class="badge">WGU B.S. Cybersecurity</span>
+        <span class="badge">Dark Fire Security</span>
+      </div>
+    </div>
+
+    <div class="hero-right reveal" style="transition-delay:0.15s">
+      <div class="terminal">
+        <div class="terminal-bar">
+          <div class="dot dot-red"></div>
+          <div class="dot dot-amber"></div>
+          <div class="dot dot-green"></div>
+          <span class="terminal-label">bash — chance@darkfire</span>
+        </div>
+        <div class="terminal-body">
+          <div><span class="t-prompt">chance@darkfire</span><span class="t-cmd">:~$</span> whoami --verbose</div>
+          <div>&nbsp;</div>
+          <div><span class="t-key">name</span><span class="t-arrow">→</span><span class="t-val">Chance Cummings</span></div>
+          <div><span class="t-key">role</span><span class="t-arrow">→</span><span class="t-val">IT Field Tech (CTG) @ VUMC</span></div>
+          <div><span class="t-key">location</span><span class="t-arrow">→</span><span class="t-val">Nashville, TN</span></div>
+          <div><span class="t-key">stack</span><span class="t-arrow">→</span><span class="t-val">Intune · VMware Horizon · PS · AD</span></div>
+          <div><span class="t-key">certs</span><span class="t-arrow">→</span><span class="t-val">A+ · Network+</span> <span class="t-amber">| Security+ [WIP]</span></div>
+          <div><span class="t-key">brand</span><span class="t-arrow">→</span><span class="t-val">Dark Fire Security</span></div>
+          <div><span class="t-key">degree</span><span class="t-arrow">→</span><span class="t-amber">B.S. Cybersecurity — WGU</span></div>
+          <div><span class="t-key">status</span><span class="t-arrow">→</span><span class="t-green">AVAILABLE FOR OPPORTUNITIES</span></div>
+          <div>&nbsp;</div>
+          <div><span class="t-prompt">chance@darkfire</span><span class="t-cmd">:~$</span> <span class="t-cursor"></span></div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- STATUS BAR -->
-  <div class="status-bar">
-    <div class="status-item">
-      <div class="status-label">Current Role</div>
-      <div class="status-value" style="font-size:12px;">IT Field Tech</div>
-      <div class="status-sub">Vanderbilt University Medical Center</div>
-    </div>
-    <div class="status-item">
-      <div class="status-label">Certifications</div>
-      <div class="status-value">A+ · Net+</div>
-      <div class="status-sub">Security+ — In Progress</div>
-    </div>
-    <div class="status-item">
-      <div class="status-label">Security Brand</div>
-      <div class="status-value orange" style="font-size:12px;">Dark Fire</div>
-      <div class="status-sub">darkfiresecurity.com</div>
-    </div>
-    <div class="status-item">
-      <div class="status-label">Degree</div>
-      <div class="status-value" style="font-size:12px;">B.S. CyberSec</div>
-      <div class="status-sub">WGU — In Progress</div>
-    </div>
-  </div>
-
-  <!-- TERMINAL -->
-  <div class="terminal">
-    <div class="terminal-bar">
-      <div class="td td-r"></div>
-      <div class="td td-y"></div>
-      <div class="td td-g"></div>
-    </div>
-    <div><span class="t-prompt">chance@darkfire</span><span class="t-cmd">:~$ whoami --verbose</span></div>
-    <div><span class="t-key">name     </span><span class="t-cmd"> → </span><span class="t-val">Chance Cummings</span></div>
-    <div><span class="t-key">role     </span><span class="t-cmd"> → </span><span class="t-val">IT Field Service Technician @ VUMC</span></div>
-    <div><span class="t-key">location </span><span class="t-cmd"> → </span><span class="t-val">Nashville, TN</span></div>
-    <div><span class="t-key">stack    </span><span class="t-cmd"> → </span><span class="t-val">Intune MDM · VMware Horizon VDI · PowerShell · Active Directory</span></div>
-    <div><span class="t-key">certs    </span><span class="t-cmd"> → </span><span class="t-val">CompTIA A+, Network+</span><span class="t-cmd"> | </span><span class="t-flag">Security+ [IN PROGRESS]</span></div>
-    <div><span class="t-key">brand    </span><span class="t-cmd"> → </span><span class="t-flag">Dark Fire Security</span><span class="t-val"> — Cybersecurity Consulting</span></div>
-    <div><span class="t-key">status   </span><span class="t-cmd"> → </span><span class="t-live">AVAILABLE FOR OPPORTUNITIES ●</span></div>
-  </div>
+  <hr class="divider" />
 
   <!-- EXPERIENCE -->
   <section id="experience">
-    <div class="section-header">
-      <span class="section-label">Experience</span>
-      <div class="section-line"></div>
-      <span class="section-num">01</span>
-    </div>
-    <div class="timeline">
+    <div class="container">
+      <div class="section-tag">01 / Experience</div>
+      <h2 class="section-title">Where I've worked</h2>
+      <p class="section-sub">Field-tested across healthcare IT, logistics, retail, and my own ventures.</p>
 
-      <div class="exp-card current">
-        <div class="exp-header">
-          <span class="exp-title">IT Field Service Technician</span>
-          <span class="exp-org">Vanderbilt University Medical Center</span>
-          <span class="exp-date">2024 – Present</span>
+      <div class="exp-list">
+
+        <div class="exp-item reveal">
+          <div class="exp-meta">
+            <div class="exp-num">01</div>
+            <div class="exp-period">2024 – Present</div>
+            <div class="exp-location">Nashville, TN</div>
+          </div>
+          <div class="exp-content">
+            <div class="exp-role">IT Field Service Technician</div>
+            <div class="exp-company">Vanderbilt University Medical Center</div>
+            <div class="exp-subtitle">CTG (Clinical Technology Group) Contract · Healthcare Enterprise IT · HIPAA Environment</div>
+            <ul class="exp-bullets">
+              <li>Provision and deploy iOS devices at scale via <strong>Microsoft Intune MDM</strong> and <strong>Apple Business Manager</strong> across clinical and administrative floors.</li>
+              <li>Deploy and configure <strong>VMware Horizon VDI</strong> thin client workstations supporting multi-floor infrastructure expansion.</li>
+              <li>Manage hardware asset lifecycle records within <strong>Pegasus CI</strong> and enterprise ITSM via <strong>ServiceNow</strong>.</li>
+              <li>Execute <strong>PowerShell</strong> scripts for network configuration, device enrollment validation, and endpoint diagnostics.</li>
+              <li>Support HIPAA-compliant workflows — applying field-level security practices in a regulated healthcare environment.</li>
+              <li>Primary technician on large-scale multi-floor infrastructure expansion — staging, cabling verification, go-live support.</li>
+            </ul>
+          </div>
         </div>
-        <div class="exp-loc">📍 Nashville, TN &nbsp;·&nbsp; Healthcare Enterprise IT · HIPAA Environment</div>
-        <ul class="exp-bullets">
-          <li>Provision and deploy iOS devices at scale via <strong>Microsoft Intune MDM</strong> across clinical and administrative floors.</li>
-          <li>Deploy and configure <strong>VMware Horizon VDI</strong> thin client workstations supporting multi-floor expansion project.</li>
-          <li>Manage hardware asset records and lifecycle documentation within enterprise ITSM systems.</li>
-          <li>Execute <strong>PowerShell</strong> scripts for network config, device enrollment validation, and endpoint diagnostics.</li>
-          <li>Support HIPAA-compliant workflows — applying field-level security practices in a regulated healthcare environment.</li>
-          <li>Primary technician on large-scale multi-floor infrastructure expansion — staging, cabling verification, go-live support.</li>
-        </ul>
-      </div>
 
-      <div class="exp-card">
-        <div class="exp-header">
-          <span class="exp-title">IT Technician (Contract)</span>
-          <span class="exp-org">Pawn Shop Operations</span>
-          <span class="exp-date">2024 – Present</span>
+        <div class="exp-item reveal">
+          <div class="exp-meta">
+            <div class="exp-num">02</div>
+            <div class="exp-period">2024 – Present</div>
+            <div class="exp-location">Ashland City, TN</div>
+          </div>
+          <div class="exp-content">
+            <div class="exp-role">IT Technician (Contract)</div>
+            <div class="exp-company">A1 Pawn Shop</div>
+            <div class="exp-subtitle">Break-Fix · Retail IT · Data Management</div>
+            <ul class="exp-bullets">
+              <li>Diagnosed and repaired laptops/desktops with boot failures, OS corruption, and hardware faults.</li>
+              <li>Executed secure data destruction using <strong>ShredOS</strong> with verification certificates and chain-of-custody documentation.</li>
+              <li>Reimaged systems for resale and provided pre-sale usability validation.</li>
+              <li>Built a custom <strong>analytics dashboard</strong> for pawnshop inventory and sales data.</li>
+            </ul>
+          </div>
         </div>
-        <div class="exp-loc">📍 Ashland City, TN &nbsp;·&nbsp; Break-Fix · Retail IT</div>
-        <ul class="exp-bullets">
-          <li>Diagnosed and repaired laptops/desktops with boot failures, OS corruption, and hardware faults.</li>
-          <li>Performed clean Windows installs, recovery environment troubleshooting, and OS resets.</li>
-          <li>Executed secure data destruction using <strong>ShredOS</strong> with verification certificates and chain-of-custody docs.</li>
-          <li>Reimaged systems for resale and provided pre-sale usability validation.</li>
-        </ul>
-      </div>
 
-      <div class="exp-card">
-        <div class="exp-header">
-          <span class="exp-title">Owner / Operator</span>
-          <span class="exp-org">Double C Solutions, LLC</span>
-          <span class="exp-date">2023 – Present</span>
+        <div class="exp-item reveal">
+          <div class="exp-meta">
+            <div class="exp-num">03</div>
+            <div class="exp-period">2023 – Present</div>
+            <div class="exp-location">Ashland City, TN</div>
+          </div>
+          <div class="exp-content">
+            <div class="exp-role">Owner / Operator</div>
+            <div class="exp-company">Double C Solutions, LLC</div>
+            <div class="exp-subtitle">Small Business IT · Website Flipping · Client Services</div>
+            <ul class="exp-bullets">
+              <li>Built and deployed professional websites for local tradespeople and small businesses across Middle Tennessee using a Claude → GitHub → Vercel pipeline.</li>
+              <li>Managed scheduling, invoicing, client communication, and service delivery alongside full-time employment.</li>
+            </ul>
+          </div>
         </div>
-        <div class="exp-loc">📍 Ashland City, TN &nbsp;·&nbsp; Small Business IT & Services</div>
-        <ul class="exp-bullets">
-          <li>Run scheduling, invoicing, client communication, and service delivery alongside full-time employment.</li>
-          <li>Manage business technology including email systems, website tools, and IT troubleshooting for clients.</li>
-        </ul>
-      </div>
 
-      <div class="exp-card">
-        <div class="exp-header">
-          <span class="exp-title">Sales Assistant</span>
-          <span class="exp-org">A1 Pawn</span>
-          <span class="exp-date">Present</span>
+        <div class="exp-item reveal">
+          <div class="exp-meta">
+            <div class="exp-num">04</div>
+            <div class="exp-period">Jul 2021 – 2023</div>
+            <div class="exp-location">Nashville, TN</div>
+          </div>
+          <div class="exp-content">
+            <div class="exp-role">Feeder Operator / CDL Driver</div>
+            <div class="exp-company">UPS</div>
+            <div class="exp-subtitle">CDL Class A · Commercial Logistics</div>
+            <ul class="exp-bullets">
+              <li>Operated commercial vehicles in a high-pressure logistics environment with a strong safety record.</li>
+              <li>Coordinated with dispatch to meet strict deadlines in fast-paced hub operations.</li>
+            </ul>
+          </div>
         </div>
-        <div class="exp-loc">📍 Springfield, TN</div>
-        <ul class="exp-bullets">
-          <li>Facilitate high-volume sales, loans, and financial transactions with focus on data accuracy.</li>
-          <li>Manage social media and digital presence — contributed to county "Top Pawn Shop" award multiple years running.</li>
-        </ul>
-      </div>
 
-      <div class="exp-card">
-        <div class="exp-header">
-          <span class="exp-title">Feeder Operator / CDL Driver</span>
-          <span class="exp-org">UPS</span>
-          <span class="exp-date">Jul 2021 – 2023</span>
-        </div>
-        <div class="exp-loc">📍 Nashville, TN</div>
-        <ul class="exp-bullets">
-          <li>Operated commercial vehicles in high-pressure logistics environment with strong safety record.</li>
-          <li>Coordinated with dispatch to meet strict deadlines in fast-paced hub operations.</li>
-        </ul>
       </div>
-
     </div>
   </section>
 
-  <!-- PROJECTS -->
+  <hr class="divider" />
+
+  <!-- SITES BUILT SHOWCASE -->
+  <section id="sites">
+    <div class="container">
+      <div class="sites-intro">
+        <div>
+          <div class="section-tag">02 / Sites Built</div>
+          <h2 class="section-title">I build things that ship</h2>
+          <p class="section-sub">Real sites and tools deployed for real clients — plus my own brands. Claude → GitHub → Vercel pipeline.</p>
+        </div>
+      </div>
+
+      <div class="sites-grid">
+
+        <div class="site-card reveal" onmousemove="spotlight(event,this)">
+          <div class="site-category">Personal Brand</div>
+          <div class="site-icon">🔥</div>
+          <div class="site-name">Dark Fire Security</div>
+          <div class="site-desc">Cybersecurity consulting brand site — contact form, branded tools, ebook download, and service pages targeting small businesses and tradespeople in Middle Tennessee.</div>
+          <div class="site-stack">
+            <span class="tag">HTML/CSS/JS</span><span class="tag">Formspree</span><span class="tag">GitHub Pages</span>
+          </div>
+          <a href="https://darkfiresecurity.com" class="site-link" target="_blank" rel="noopener">
+            darkfiresecurity.com <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+
+        <div class="site-card reveal" onmousemove="spotlight(event,this)">
+          <div class="site-category">Personal Portfolio</div>
+          <div class="site-icon">👤</div>
+          <div class="site-name">chancecummings.com</div>
+          <div class="site-desc">This site — a full resume/portfolio page with terminal aesthetics, dark/light mode, project showcase, cert tracking, and contact info. Built and maintained personally.</div>
+          <div class="site-stack">
+            <span class="tag">HTML/CSS/JS</span><span class="tag">Vercel</span><span class="tag">Custom Design</span>
+          </div>
+          <a href="https://chancecummings.com" class="site-link" target="_blank" rel="noopener">
+            chancecummings.com <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+
+        <div class="site-card reveal" onmousemove="spotlight(event,this)">
+          <div class="site-category">Client · Construction</div>
+          <div class="site-icon">🏗️</div>
+          <div class="site-name">Wade King Construction</div>
+          <div class="site-desc">Professional website for a local construction company — service pages, project gallery, and contact info. Part of a website-flipping project targeting Middle Tennessee tradespeople.</div>
+          <div class="site-stack">
+            <span class="tag">HTML/CSS/JS</span><span class="tag">Vercel</span><span class="tag">GitHub</span>
+          </div>
+          <a href="#" class="site-link">
+            Live Site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+
+        <div class="site-card reveal" onmousemove="spotlight(event,this)">
+          <div class="site-category">Client · Retail IT</div>
+          <div class="site-icon">📊</div>
+          <div class="site-name">A1 Pawn Shop Analytics</div>
+          <div class="site-desc">Custom data analytics dashboard built for A1 Pawn Shop — inventory tracking, sales data visualization, and business intelligence for a retail pawnshop operation.</div>
+          <div class="site-stack">
+            <span class="tag">React</span><span class="tag">Chart.js</span><span class="tag">Vercel</span>
+          </div>
+          <a href="#" class="site-link">
+            Internal Tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+
+        <div class="site-card reveal" onmousemove="spotlight(event,this)">
+          <div class="site-category">Client · Trade</div>
+          <div class="site-icon">⚡</div>
+          <div class="site-name">Sunshine Electric LLC</div>
+          <div class="site-desc">Professional landing page for a local electrical contractor — service list, service area, licensing info, and a contact form for job quote requests.</div>
+          <div class="site-stack">
+            <span class="tag">HTML/CSS/JS</span><span class="tag">Formspree</span><span class="tag">Vercel</span>
+          </div>
+          <a href="#" class="site-link">
+            Live Site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+
+        <div class="site-card reveal" onmousemove="spotlight(event,this)">
+          <div class="site-category">Client · Trade</div>
+          <div class="site-icon">🔧</div>
+          <div class="site-name">Defiant Machine Works</div>
+          <div class="site-desc">Brand site for a local machining and fabrication shop — capabilities overview, work examples, and contact capture. Dark industrial aesthetic matching their trade.</div>
+          <div class="site-stack">
+            <span class="tag">HTML/CSS/JS</span><span class="tag">GitHub Pages</span><span class="tag">Custom Design</span>
+          </div>
+          <a href="#" class="site-link">
+            Live Site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+
+        <div class="site-card reveal" onmousemove="spotlight(event,this)">
+          <div class="site-category">Client · Trade</div>
+          <div class="site-icon">🚿</div>
+          <div class="site-name">Beyond Drain Solutions</div>
+          <div class="site-desc">Service page for a plumbing/drain contractor — service list, service areas, before/after gallery, and lead capture form. Ranks locally for drain service searches.</div>
+          <div class="site-stack">
+            <span class="tag">HTML/CSS/JS</span><span class="tag">Vercel</span><span class="tag">SEO</span>
+          </div>
+          <a href="#" class="site-link">
+            Live Site <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+
+        <div class="site-card reveal" onmousemove="spotlight(event,this)">
+          <div class="site-category">Healthcare IT Tool</div>
+          <div class="site-icon">🏥</div>
+          <div class="site-name">WingTech Ops Academy</div>
+          <div class="site-desc">Interactive training platform for hospital IT field technicians — modules covering MDM provisioning, VDI deployment, HIPAA awareness, and ServiceNow ticketing workflows.</div>
+          <div class="site-stack">
+            <span class="tag">HTML/CSS/JS</span><span class="tag">Interactive</span><span class="tag">Training</span>
+          </div>
+          <a href="#" class="site-link">
+            View Project <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- SECURITY TOOLS / PROJECTS -->
   <section id="projects">
-    <div class="section-header">
-      <span class="section-label">Projects & Tools</span>
-      <div class="section-line"></div>
-      <span class="section-num">02</span>
-    </div>
-    <div class="projects-grid">
-      <div class="proj-card">
-        <div class="proj-icon">🛡️</div>
-        <div class="proj-name">SENTINEL SOC Dashboard</div>
-        <div class="proj-desc">Dark-themed network threat intelligence dashboard simulating real SOC workflows — live threat feeds, alert triage, and incident tracking.</div>
-        <div class="proj-tags"><span class="tag cyan">SOC</span><span class="tag green">Threat Intel</span><span class="tag">HTML/JS</span></div>
-        <a href="https://darkfiresecurity.com" class="proj-link" target="_blank">Live Demo</a>
-      </div>
-      <div class="proj-card">
-        <div class="proj-icon">🎣</div>
-        <div class="proj-name">PhishGuard Elite</div>
-        <div class="proj-desc">Email triage simulator for training phishing recognition and SOC-style classification decisions. Interactive scenarios with scoring.</div>
-        <div class="proj-tags"><span class="tag cyan">Security Awareness</span><span class="tag orange">Training</span></div>
-        <a href="https://phishguard-elite-immersive-cyber-awareness-traini-293799863337.us-west1.run.app" class="proj-link" target="_blank">Open Tool</a>
-      </div>
-      <div class="proj-card">
-        <div class="proj-icon">⚗️</div>
-        <div class="proj-name">DarkChef</div>
-        <div class="proj-desc">CyberChef-style browser-based data transformation toolkit for encoding, decoding, and IR-style data manipulation workflows.</div>
-        <div class="proj-tags"><span class="tag cyan">DFIR</span><span class="tag green">Data Transform</span></div>
-        <a href="https://darkchef-professional-data-alchemy-1044572571760.us-west1.run.app" class="proj-link" target="_blank">Open Tool</a>
-      </div>
-      <div class="proj-card">
-        <div class="proj-icon">📊</div>
-        <div class="proj-name">Small Business Risk Report</div>
-        <div class="proj-desc">Client intake + risk scoring flow outputting structured security posture summaries for small businesses. Designed for non-technical stakeholders.</div>
-        <div class="proj-tags"><span class="tag orange">Consulting</span><span class="tag">Risk Assessment</span></div>
-        <a href="https://small-business-security-intake-risk-report-293799863337.us-west1.run.app" class="proj-link" target="_blank">Open Tool</a>
-      </div>
-      <div class="proj-card">
-        <div class="proj-icon">🌐</div>
-        <div class="proj-name">NetProbe — IP Inspector</div>
-        <div class="proj-desc">Privacy-first public IP inspector built in Next.js. Displays network intelligence without logging or tracking visitors.</div>
-        <div class="proj-tags"><span class="tag cyan">Privacy</span><span class="tag green">Next.js</span><span class="tag">Vercel</span></div>
-        <a href="https://darkfiresecurity.com" class="proj-link" target="_blank">View Project</a>
-      </div>
-      <div class="proj-card">
-        <div class="proj-icon">🐍</div>
-        <div class="proj-name">PyForge AI Sandbox</div>
-        <div class="proj-desc">Cloud-hosted Python execution environment for safe scripting labs, security automation prototyping, and quick experiments.</div>
-        <div class="proj-tags"><span class="tag green">Python</span><span class="tag">Cloud Run</span><span class="tag">Automation</span></div>
-        <a href="https://pyforge-ai-advanced-python-sandbox-810187719410.us-west1.run.app/" class="proj-link" target="_blank">Open Tool</a>
-      </div>
-      <div class="proj-card">
-        <div class="proj-icon">🏥</div>
-        <div class="proj-name">WingTech Ops Academy</div>
-        <div class="proj-desc">Hospital IT field technician training platform — interactive modules covering MDM, VDI deployment, and HIPAA-relevant procedures.</div>
-        <div class="proj-tags"><span class="tag cyan">Healthcare IT</span><span class="tag orange">Training</span></div>
-        <a href="#" class="proj-link">View Project</a>
-      </div>
-      <div class="proj-card">
-        <div class="proj-icon">🏗️</div>
-        <div class="proj-name">Wade King Construction</div>
-        <div class="proj-desc">Professional website for a local construction company — part of a website-flipping project targeting local tradespeople in Middle Tennessee.</div>
-        <div class="proj-tags"><span class="tag green">Web Dev</span><span class="tag">Local Business</span><span class="tag">Vercel</span></div>
-        <a href="#" class="proj-link">View Site</a>
+    <div class="container">
+      <div class="section-tag">03 / Projects &amp; Tools</div>
+      <h2 class="section-title">Security tools I've shipped</h2>
+      <p class="section-sub">Dark Fire branded cybersecurity tools — SOC workflows, training simulations, and research.</p>
+
+      <div class="projects-grid">
+
+        <div class="project-card reveal">
+          <div class="project-header">
+            <div class="project-name">SENTINEL SOC Dashboard</div>
+            <div class="project-badge">SOC</div>
+          </div>
+          <div class="project-desc">Dark-themed network threat intelligence dashboard simulating real SOC workflows — live threat feeds, alert triage, and incident tracking.</div>
+          <div class="project-tags">
+            <span class="tag">SOC</span><span class="tag">Threat Intel</span><span class="tag">HTML/JS</span>
+          </div>
+          <a href="https://darkfiresecurity.com" class="project-link" target="_blank" rel="noopener">Live Demo →</a>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-header">
+            <div class="project-name">PhishGuard Elite</div>
+            <div class="project-badge">Training</div>
+          </div>
+          <div class="project-desc">Email triage simulator for training phishing recognition and SOC-style classification decisions. Interactive scenarios with scoring.</div>
+          <div class="project-tags">
+            <span class="tag">Security Awareness</span><span class="tag">Training</span>
+          </div>
+          <a href="https://phishguard-elite-immersive-cyber-awareness-traini-293799863337.us-west1.run.app" class="project-link" target="_blank" rel="noopener">Open Tool →</a>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-header">
+            <div class="project-name">DarkChef</div>
+            <div class="project-badge">DFIR</div>
+          </div>
+          <div class="project-desc">CyberChef-style browser-based data transformation toolkit for encoding, decoding, and IR-style data manipulation workflows.</div>
+          <div class="project-tags">
+            <span class="tag">DFIR</span><span class="tag">Data Transform</span><span class="tag">Browser</span>
+          </div>
+          <a href="https://darkchef-professional-data-alchemy-1044572571760.us-west1.run.app" class="project-link" target="_blank" rel="noopener">Open Tool →</a>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-header">
+            <div class="project-name">Small Business Risk Report</div>
+            <div class="project-badge">Consulting</div>
+          </div>
+          <div class="project-desc">Client intake and risk scoring flow outputting structured security posture summaries for small businesses. Designed for non-technical stakeholders.</div>
+          <div class="project-tags">
+            <span class="tag">Consulting</span><span class="tag">Risk Assessment</span>
+          </div>
+          <a href="https://small-business-security-intake-risk-report-293799863337.us-west1.run.app" class="project-link" target="_blank" rel="noopener">Open Tool →</a>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-header">
+            <div class="project-name">Zero-Trust Proximity Protocol</div>
+            <div class="project-badge">Research</div>
+          </div>
+          <div class="project-desc">Original security research addressing LAN discovery vulnerabilities — packaged as an RFC-style spec, SMB-accessible whitepaper, and interactive demo. GitHub portfolio and Dark Fire SENTINEL feature.</div>
+          <div class="project-tags">
+            <span class="tag">Research</span><span class="tag">Zero Trust</span><span class="tag">RFC-Style</span>
+          </div>
+          <a href="https://darkfiresecurity.com" class="project-link" target="_blank" rel="noopener">View Research →</a>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="project-header">
+            <div class="project-name">PyForge AI Sandbox</div>
+            <div class="project-badge">Lab</div>
+          </div>
+          <div class="project-desc">Cloud-hosted Python execution environment for safe scripting labs, security automation prototyping, and quick experiments.</div>
+          <div class="project-tags">
+            <span class="tag">Python</span><span class="tag">Cloud Run</span><span class="tag">Automation</span>
+          </div>
+          <a href="https://pyforge-ai-advanced-python-sandbox-810187719410.us-west1.run.app/" class="project-link" target="_blank" rel="noopener">Open Sandbox →</a>
+        </div>
+
       </div>
     </div>
   </section>
+
+  <hr class="divider" />
 
   <!-- DARK FIRE -->
   <section id="darkfire">
-    <div class="section-header">
-      <span class="section-label">Dark Fire Security</span>
-      <div class="section-line"></div>
-      <span class="section-num">03</span>
-    </div>
-    <div class="brand-block">
-      <div class="brand-title">🔥 DARK FIRE SECURITY</div>
-      <div class="brand-subtitle">Cybersecurity Consulting · Small Business Defense · Security Awareness</div>
-      <p class="brand-desc">
-        Dark Fire Security is my cybersecurity consulting brand — built to help small businesses, healthcare organizations, and tradespeople defend against modern threats without enterprise-sized budgets. From security awareness training and phishing simulations to risk assessments and posture reviews, Dark Fire brings real security to the people who need it most.
-      </p>
-      <div style="display:flex;flex-wrap:wrap;gap:12px;">
-        <a href="https://darkfiresecurity.com" class="btn btn-brand" target="_blank">🔥 Visit darkfiresecurity.com</a>
-        <a href="assets/Cybersecurity Essentials for Small Businesses.pdf" class="btn btn-secondary" download>📘 Download Free eBook</a>
+    <div class="container">
+      <div class="section-tag">04 / Dark Fire Security</div>
+      <div class="darkfire-inner">
+        <div class="darkfire-content reveal">
+          <div class="darkfire-logo">DARK <span>FIRE</span></div>
+          <div style="font-size:0.75rem;font-family:var(--mono);color:var(--muted);letter-spacing:0.1em;margin-bottom:1.25rem;">Faith · Technology · Protection</div>
+          <p class="darkfire-desc">Cybersecurity consulting for small businesses, farms, and tradespeople in Middle Tennessee — real security without enterprise-sized budgets. From phishing simulations and risk assessments to posture reviews and security awareness training.</p>
+
+          <div class="darkfire-services">
+            <div class="df-service">
+              <div class="df-icon">🛡️</div>
+              <div>
+                <div class="df-service-name">Security Risk Assessments</div>
+                <div class="df-service-desc">Structured intake and posture scoring for small businesses — actionable reports, not jargon.</div>
+              </div>
+            </div>
+            <div class="df-service">
+              <div class="df-icon">🎣</div>
+              <div>
+                <div class="df-service-name">Phishing Simulations &amp; Training</div>
+                <div class="df-service-desc">Email triage training and awareness campaigns tailored to non-technical staff.</div>
+              </div>
+            </div>
+            <div class="df-service">
+              <div class="df-icon">📋</div>
+              <div>
+                <div class="df-service-name">Policy &amp; Compliance Guidance</div>
+                <div class="df-service-desc">HIPAA awareness, access controls, and basic security documentation for SMBs.</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+            <a href="https://darkfiresecurity.com" class="btn-primary" target="_blank" rel="noopener">Visit darkfiresecurity.com</a>
+            <a href="assets/Cybersecurity Essentials for Small Businesses.pdf" class="btn-ghost" download>Free eBook</a>
+          </div>
+        </div>
+
+        <div class="reveal" style="transition-delay:0.1s">
+          <div class="darkfire-stats">
+            <div class="df-stat">
+              <div class="df-stat-num">5+</div>
+              <div class="df-stat-label">Client Sites Deployed</div>
+            </div>
+            <div class="df-stat">
+              <div class="df-stat-num">6+</div>
+              <div class="df-stat-label">Security Tools Built</div>
+            </div>
+            <div class="df-stat">
+              <div class="df-stat-num">A+</div>
+              <div class="df-stat-label">CompTIA Certified</div>
+            </div>
+            <div class="df-stat">
+              <div class="df-stat-num">Net+</div>
+              <div class="df-stat-label">Network+ Certified</div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
+
+  <hr class="divider" />
 
   <!-- SKILLS -->
   <section id="skills">
-    <div class="section-header">
-      <span class="section-label">Technical Skills</span>
-      <div class="section-line"></div>
-      <span class="section-num">04</span>
-    </div>
-    <div class="skills-grid">
-      <div class="skill-block">
-        <div class="skill-block-title">Enterprise IT / MDM</div>
-        <div class="skill-list">
-          <span class="skill-pill">Microsoft Intune</span>
-          <span class="skill-pill">VMware Horizon VDI</span>
-          <span class="skill-pill">iOS Provisioning</span>
-          <span class="skill-pill">Thin Client Deploy</span>
-          <span class="skill-pill">Asset Management</span>
-          <span class="skill-pill">ITSM Ticketing</span>
+    <div class="container">
+      <div class="section-tag">05 / Technical Skills</div>
+      <h2 class="section-title">Stack &amp; tools</h2>
+      <p class="section-sub">Hands-on proficiency earned in the field, the lab, and client engagements.</p>
+
+      <div class="skills-grid">
+        <div class="skill-group reveal">
+          <div class="skill-group-name">Enterprise IT / MDM</div>
+          <div class="skill-pills">
+            <span class="skill-pill">Microsoft Intune</span>
+            <span class="skill-pill">Apple Business Manager</span>
+            <span class="skill-pill">VMware Horizon VDI</span>
+            <span class="skill-pill">iOS Provisioning</span>
+            <span class="skill-pill">Thin Client Deploy</span>
+            <span class="skill-pill">Pegasus CI</span>
+            <span class="skill-pill">ServiceNow</span>
+            <span class="skill-pill">Asset Management</span>
+          </div>
         </div>
-      </div>
-      <div class="skill-block">
-        <div class="skill-block-title">Networking</div>
-        <div class="skill-list">
-          <span class="skill-pill">TCP/IP</span>
-          <span class="skill-pill">DNS / DHCP</span>
-          <span class="skill-pill">VPN / WireGuard</span>
-          <span class="skill-pill">DNS-over-HTTPS</span>
-          <span class="skill-pill">Nmap / Recon</span>
-          <span class="skill-pill">OpenWrt</span>
+        <div class="skill-group reveal">
+          <div class="skill-group-name">Networking</div>
+          <div class="skill-pills">
+            <span class="skill-pill">TCP/IP</span>
+            <span class="skill-pill">DNS / DHCP</span>
+            <span class="skill-pill">VPN / WireGuard</span>
+            <span class="skill-pill">DNS-over-HTTPS</span>
+            <span class="skill-pill">Nmap / Recon</span>
+            <span class="skill-pill">OpenWrt</span>
+            <span class="skill-pill">GL.iNet WiFi 6</span>
+          </div>
         </div>
-      </div>
-      <div class="skill-block">
-        <div class="skill-block-title">Security</div>
-        <div class="skill-list">
-          <span class="skill-pill">IR Fundamentals</span>
-          <span class="skill-pill">Phishing Simulation</span>
-          <span class="skill-pill">Pi-hole / AdGuard</span>
-          <span class="skill-pill">Secure Data Destruction</span>
-          <span class="skill-pill">HIPAA Awareness</span>
-          <span class="skill-pill">Risk Assessment</span>
+        <div class="skill-group reveal">
+          <div class="skill-group-name">Security</div>
+          <div class="skill-pills">
+            <span class="skill-pill">IR Fundamentals</span>
+            <span class="skill-pill">Phishing Simulation</span>
+            <span class="skill-pill">Pi-hole / AdGuard</span>
+            <span class="skill-pill">Secure Data Destruction</span>
+            <span class="skill-pill">HIPAA Awareness</span>
+            <span class="skill-pill">Risk Assessment</span>
+            <span class="skill-pill">Zero Trust</span>
+          </div>
         </div>
-      </div>
-      <div class="skill-block">
-        <div class="skill-block-title">Systems & Tools</div>
-        <div class="skill-list">
-          <span class="skill-pill">Windows 10/11</span>
-          <span class="skill-pill">Linux (Ubuntu/Debian)</span>
-          <span class="skill-pill">Active Directory</span>
-          <span class="skill-pill">PowerShell</span>
-          <span class="skill-pill">VMware</span>
-          <span class="skill-pill">GitHub / VS Code</span>
+        <div class="skill-group reveal">
+          <div class="skill-group-name">Systems &amp; Tools</div>
+          <div class="skill-pills">
+            <span class="skill-pill">Windows 10/11</span>
+            <span class="skill-pill">Linux (Ubuntu/Debian)</span>
+            <span class="skill-pill">Active Directory</span>
+            <span class="skill-pill">PowerShell</span>
+            <span class="skill-pill">VMware</span>
+            <span class="skill-pill">GitHub / VS Code</span>
+          </div>
         </div>
-      </div>
-      <div class="skill-block">
-        <div class="skill-block-title">Web & Dev</div>
-        <div class="skill-list">
-          <span class="skill-pill">HTML / CSS / JS</span>
-          <span class="skill-pill">Next.js</span>
-          <span class="skill-pill">Python (Basics)</span>
-          <span class="skill-pill">Vercel Deploy</span>
-          <span class="skill-pill">GitHub Pages</span>
-          <span class="skill-pill">Google Cloud Run</span>
+        <div class="skill-group reveal">
+          <div class="skill-group-name">Web &amp; Dev</div>
+          <div class="skill-pills">
+            <span class="skill-pill">HTML / CSS / JS</span>
+            <span class="skill-pill">React / Next.js</span>
+            <span class="skill-pill">Python</span>
+            <span class="skill-pill">Vercel Deploy</span>
+            <span class="skill-pill">GitHub Pages</span>
+            <span class="skill-pill">Google Cloud Run</span>
+          </div>
         </div>
-      </div>
-      <div class="skill-block">
-        <div class="skill-block-title">Home Lab</div>
-        <div class="skill-list">
-          <span class="skill-pill">Dell Optiplex Lab</span>
-          <span class="skill-pill">GL.iNet WiFi 6</span>
-          <span class="skill-pill">OpenWrt Router</span>
-          <span class="skill-pill">ProtonVPN</span>
-          <span class="skill-pill">Pi-hole</span>
-          <span class="skill-pill">AdGuard Home</span>
+        <div class="skill-group reveal">
+          <div class="skill-group-name">Home Lab</div>
+          <div class="skill-pills">
+            <span class="skill-pill">Dell Optiplex Lab</span>
+            <span class="skill-pill">Jetson Orin Nano</span>
+            <span class="skill-pill">Tailscale Mesh</span>
+            <span class="skill-pill">Docker / Portainer</span>
+            <span class="skill-pill">Ollama / Open WebUI</span>
+            <span class="skill-pill">Kali Linux</span>
+            <span class="skill-pill">ProtonVPN</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
+
+  <hr class="divider" />
 
   <!-- CERTS -->
   <section id="certs">
-    <div class="section-header">
-      <span class="section-label">Certifications</span>
-      <div class="section-line"></div>
-      <span class="section-num">05</span>
-    </div>
-    <div class="certs-grid">
-      <div class="cert-card s-active">
-        <div class="cert-icon">🏅</div>
-        <div><div class="cert-name">CompTIA A+</div><div class="cert-meta">Valid 2024–2027</div></div>
-        <span class="cert-badge active">ACTIVE</span>
-      </div>
-      <div class="cert-card s-active">
-        <div class="cert-icon">🌐</div>
-        <div><div class="cert-name">CompTIA Network+</div><div class="cert-meta">Passed March 2025</div></div>
-        <span class="cert-badge active">ACTIVE</span>
-      </div>
-      <div class="cert-card s-progress">
-        <div class="cert-icon">🔐</div>
-        <div><div class="cert-name">CompTIA Security+ (SY0-701)</div><div class="cert-meta">Actively Studying</div></div>
-        <span class="cert-badge progress">IN PROGRESS</span>
-      </div>
-      <div class="cert-card s-active">
-        <div class="cert-icon">🎓</div>
-        <div><div class="cert-name">Google IT Support Pro</div><div class="cert-meta">2024</div></div>
-        <span class="cert-badge active">ACTIVE</span>
-      </div>
-      <div class="cert-card s-info">
-        <div class="cert-icon">🚛</div>
-        <div><div class="cert-name">CDL Class A</div><div class="cert-meta">Commercial Driver's License</div></div>
-        <span class="cert-badge info">ACTIVE</span>
-      </div>
-      <div class="cert-card s-active">
-        <div class="cert-icon">🌿</div>
-        <div><div class="cert-name">Certified Lawn Care Pro</div><div class="cert-meta">University of Tennessee · 2024–2026</div></div>
-        <span class="cert-badge active">ACTIVE</span>
-      </div>
-    </div>
-    <div class="edu-grid">
-      <div class="edu-card">
-        <div class="edu-label">Education</div>
-        <div class="edu-degree">B.S. Cybersecurity</div>
-        <div class="edu-school">Western Governors University &nbsp;·&nbsp; In Progress</div>
-      </div>
-      <div class="edu-card">
-        <div class="edu-label">Prior Education</div>
-        <div class="edu-degree">Agriculture Business Coursework</div>
-        <div class="edu-school">Austin Peay State University &nbsp;·&nbsp; 2015–2019</div>
+    <div class="container">
+      <div class="section-tag">06 / Certifications</div>
+      <h2 class="section-title">Credentials</h2>
+      <p class="section-sub">Active certifications and what's in progress.</p>
+
+      <div class="certs-grid reveal">
+
+        <div class="cert-card">
+          <div class="cert-icon active">🏅</div>
+          <div>
+            <div class="cert-name">CompTIA A+</div>
+            <div class="cert-detail">Valid 2024–2027</div>
+            <div class="cert-status active">ACTIVE</div>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-icon active">🌐</div>
+          <div>
+            <div class="cert-name">CompTIA Network+</div>
+            <div class="cert-detail">Passed March 2025 · Active</div>
+            <div class="cert-status active">ACTIVE</div>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-icon progress">🔐</div>
+          <div>
+            <div class="cert-name">CompTIA Security+ SY0-701</div>
+            <div class="cert-detail">Actively Studying</div>
+            <div class="cert-status progress">IN PROGRESS</div>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-icon active">🎓</div>
+          <div>
+            <div class="cert-name">Google IT Support Pro</div>
+            <div class="cert-detail">2024</div>
+            <div class="cert-status active">ACTIVE</div>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-icon other">🚛</div>
+          <div>
+            <div class="cert-name">CDL Class A</div>
+            <div class="cert-detail">Commercial Driver's License</div>
+            <div class="cert-status active">ACTIVE</div>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-icon other">🎓</div>
+          <div>
+            <div class="cert-name">B.S. Cybersecurity</div>
+            <div class="cert-detail">Western Governors University · In Progress</div>
+            <div class="cert-status progress">IN PROGRESS</div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
+
+  <hr class="divider" />
 
   <!-- CONTACT -->
   <section id="contact">
-    <div class="section-header">
-      <span class="section-label">Contact</span>
-      <div class="section-line"></div>
-      <span class="section-num">06</span>
-    </div>
-    <div class="contact-grid">
-      <a href="mailto:thechancecummings@gmail.com?subject=Interview%20Request" class="contact-item">
-        <span class="contact-icon">✉️</span>
-        <div><div class="contact-label">Email</div><div class="contact-val">thechancecummings@gmail.com</div></div>
-      </a>
-      <a href="tel:+16156931113" class="contact-item">
-        <span class="contact-icon">📞</span>
-        <div><div class="contact-label">Phone</div><div class="contact-val">615-693-1113</div></div>
-      </a>
-      <a href="https://github.com/jazzy216" class="contact-item" target="_blank">
-        <span class="contact-icon">🐙</span>
-        <div><div class="contact-label">GitHub</div><div class="contact-val">github.com/jazzy216</div></div>
-      </a>
-      <a href="https://linkedin.com/in/chance-cummings" class="contact-item" target="_blank">
-        <span class="contact-icon">💼</span>
-        <div><div class="contact-label">LinkedIn</div><div class="contact-val">linkedin.com/in/chance-cummings</div></div>
-      </a>
-      <a href="https://darkfiresecurity.com" class="contact-item" target="_blank">
-        <span class="contact-icon">🔥</span>
-        <div><div class="contact-label">Security Brand</div><div class="contact-val">darkfiresecurity.com</div></div>
-      </a>
-      <a href="assets/Chance_Cummings_Resume.pdf" class="contact-item" download>
-        <span class="contact-icon">📄</span>
-        <div><div class="contact-label">Resume</div><div class="contact-val">Download PDF</div></div>
-      </a>
+    <div class="container">
+      <div class="section-tag">07 / Contact</div>
+      <div class="contact-inner">
+        <div class="reveal">
+          <h2 class="contact-heading">Let's work<br><span>together.</span></h2>
+          <p class="contact-note">Open to IT roles, cybersecurity opportunities, SOC analyst positions, and consulting engagements across Nashville and Middle Tennessee.</p>
+          <div class="contact-links">
+            <a href="mailto:thechancecummings@gmail.com?subject=Interview%20Request" class="contact-link">
+              <div class="contact-link-icon">✉️</div>
+              <div class="contact-link-content">
+                <div class="contact-link-label">Email</div>
+                <div class="contact-link-val">thechancecummings@gmail.com</div>
+              </div>
+            </a>
+            <a href="tel:+16156931113" class="contact-link">
+              <div class="contact-link-icon">📞</div>
+              <div class="contact-link-content">
+                <div class="contact-link-label">Phone</div>
+                <div class="contact-link-val">615-693-1113</div>
+              </div>
+            </a>
+            <a href="https://github.com/jazzy216" class="contact-link" target="_blank" rel="noopener">
+              <div class="contact-link-icon">🐙</div>
+              <div class="contact-link-content">
+                <div class="contact-link-label">GitHub</div>
+                <div class="contact-link-val">github.com/jazzy216</div>
+              </div>
+            </a>
+            <a href="https://linkedin.com/in/chance-cummings" class="contact-link" target="_blank" rel="noopener">
+              <div class="contact-link-icon">💼</div>
+              <div class="contact-link-content">
+                <div class="contact-link-label">LinkedIn</div>
+                <div class="contact-link-val">linkedin.com/in/chance-cummings</div>
+              </div>
+            </a>
+            <a href="https://darkfiresecurity.com" class="contact-link" target="_blank" rel="noopener">
+              <div class="contact-link-icon">🔥</div>
+              <div class="contact-link-content">
+                <div class="contact-link-label">Security Brand</div>
+                <div class="contact-link-val">darkfiresecurity.com</div>
+              </div>
+            </a>
+            <a href="assets/Chance_Cummings_Resume.pdf" class="contact-link" download>
+              <div class="contact-link-icon">📄</div>
+              <div class="contact-link-content">
+                <div class="contact-link-label">Resume</div>
+                <div class="contact-link-val">Download PDF</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="reveal" style="transition-delay:0.1s">
+          <div class="availability-card">
+            <div class="availability-header">
+              <span class="status-dot"></span>
+              AVAILABLE FOR OPPORTUNITIES
+            </div>
+            <div class="availability-title">Actively seeking my next role</div>
+            <p class="availability-desc">Looking for SOC analyst, cybersecurity, or senior IT roles in the Nashville/Middle Tennessee area — or remote positions with strong security mission.</p>
+            <div class="availability-detail">
+              <div class="avail-row">
+                <span class="avail-key">Location</span>
+                <span class="avail-val">Nashville, TN</span>
+              </div>
+              <div class="avail-row">
+                <span class="avail-key">Current Role</span>
+                <span class="avail-val">IT Field Tech (CTG) · VUMC</span>
+              </div>
+              <div class="avail-row">
+                <span class="avail-key">Certs</span>
+                <span class="avail-val">A+ · Network+</span>
+              </div>
+              <div class="avail-row">
+                <span class="avail-key">In Progress</span>
+                <span class="avail-val">Security+ · WGU B.S.</span>
+              </div>
+              <div class="avail-row">
+                <span class="avail-key">Open To</span>
+                <span class="avail-val">SOC · Security · IT Mgmt</span>
+              </div>
+            </div>
+            <a href="mailto:thechancecummings@gmail.com?subject=Interview%20Request" class="btn-primary" style="width:100%;justify-content:center;">
+              Send Interview Request
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-</div>
-
-<!-- FOOTER -->
-<div class="wrapper" style="padding-top:0;">
   <footer>
-    <span>© Chance Cummings &nbsp;·&nbsp; Nashville, TN &nbsp;·&nbsp; <a href="https://darkfiresecurity.com" target="_blank">Dark Fire Security</a></span>
-    <span class="footer-status">● OPEN TO OPPORTUNITIES</span>
+    <div class="footer-inner">
+      <div class="footer-copy">© Chance Cummings · Nashville, TN · Built with Dark Fire</div>
+      <div class="footer-links">
+        <a href="https://darkfiresecurity.com" target="_blank" rel="noopener">darkfiresecurity.com</a>
+        <a href="https://github.com/jazzy216" target="_blank" rel="noopener">GitHub</a>
+        <a href="assets/Chance_Cummings_Resume.pdf" download>Resume PDF</a>
+      </div>
+    </div>
   </footer>
-</div>
 
-<script>
-/* ── Theme engine ─────────────────────────────────────── */
-const html = document.documentElement;
-
-function applyTheme(theme) {
-  html.setAttribute('data-theme', theme);
-  const lbl = document.getElementById('toggle-label');
-  if (lbl) lbl.textContent = theme === 'dark' ? 'LIGHT' : 'DARK';
-}
-
-function toggleTheme() {
-  const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-  applyTheme(next);
-  try { localStorage.setItem('cc-theme', next); } catch(e){}
-}
-
-// Default dark; restore user pref if set
-try {
-  const saved = localStorage.getItem('cc-theme');
-  applyTheme(saved || 'dark');
-} catch(e) {
-  applyTheme('dark');
-}
-
-/* ── Scroll-reveal ────────────────────────────────────── */
-const revealObs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.style.opacity = '1';
-      e.target.style.transform = 'translateY(0)';
-      revealObs.unobserve(e.target);
+  <script>
+    // Theme toggle
+    function toggleTheme() {
+      const html = document.documentElement;
+      html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
     }
-  });
-}, { threshold: 0.07 });
 
-document.querySelectorAll(
-  '.exp-card,.proj-card,.cert-card,.skill-block,.contact-item,.edu-card,.brand-block,.terminal,.status-item'
-).forEach(el => {
-  el.style.cssText += 'opacity:0;transform:translateY(12px);transition:opacity 0.42s ease,transform 0.42s ease;';
-  revealObs.observe(el);
-});
+    // Mobile menu
+    function toggleMenu() {
+      document.getElementById('mobileMenu').classList.toggle('open');
+    }
 
-/* ── Glitch on name hover ─────────────────────────────── */
-const accent = document.querySelector('h1 .accent');
-if (accent) {
-  const orig = accent.textContent;
-  let glitchTimer;
-  accent.addEventListener('mouseenter', () => {
-    let t = 0;
-    glitchTimer = setInterval(() => {
-      accent.textContent = orig.split('').map(c =>
-        Math.random() > 0.8 ? '▓█░'[Math.floor(Math.random()*3)] : c
-      ).join('');
-      if (++t > 8) { clearInterval(glitchTimer); accent.textContent = orig; }
-    }, 55);
-  });
-}
-</script>
+    // Spotlight effect on site cards
+    function spotlight(e, el) {
+      const rect = el.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width * 100).toFixed(1);
+      const y = ((e.clientY - rect.top) / rect.height * 100).toFixed(1);
+      el.style.setProperty('--mx', x + '%');
+      el.style.setProperty('--my', y + '%');
+    }
+
+    // Scroll reveal
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    revealEls.forEach(el => observer.observe(el));
+
+    // Stagger sibling reveals
+    document.querySelectorAll('.sites-grid, .projects-grid, .certs-grid').forEach(grid => {
+      grid.querySelectorAll('.reveal').forEach((el, i) => {
+        el.style.transitionDelay = (i * 0.07) + 's';
+      });
+    });
+
+    // Active nav link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 120) current = s.id;
+      });
+      navLinks.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + current ? 'var(--accent)' : '';
+      });
+    }, { passive: true });
+  </script>
 </body>
 </html>
