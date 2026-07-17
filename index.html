@@ -95,6 +95,8 @@ section{padding:5rem 0;}
 .exp-bullets li{font-size:.86rem;color:var(--text2);line-height:1.65;padding-left:1.2rem;position:relative;}
 .exp-bullets li::before{content:'—';position:absolute;left:0;color:var(--muted);font-size:.7rem;top:.3em;}
 .exp-bullets li strong{color:var(--text);font-weight:600;}
+.exp-bullets li.highlight{background:rgba(232,98,42,.06);border:1px solid rgba(232,98,42,.18);border-radius:8px;padding:.65rem .85rem .65rem 1.5rem;margin:.15rem 0 .35rem;}
+.exp-bullets li.highlight::before{content:'★';color:var(--accent);top:.65rem;}
 /* VUMC GO-LIVES CALLOUT */
 .golive-strip{display:flex;flex-wrap:wrap;gap:.5rem;margin:1rem 0 .5rem;}
 .golive-pill{font-family:var(--mono);font-size:.67rem;font-weight:600;padding:.28rem .65rem;border-radius:5px;background:rgba(232,98,42,.07);border:1px solid rgba(232,98,42,.22);color:var(--accent);letter-spacing:.04em;}
@@ -305,14 +307,15 @@ Resume PDF
 <span class="golive-pill">32+ iOS Devices</span>
 <span class="golive-pill">32-Port PXE Imaging</span>
 <span class="golive-pill">Multi-Site Autonomous Visits</span>
+<span class="golive-pill">Sole-Machine Specialty Software Install</span>
 </div>
 <ul class="exp-bullets">
+<li class="highlight">Remotely installed and configured <strong>Philips Holter monitoring software</strong> on a replacement AWS (acquisition workstation) — the <strong>only computer in the unit certified and capable of running that software</strong> — restoring the unit's sole cardiac data-acquisition path with zero disruption to active patient monitoring.</li>
 <li>Transitioned onto CTG's <strong>Refresh Team</strong>, taking on imaging, wiping, and redeployment of Windows 10 machines and WOW carts across multiple sites including Clarksville and Tullahoma — remained hourly through the shift.</li>
 <li>Performed a live <strong>network switch swap and port remap</strong> and ran <strong>32-port KVM/PXE imaging</strong> (WinPE + WIM, manual OS and OU selection, no SCCM) during a full-day refresh deployment.</li>
 <li>Independently resolved a <strong>multi-site visit that six other technicians had failed to complete</strong> — desktop swaps, computer-rename scripting, shared drive mapping, forced Windows updates, and full <strong>Pegasus CI</strong> asset record management, end to end and unsupervised.</li>
 <li>Diagnosed and swapped <strong>two WOW cart CWS units</strong>: tracked the affected carts down by walking the floor and interviewing nurses directly (no ticket had the info), pulled the device IP via <strong>Bomgar</strong> remote session, then cross-referenced it against the <strong>Cisco Prime</strong> access-point map to physically locate and confirm the hardware before swap.</li>
 <li>Swapped a <strong>digital status board on a pediatric heart unit</strong>, coordinating around active clinical use on the floor.</li>
-<li>Remotely installed and configured <strong>Philips Holter monitoring software</strong> on a replacement AWS (acquisition workstation) — the only computer in the unit capable of running that software — restoring the unit's sole Holter data-acquisition path without disrupting patient monitoring.</li>
 <li>Located an <strong>untracked laptop offline since 2024</strong> that no other technician could find, by leaving the desk and physically tracking it down through staff conversations — closed a stale asset gap in inventory.</li>
 <li>Maintains disciplined documentation habits: updates the team tracking <strong>spreadsheet</strong> and <strong>Pegasus CI</strong> records after every swap, install, and asset move.</li>
 <li>Supported full floor go-lives for <strong>two Neuro Step Down units</strong> — coordinating device deployment, network validation, and on-site technical support through cutover on each floor.</li>
@@ -673,6 +676,7 @@ Resume PDF
 <span class="skill-pill">Bomgar Remote Support</span><span class="skill-pill">Cisco Prime AP Mapping</span>
 <span class="skill-pill">32-Port KVM/PXE Imaging</span><span class="skill-pill">WinPE / WIM</span>
 <span class="skill-pill">Multi-Site Field Deployment</span>
+<span class="skill-pill">Specialty Clinical Software Install (Philips Holter)</span>
 </div>
 </div>
 <div class="skill-group reveal">
