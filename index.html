@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+
+<html data-theme="dark" lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="color-scheme" content="dark light" />
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="dark light" name="color-scheme"/>
 <title>Chance Cummings | IT Field Technician &amp; Cybersecurity</title>
-<meta name="description" content="IT Field Service Technician (CTG) @ VUMC · CompTIA A+ &amp; Network+ · Dark Fire Security · Security+ in progress · Nashville, TN" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<meta content="IT Field Service Technician (CTG) @ VUMC · CompTIA A+ &amp; Network+ · Dark Fire Security · Security+ in progress · Nashville, TN" name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;family=Geist+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
 <style>
 :root {
 --bg:#0d0f12;--bg2:#111318;--bg3:#181b22;--surface:#1c2029;
@@ -202,49 +203,70 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem;}
 @media(max-width:1024px){.hero{grid-template-columns:1fr;padding:6rem 2rem 3rem;gap:2.5rem;}.hero-right{display:none;}.darkfire-inner,.contact-inner{grid-template-columns:1fr;gap:2.5rem;}}
 @media(max-width:768px){.nav-links,.nav-cta{display:none;}.hamburger{display:flex;}.exp-item{grid-template-columns:1fr;gap:.75rem;}.exp-meta{display:flex;gap:1.5rem;align-items:center;}section{padding:3.5rem 0;}}
 @media(max-width:500px){nav{padding:0 1rem;}.container{padding:0 1.25rem;}.hero{padding:5.5rem 1.25rem 2.5rem;}.hero-name{font-size:2rem;}}
+
+
+/* Portfolio design system */
+:root{--bg:#101110;--bg2:#151614;--bg3:#1b1d19;--surface:#20221e;--border:#30332c;--border2:#44483e;--accent:#ef9a67;--accent2:#ffc29c;--text:#f0f0e7;--text2:#bfc1b5;--text3:#9b9f91;--muted:#949989;--muted2:#acb09f;--green:#a9c987;--radius:12px;--radius-lg:18px}
+[data-theme=light]{--bg:#f6f4ed;--bg2:#eeece3;--bg3:#e6e5db;--surface:#fffdf7;--border:#d3d4c7;--border2:#b5b7a8;--accent:#a04420;--accent2:#8a3718;--text:#232a20;--text2:#4d5748;--text3:#606957;--muted:#616957;--muted2:#5e6755;--green:#426b29}
+::selection{background:var(--accent);color:var(--bg)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:5px}button,input{font:inherit}button{touch-action:manipulation}section[id]{scroll-margin-top:100px} [hidden]{display:none!important}
+nav{height:80px;padding:0 max(32px,calc((100vw - 1280px)/2));background:color-mix(in srgb,var(--bg) 90%,transparent)}
+.nav-logo{display:flex;align-items:center;gap:12px;color:var(--text);font-size:13px;letter-spacing:-.03em}.logo-mark{display:grid;place-items:center;width:35px;height:35px;border:1px solid var(--accent);color:var(--accent);border-radius:8px;font-size:15px}.nav-links a{font-size:12px;padding:8px 10px;color:var(--text2)}.nav-links a[aria-current]{background:var(--surface);color:var(--accent)}.nav-cta{background:var(--text);color:var(--bg);padding:11px 18px;border-radius:7px}.theme-toggle{width:38px;height:38px;background:transparent}.mobile-menu{top:80px}
+.container{max-width:1280px;padding:0 32px}.hero{max-width:1280px;min-height:780px;grid-template-columns:1.1fr 1fr;gap:65px;padding:155px 32px 80px!important;position:relative}.hero-left{padding:0}.hero-eyebrow{background:none;border:none;padding:0;font-size:10px;letter-spacing:.1em;margin-bottom:27px;color:var(--text2)}.status-dot{width:7px;height:7px;background:var(--green);box-shadow:0 0 0 4px color-mix(in srgb,var(--green) 10%,transparent)}.hero-name{font-size:clamp(60px,6.6vw,88px);font-weight:500;letter-spacing:-.065em;line-height:.99;margin-bottom:25px}.hero-name span{color:var(--accent)}.hero-title{font-size:15px;max-width:420px;line-height:1.7;margin-bottom:15px}.hero-desc{font-size:14px;line-height:1.8;color:var(--text3);margin-bottom:27px}.hero-actions{gap:10px;margin-bottom:27px}.btn-primary,.btn-ghost{padding:13px 18px;border-radius:7px;font-size:12px;letter-spacing:0}.btn-primary{color:#20160e;background:var(--accent)}[data-theme=light] .btn-primary{color:#fff}.hero-badges{gap:7px}.badge{font-size:9px;padding:5px 8px;background:transparent;border-radius:4px}.badge.active{color:var(--green);border-color:var(--border);background:none}.badge.progress{color:var(--accent);border-color:var(--border);background:none}
+.hero-right{display:block;min-width:0}.signal-card{border:1px solid var(--border);border-radius:18px;overflow:hidden;background:var(--bg2);position:relative}.signal-top,.signal-bottom{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;font:10px var(--mono);color:var(--text3);letter-spacing:.08em}.signal-top{border-bottom:1px solid var(--border)}.signal-top b{font-weight:400;color:var(--green)}.signal-art{height:300px;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:32px 32px;position:relative;display:grid;place-items:center}.signal-art:before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse,transparent,var(--bg2) 75%)}.signal-art svg{position:relative;width:100%;height:100%;color:var(--accent)}.signal-bottom{border-top:1px solid var(--border);letter-spacing:0}.signal-bottom strong{font:500 13px var(--font);color:var(--text)}.terminal{margin-top:16px;border-radius:12px;box-shadow:none;background:var(--bg2)}.terminal summary{padding:14px 18px;font:11px var(--mono);color:var(--text2);cursor:pointer}.terminal-bar{display:none}.terminal-body{font-size:10px;overflow-wrap:anywhere}.hero-caption{display:flex;gap:10px;align-items:center;margin-top:17px;font:10px var(--mono);color:var(--text3)}.hero-caption:before{content:'';width:24px;height:1px;background:var(--accent)}
+.proof-strip{max-width:1216px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}.proof-item{padding:27px 30px;border-right:1px solid var(--border)}.proof-item:first-child{padding-left:0}.proof-item:last-child{border:0}.proof-item strong{font-size:32px;letter-spacing:-.05em;font-weight:500;display:block}.proof-item span{font:10px var(--mono);color:var(--text3)}
+section{padding:96px 0}.divider{display:none}.section-tag{font-size:10px;letter-spacing:.13em;margin-bottom:15px}.section-title{font-size:clamp(32px,4vw,45px);font-weight:500;letter-spacing:-.045em}.section-sub{font-size:14px;max-width:65ch;color:var(--text3);margin-top:15px;margin-bottom:35px}.exp-item{grid-template-columns:190px 1fr;padding:30px 0;gap:35px}.exp-item:first-child{border-top:1px solid var(--border)}.exp-role{font-size:20px;letter-spacing:-.02em}.exp-company{margin:6px 0}.exp-subtitle{font-size:10px;line-height:1.8}.exp-meta{padding-top:5px}.exp-num{color:var(--accent);margin-bottom:12px}.exp-bullets li{font-size:13px}.exp-bullets li.highlight{padding:16px 16px 16px 28px;background:var(--bg2);border-color:var(--border)}.exp-bullets li.highlight:before{top:16px;left:10px}.golive-pill{font-size:9px;border-color:var(--border);background:var(--bg2);color:var(--text2)}.experience-more{margin-top:18px;color:var(--text2)}.experience-more summary{cursor:pointer;font-size:12px;color:var(--accent);padding:10px 0}.experience-more ul{margin-top:15px}
+.sites-grid,.tools-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;border:0;background:none;border-radius:0;overflow:visible}.site-card,.tool-card{border:1px solid var(--border);background:var(--bg);border-radius:12px;padding:25px;gap:15px;min-width:0;transition:transform .25s,border-color .25s}.site-card:hover,.tool-card:hover{transform:translateY(-4px);border-color:var(--accent);background:var(--bg)}.site-icon{width:46px;height:46px;font:20px var(--mono);background:var(--bg3);border-color:var(--border);color:var(--accent)}.site-name,.tool-name{font-size:18px;font-weight:500;letter-spacing:-.025em}.site-desc,.tool-desc{font-size:13px;color:var(--text3)}.site-category{font-size:9px;color:var(--text3)}.site-link,.tool-link{border-top:1px solid var(--border);padding-top:16px;margin-top:4px;font-size:11px;overflow-wrap:anywhere}.tag{font-size:9px;background:var(--bg2);color:var(--text2)}.tool-badge{font-size:8px}.project-toolbar{display:flex;justify-content:space-between;gap:18px;margin:0 0 25px;align-items:center;flex-wrap:wrap}.filters{display:flex;gap:6px;flex-wrap:wrap}.filter{border:1px solid var(--border);background:transparent;color:var(--text2);border-radius:6px;padding:9px 13px;font-size:11px;cursor:pointer}.filter[aria-pressed=true]{background:var(--text);border-color:var(--text);color:var(--bg)}.project-search{border:1px solid var(--border);border-radius:6px;background:var(--bg);color:var(--text);padding:10px 13px;width:230px;font-size:12px}.project-count{font:10px var(--mono);color:var(--text3);margin-bottom:18px}.empty-state{padding:35px;border:1px dashed var(--border);border-radius:12px;color:var(--text2)}
+.darkfire-inner{gap:70px}.darkfire-logo{font-size:44px;font-weight:500}.darkfire-desc{font-size:14px}.df-service{background:var(--bg);padding:18px}.df-icon{color:var(--accent)}.darkfire-stats{gap:12px;background:none;border:none}.df-stat{border:1px solid var(--border);border-radius:12px;padding:30px 18px;background:var(--bg)}.df-stat-num{font-family:var(--font);font-size:40px;font-weight:500}.df-stat-label{font-size:12px}.skills-grid{grid-template-columns:repeat(3,1fr);gap:35px}.skill-group{border-top:1px solid var(--border);padding-top:20px}.skill-group-name{color:var(--accent);font:10px var(--mono)}.skill-pill{font-size:11px;background:transparent;padding:7px 10px}.certs-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;background:none;border:0;overflow:visible}.cert-card{border:1px solid var(--border);border-radius:10px;background:var(--bg);padding:23px 18px}.cert-name{font-size:13px}.cert-detail{font-size:11px}.cert-icon{font:14px var(--mono);color:var(--green)}.contact-heading{font-size:clamp(48px,6vw,75px);font-weight:500;letter-spacing:-.055em}.contact-note{font-size:14px}.contact-link{background:transparent;border-width:0 0 1px;border-radius:0;padding:13px 0}.contact-link-icon{background:var(--bg2);color:var(--accent);font-family:var(--mono)}.contact-link-val{font-size:13px;overflow-wrap:anywhere}.availability-card{background:var(--bg2);padding:30px}.availability-header{font-size:10px}.avail-row{gap:24px;align-items:start}.avail-val{text-align:right;font-size:11px}.avail-key{font-size:11px;white-space:nowrap}.footer-copy{font-size:10px}.footer-links a{font-size:11px}.reveal{opacity:1;transform:none}.skip-link{position:fixed;top:-80px;left:20px;z-index:200;background:var(--text);color:var(--bg);padding:12px}.skip-link:focus{top:12px}.scroll-progress{position:fixed;top:0;left:0;height:2px;background:var(--accent);width:0;z-index:101}
+@media(min-width:1050px){.site-card:first-child{grid-column:span 2;display:grid;grid-template-columns:60px 1fr;column-gap:20px}.site-card:first-child .site-icon{grid-column:1;grid-row:2/5}.site-card:first-child .site-category{grid-column:1/-1}.site-card:first-child .site-name,.site-card:first-child .site-desc,.site-card:first-child .site-stack,.site-card:first-child .site-link{grid-column:2}.site-card:first-child .site-name{font-size:27px}}
+@media(max-width:1100px){.nav-links a{padding:7px;font-size:10px}.hero{gap:30px}.hero-name{font-size:70px}.proof-strip{margin:0 32px}.sites-grid,.tools-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.darkfire-inner,.contact-inner{grid-template-columns:1fr 1fr;gap:35px}}
+@media(max-width:800px){nav{padding:0 22px}.nav-links,.nav-cta{display:none}.hamburger{display:flex;padding:10px}.hero{grid-template-columns:1fr;padding:135px 24px 50px!important;gap:40px}.hero-name{font-size:76px}.hero-desc{max-width:60ch}.hero-right{display:block}.signal-art{height:240px}.hero{min-height:auto}.proof-strip{margin:0 24px;grid-template-columns:repeat(2,1fr)}.proof-item{padding:22px!important}.proof-item:nth-child(2){border:0}.proof-item:nth-child(-n+2){border-bottom:1px solid var(--border)}.proof-item strong{font-size:28px}.container{padding:0 24px}section{padding:65px 0}.exp-item{grid-template-columns:1fr;gap:14px}.exp-meta{display:flex;gap:15px;flex-wrap:wrap}.exp-num{margin:0}.darkfire-inner,.contact-inner{grid-template-columns:1fr}.skills-grid,.certs-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.tools-header{flex-wrap:wrap}.contact-inner{gap:40px}}
+@media(max-width:520px){.hero-name{font-size:65px}.hero-eyebrow{font-size:8px}.hero-actions{gap:8px}.btn-primary,.btn-ghost{font-size:11px;padding:12px 13px}.sites-grid,.tools-grid,.certs-grid{grid-template-columns:1fr}.skills-grid{gap:25px 15px}.project-search{width:100%}.proof-item span{font-size:9px}.tools-brand-link{font-size:10px}.exp-role{font-size:18px}.availability-card{padding:22px}.signal-top,.signal-bottom{padding:15px;font-size:8px}.signal-bottom strong{font-size:11px}.site-card{padding:22px}.footer-inner{align-items:start}.footer-copy{line-height:1.9}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+@media print{nav,.mobile-menu,.scroll-progress,.project-toolbar,.hero-right{display:none!important}body{background:white;color:black}.hero{min-height:0;display:block;padding:20px!important}section{padding:25px 0}.exp-item,.site-card,.tool-card{break-inside:avoid}}
 </style>
 </head>
-<body>
+<body><a class="skip-link" href="#experience">Skip to content</a><div aria-hidden="true" class="scroll-progress"></div>
 <nav>
-<div class="nav-logo">CC_SEC</div>
+<a aria-label="Chance Cummings home" class="nav-logo" href="#top"><span class="logo-mark">cc.</span>CHANCE CUMMINGS<span style="color:var(--accent)"> / </span></a>
 <div class="nav-links">
 <a href="#experience">Experience</a>
-<a href="#sites">Sites Built</a>
-<a href="#tools">DF Tools</a>
+<a href="#sites">Projects</a>
+<a href="#tools">Tools</a>
 <a href="#skills">Skills</a>
-<a href="#certs">Certs</a>
+<a href="#certs">Credentials</a>
 <a href="#darkfire">Dark Fire</a>
 <a href="#contact">Contact</a>
 </div>
 <div class="nav-right">
-<button class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">◑</button>
-<a href="mailto:thechancecummings@gmail.com?subject=Interview%20Request" class="nav-cta">Hire Me</a>
-<button class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+<button aria-label="Switch color theme" class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">◑</button>
+<a class="nav-cta" href="mailto:thechancecummings@gmail.com?subject=Interview%20Request">Let’s talk ↗</a>
+<button aria-controls="mobileMenu" aria-expanded="false" aria-label="Open navigation" class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
 <a href="#experience" onclick="toggleMenu()">Experience</a>
-<a href="#sites" onclick="toggleMenu()">Sites Built</a>
-<a href="#tools" onclick="toggleMenu()">DF Tools</a>
+<a href="#sites" onclick="toggleMenu()">Projects</a>
+<a href="#tools" onclick="toggleMenu()">Tools</a>
 <a href="#skills" onclick="toggleMenu()">Skills</a>
-<a href="#certs" onclick="toggleMenu()">Certs</a>
+<a href="#certs" onclick="toggleMenu()">Credentials</a>
 <a href="#darkfire" onclick="toggleMenu()">Dark Fire</a>
 <a href="#contact" onclick="toggleMenu()">Contact</a>
 </div>
 <!-- HERO -->
-<section class="hero" style="padding-top:calc(58px + 3rem);">
+<section class="hero" id="top" style="padding-top:calc(58px + 3rem);">
 <div class="hero-left reveal">
 <div class="hero-eyebrow"><span class="status-dot"></span>Open to Opportunities · Nashville, TN</div>
-<h1 class="hero-name">Chance<br><span>Cummings</span></h1>
+<h1 class="hero-name">Chance<br/><span>Cummings</span></h1>
 <p class="hero-title"><strong>IT Field Service Technician (CTG)</strong> · Vanderbilt University Medical Center — Refresh Team</p>
-<p class="hero-desc">Healthcare IT professional specializing in large-scale endpoint deployment, MDM, VDI infrastructure, and multi-site clinical device refresh — actively transitioning into cybersecurity. Founder of Dark Fire Security. CompTIA A+ &amp; Network+ certified. Security+ in progress.</p>
-<div class="hero-actions">
-<a href="assets/Chance_Cummings_Resume.pdf" class="btn-primary" download>
-<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+<p class="hero-desc">I deploy the systems people depend on—and build tools to help protect them. Healthcare enterprise IT, hands-on security projects, and a clear focus on the next step: cyber defense.</p>
+<div class="hero-actions"><a class="btn-primary" href="#sites">Explore my work <span aria-hidden="true">↗</span></a>
+<a class="btn-ghost" download="" href="assets/Chance_Cummings_Resume.pdf">
+<svg fill="none" height="14" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="14"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" x2="12" y1="15" y2="3"></line></svg>
 Resume PDF
 </a>
-<a href="assets/Cybersecurity Essentials for Small Businesses.docx" class="btn-ghost" download>Free eBook</a>
-<a href="mailto:thechancecummings@gmail.com?subject=Interview%20Request" class="btn-ghost">Email Me</a>
+<a class="btn-ghost" download="" href="assets/Cybersecurity Essentials for Small Businesses.docx">Free eBook</a>
+<a class="btn-ghost" href="mailto:thechancecummings@gmail.com?subject=Interview%20Request">Email Me</a>
 </div>
 <div class="hero-badges">
 <span class="badge active">CompTIA A+</span>
@@ -254,15 +276,15 @@ Resume PDF
 <span class="badge">Dark Fire Security</span>
 </div>
 </div>
-<div class="hero-right reveal" style="transition-delay:.15s">
-<div class="terminal">
+<div class="hero-right reveal" style="transition-delay:.15s"><div class="signal-card"><div class="signal-top"><span>FIELD NOTES / 001</span><b>● BUILDING + DEFENDING</b></div><div class="signal-art"><svg aria-label="Abstract shield connecting endpoints" fill="none" role="img" viewbox="0 0 480 300"><g opacity=".2" stroke="currentColor"><circle cx="240" cy="150" r="120"></circle><circle cx="240" cy="150" r="98" stroke-dasharray="3 8"></circle><path d="M25 150h115m200 0h115M240 10v40m0 200v40M75 60l80 55m170 70 80 55M75 240l80-55m170-70 80-55"></path></g><g stroke="currentColor"><path d="M240 64l66 26v57c0 47-31 72-66 90-35-18-66-43-66-90V90z" fill="var(--bg2)" stroke-width="1.5"></path><path d="M240 80l52 20v46c0 36-22 59-52 75-30-16-52-39-52-75v-46z" opacity=".35"></path><path d="m216 149 17 17 33-36" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><rect fill="var(--bg2)" height="32" rx="7" width="32" x="39" y="134"></rect><rect fill="var(--bg2)" height="32" rx="7" width="32" x="409" y="134"></rect><circle cx="89" cy="70" fill="var(--bg2)" r="5"></circle><circle cx="391" cy="230" fill="var(--bg2)" r="5"></circle><circle cx="89" cy="230" fill="var(--bg2)" r="5"></circle><circle cx="391" cy="70" fill="var(--bg2)" r="5"></circle><path d="M49 144h12v9H49zM419 144h12v9h-12z"></path></g><g fill="var(--text3)" font-family="monospace" font-size="8" letter-spacing="1"><text x="27" y="187">ENDPOINTS</text><text x="397" y="187">DEFENSE</text><text x="208" y="270">TRUST BY DESIGN</text></g></svg></div><div class="signal-bottom"><span>CURRENTLY AT<br/><strong>Vanderbilt Health / CTG</strong></span><span>NASHVILLE, TN<br/><strong>IT → Cybersecurity</strong></span></div></div>
+<details class="terminal"><summary>~/chance/profile.sh <span style="float:right;color:var(--accent)">Inspect profile +</span></summary>
 <div class="terminal-bar">
 <div class="dot dot-red"></div><div class="dot dot-amber"></div><div class="dot dot-green"></div>
 <span class="terminal-label">bash — chance@darkfire:~</span>
 </div>
 <div class="terminal-body">
 <div><span class="t-prompt">chance@darkfire</span><span class="t-cmd">:~$</span> whoami --verbose</div>
-<div>&nbsp;</div>
+<div> </div>
 <div><span class="t-key">name</span><span class="t-arrow">→</span><span class="t-val">Chance Cummings</span></div>
 <div><span class="t-key">role</span><span class="t-arrow">→</span><span class="t-val">IT Field Tech (CTG) @ VUMC — Refresh Team</span></div>
 <div><span class="t-key">started</span><span class="t-arrow">→</span><span class="t-val">March 4, 2026</span></div>
@@ -274,13 +296,13 @@ Resume PDF
 <div><span class="t-key">certs</span><span class="t-arrow">→</span><span class="t-val">A+ · Network+</span> <span class="t-amber">| Security+ [WIP]</span></div>
 <div><span class="t-key">brand</span><span class="t-arrow">→</span><span class="t-val">darkfiresecurity.com</span></div>
 <div><span class="t-key">status</span><span class="t-arrow">→</span><span class="t-green">AVAILABLE FOR OPPORTUNITIES ●</span></div>
-<div>&nbsp;</div>
+<div> </div>
 <div><span class="t-prompt">chance@darkfire</span><span class="t-cmd">:~$</span> <span class="t-cursor"></span></div>
 </div>
-</div>
-</div>
-</section>
-<hr class="divider" />
+</details>
+<div class="hero-caption">Hands-on experience. Security-minded execution.</div></div>
+</section><div aria-label="Experience highlights" class="proof-strip"><div class="proof-item"><strong>100+</strong><span>CLINICAL ENDPOINTS DEPLOYED</span></div><div class="proof-item"><strong>32+</strong><span>iOS DEVICES PROVISIONED</span></div><div class="proof-item"><strong>12+</strong><span>SECURITY TOOLS / PLATFORMS</span></div><div class="proof-item"><strong>A+ / N+</strong><span>COMPTIA CERTIFIED</span></div></div>
+<hr class="divider"/>
 <!-- EXPERIENCE -->
 <section id="experience" style="background:var(--bg);">
 <div class="container">
@@ -313,23 +335,23 @@ Resume PDF
 <li class="highlight">Remotely installed and configured <strong>Philips Holter monitoring software</strong> on a replacement AWS (acquisition workstation) — the <strong>only computer in the unit certified and capable of running that software</strong> — restoring the unit's sole cardiac data-acquisition path with zero disruption to active patient monitoring.</li>
 <li>Transitioned onto CTG's <strong>Refresh Team</strong>, taking on imaging, wiping, and redeployment of Windows 10 machines and WOW carts across multiple sites including Clarksville and Tullahoma — remained hourly through the shift.</li>
 <li>Performed a live <strong>network switch swap and port remap</strong> and ran <strong>32-port KVM/PXE imaging</strong> (WinPE + WIM, manual OS and OU selection, no SCCM) during a full-day refresh deployment.</li>
-<li>Independently resolved a <strong>multi-site visit that six other technicians had failed to complete</strong> — desktop swaps, computer-rename scripting, shared drive mapping, forced Windows updates, and full <strong>Pegasus CI</strong> asset record management, end to end and unsupervised.</li>
-<li>Diagnosed and swapped <strong>two WOW cart CWS units</strong>: tracked the affected carts down by walking the floor and interviewing nurses directly (no ticket had the info), pulled the device IP via <strong>Bomgar</strong> remote session, then cross-referenced it against the <strong>Cisco Prime</strong> access-point map to physically locate and confirm the hardware before swap.</li>
-<li>Swapped a <strong>digital status board on a pediatric heart unit</strong>, coordinating around active clinical use on the floor.</li>
-<li>Located an <strong>untracked laptop offline since 2024</strong> that no other technician could find, by leaving the desk and physically tracking it down through staff conversations — closed a stale asset gap in inventory.</li>
-<li>Maintains disciplined documentation habits: updates the team tracking <strong>spreadsheet</strong> and <strong>Pegasus CI</strong> records after every swap, install, and asset move.</li>
-<li>Supported full floor go-lives for <strong>two Neuro Step Down units</strong> — coordinating device deployment, network validation, and on-site technical support through cutover on each floor.</li>
-<li>Collaborated cross-team with a specialized IT group to install and commission <strong>epilepsy monitoring equipment in an EMU reading room</strong>, then supported the go-live of that clinical environment.</li>
-<li>Executed <strong>4–5 additional backfill moves with associated go-lives</strong>, providing extended on-site support through each transition and adapting to last-minute scope changes in a live clinical environment.</li>
-<li>Provisioned and deployed <strong>100+ clinical workstations and WOW (Workstation on Wheels) carts</strong> across multiple floors — managed full device lifecycle from imaging through floor-ready deployment.</li>
-<li>Engineered and pushed <strong>floor-specific MDM configuration profiles via Microsoft Intune</strong>, tailoring policies to each unit's clinical workflow requirements.</li>
-<li>Built and deployed <strong>specialty Intune profiles for charge nurse iPhones</strong> requiring cellular connectivity — distinct APN configuration and policy enforcement from standard Wi-Fi-only device profiles.</li>
-<li>Provisioned <strong>32+ iOS devices via Intune and Apple Business Manager (ABM)</strong> including Radiology-specific configurations and charge nurse cellular profiles.</li>
-<li>Deployed and troubleshot <strong>VMware Horizon VDI</strong> sessions across clinical workstations; managed asset records in <strong>Pegasus CI (CMDB)</strong> and tracked work through <strong>ServiceNow</strong>.</li>
-<li>Authored <strong>SOP-ITS-001</strong> — a formal iOS MDM provisioning runbook; became the de-facto institutional knowledge source for MDM workflows after senior technician departure.</li>
-<li>Used <strong>PowerShell</strong> to locate IP addresses on restricted "Hugs machines" and documented layered security controls (GPO + Intune compliance) that correctly prevented privilege escalation — submitted as a configuration security analysis.</li>
-<li>Applied HIPAA-aware device handling and PHI protocols throughout all field work in a regulated healthcare environment.</li>
-</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul><details class="experience-more"><summary>Explore 16 more contributions</summary><ul class="exp-bullets"><li>Independently resolved a <strong>multi-site visit that six other technicians had failed to complete</strong> — desktop swaps, computer-rename scripting, shared drive mapping, forced Windows updates, and full <strong>Pegasus CI</strong> asset record management, end to end and unsupervised.</li><li>Diagnosed and swapped <strong>two WOW cart CWS units</strong>: tracked the affected carts down by walking the floor and interviewing nurses directly (no ticket had the info), pulled the device IP via <strong>Bomgar</strong> remote session, then cross-referenced it against the <strong>Cisco Prime</strong> access-point map to physically locate and confirm the hardware before swap.</li><li>Swapped a <strong>digital status board on a pediatric heart unit</strong>, coordinating around active clinical use on the floor.</li><li>Located an <strong>untracked laptop offline since 2024</strong> that no other technician could find, by leaving the desk and physically tracking it down through staff conversations — closed a stale asset gap in inventory.</li><li>Maintains disciplined documentation habits: updates the team tracking <strong>spreadsheet</strong> and <strong>Pegasus CI</strong> records after every swap, install, and asset move.</li><li>Supported full floor go-lives for <strong>two Neuro Step Down units</strong> — coordinating device deployment, network validation, and on-site technical support through cutover on each floor.</li><li>Collaborated cross-team with a specialized IT group to install and commission <strong>epilepsy monitoring equipment in an EMU reading room</strong>, then supported the go-live of that clinical environment.</li><li>Executed <strong>4–5 additional backfill moves with associated go-lives</strong>, providing extended on-site support through each transition and adapting to last-minute scope changes in a live clinical environment.</li><li>Provisioned and deployed <strong>100+ clinical workstations and WOW (Workstation on Wheels) carts</strong> across multiple floors — managed full device lifecycle from imaging through floor-ready deployment.</li><li>Engineered and pushed <strong>floor-specific MDM configuration profiles via Microsoft Intune</strong>, tailoring policies to each unit's clinical workflow requirements.</li><li>Built and deployed <strong>specialty Intune profiles for charge nurse iPhones</strong> requiring cellular connectivity — distinct APN configuration and policy enforcement from standard Wi-Fi-only device profiles.</li><li>Provisioned <strong>32+ iOS devices via Intune and Apple Business Manager (ABM)</strong> including Radiology-specific configurations and charge nurse cellular profiles.</li><li>Deployed and troubleshot <strong>VMware Horizon VDI</strong> sessions across clinical workstations; managed asset records in <strong>Pegasus CI (CMDB)</strong> and tracked work through <strong>ServiceNow</strong>.</li><li>Authored <strong>SOP-ITS-001</strong> — a formal iOS MDM provisioning runbook; became the de-facto institutional knowledge source for MDM workflows after senior technician departure.</li><li>Used <strong>PowerShell</strong> to locate IP addresses on restricted "Hugs machines" and documented layered security controls (GPO + Intune compliance) that correctly prevented privilege escalation — submitted as a configuration security analysis.</li><li>Applied HIPAA-aware device handling and PHI protocols throughout all field work in a regulated healthcare environment.</li></ul></details>
 </div>
 </div>
 <!-- Dark Fire -->
@@ -347,11 +369,11 @@ Resume PDF
 <li>Founded cybersecurity consultancy serving small businesses, tradespeople, and farms across Middle Tennessee — built brand, website, and full service offering end to end.</li>
 <li>Shipped <strong>Wave 1 Assessment Toolkit</strong>: five PowerShell WPF GUI tools (Password Audit Scanner, WiFi Security Checker, USB Device History Viewer, Open Ports Snapshot, Phishing Email Header Analyzer) — USB-portable for on-site SMB assessments.</li>
 <li>Built and deployed <strong>PhishGuard</strong> (live: phishguard-bay.vercel.app), an interactive phishing simulation trainer with active hunt-the-tells mechanic, Gauntlet mode, and cross-session mastery tracking.</li>
-<li>Developed and deployed: <strong>QR Code Toolkit</strong>, <strong>EXIF Metadata Tool</strong> (ExifTool GUI Pro), <strong>Steganography Detector</strong>, <strong>DarkChef</strong> (CyberChef-style encoder/decoder), <strong>SUBFIND</strong> (passive DNS enumerator), and <strong>Small Business Cyber Risk Report</strong> intake tool.</li>
-<li>Published original research: <strong>Zero-Trust Proximity Protocol (ZTPP)</strong> — RFC-style spec addressing LAN discovery exposure with whitepaper and interactive demo.</li>
-<li>Packaged the "Business Security Checkup" as a tiered service offering ($299 / $899 / $149/mo) using a trades-inspection analogy for non-technical clients.</li>
-<li>Built and deployed client websites for: Wade King Construction, Sunshine Electric LLC, Beyond Drain Solutions, Defiant Machine Works, A1 Pawn Shop (analytics dashboard), tape2dvdonline.com.</li>
-</ul>
+
+
+
+
+</ul><details class="experience-more"><summary>Explore 4 more contributions</summary><ul class="exp-bullets"><li>Developed and deployed: <strong>QR Code Toolkit</strong>, <strong>EXIF Metadata Tool</strong> (ExifTool GUI Pro), <strong>Steganography Detector</strong>, <strong>DarkChef</strong> (CyberChef-style encoder/decoder), <strong>SUBFIND</strong> (passive DNS enumerator), and <strong>Small Business Cyber Risk Report</strong> intake tool.</li><li>Published original research: <strong>Zero-Trust Proximity Protocol (ZTPP)</strong> — RFC-style spec addressing LAN discovery exposure with whitepaper and interactive demo.</li><li>Packaged the "Business Security Checkup" as a tiered service offering ($299 / $899 / $149/mo) using a trades-inspection analogy for non-technical clients.</li><li>Built and deployed client websites for: Wade King Construction, Sunshine Electric LLC, Beyond Drain Solutions, Defiant Machine Works, A1 Pawn Shop (analytics dashboard), tape2dvdonline.com.</li></ul></details>
 </div>
 </div>
 <!-- Double C -->
@@ -409,88 +431,88 @@ Resume PDF
 </div>
 </div>
 </section>
-<hr class="divider" />
+<hr class="divider"/>
 <!-- SITES BUILT -->
 <section id="sites" style="background:var(--bg2);">
 <div class="container">
 <div class="section-tag">02 / Sites &amp; Apps Built</div>
-<h2 class="section-title">Shipped and live</h2>
-<p class="section-sub">Every card below is a real URL you can click right now. No mockups, no "coming soon" — built and deployed.</p>
-<div class="sites-grid">
-<div class="site-card reveal" onmousemove="spotlight(event,this)">
+<h2 class="section-title">Built to be used.</h2>
+<p class="section-sub">Security tools, practical utilities, and digital experiences. Explore the work, then take a closer look.</p>
+<div class="project-toolbar"><div aria-label="Filter projects" class="filters" role="group"><button aria-pressed="true" class="filter" data-filter="all">All projects</button><button aria-pressed="false" class="filter" data-filter="security">Security</button><button aria-pressed="false" class="filter" data-filter="web">Web &amp; brand</button></div><input aria-label="Search projects" class="project-search" placeholder="Search projects…" type="search"/></div><p aria-live="polite" class="project-count" role="status"></p><div class="sites-grid">
+<div class="site-card reveal" data-category="web" onmousemove="spotlight(event,this)">
 <div class="site-category">Personal Brand · Live</div>
-<div class="site-icon">🔥</div>
+<div class="site-icon">DF</div>
 <div class="site-name">Dark Fire Security</div>
 <div class="site-desc">Full cybersecurity consulting site — branded tool pages, contact form, ebook download, service tiers, and links to all deployed tools. Designed, built, and maintained personally.</div>
 <div class="site-stack"><span class="tag">HTML/CSS/JS</span><span class="tag">Formspree</span><span class="tag">GitHub Pages</span></div>
-<a href="https://darkfiresecurity.com" class="site-link" target="_blank" rel="noopener">darkfiresecurity.com <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+<a class="site-link" href="https://darkfiresecurity.com" rel="noopener" target="_blank">darkfiresecurity.com <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"></path></svg></a>
 </div>
-<div class="site-card reveal" onmousemove="spotlight(event,this)">
+<div class="site-card reveal" data-category="web" onmousemove="spotlight(event,this)">
 <div class="site-category">Personal Portfolio · Live</div>
-<div class="site-icon">👤</div>
+<div class="site-icon">CC</div>
 <div class="site-name">chancecummings.com</div>
 <div class="site-desc">This site — full resume/portfolio with terminal aesthetic, dark/light mode, cert tracking, project showcase, and contact. Built and iterated personally.</div>
 <div class="site-stack"><span class="tag">HTML/CSS/JS</span><span class="tag">Vercel</span><span class="tag">Custom Design</span></div>
-<a href="https://chancecummings.com" class="site-link" target="_blank" rel="noopener">chancecummings.com <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+<a class="site-link" href="https://chancecummings.com" rel="noopener" target="_blank">chancecummings.com <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"></path></svg></a>
 </div>
-<div class="site-card reveal" onmousemove="spotlight(event,this)">
+<div class="site-card reveal" data-category="security" onmousemove="spotlight(event,this)">
 <div class="site-category">Security Tool · Live</div>
-<div class="site-icon">🕵️</div>
+<div class="site-icon">&gt;_</div>
 <div class="site-name">DARKFIRE PENTEST</div>
 <div class="site-desc">Mobile-first penetration testing toolkit for ethical hackers, red teamers, and security consultants. Features recon modules, web assessment tools, forensic analysis, session tracking, and exportable reports. Auth-gated, full-stack app on base44.</div>
 <div class="site-stack"><span class="tag">Base44</span><span class="tag">Full-Stack</span><span class="tag">Auth</span><span class="tag">Reports</span></div>
-<a href="https://dark-fire-field.base44.app" class="site-link" target="_blank" rel="noopener">dark-fire-field.base44.app <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+<a class="site-link" href="https://dark-fire-field.base44.app" rel="noopener" target="_blank">dark-fire-field.base44.app <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"></path></svg></a>
 </div>
-<div class="site-card reveal" onmousemove="spotlight(event,this)">
+<div class="site-card reveal" data-category="security" onmousemove="spotlight(event,this)">
 <div class="site-category">OSINT Tool · Live</div>
-<div class="site-icon">🔍</div>
+<div class="site-icon">◎</div>
 <div class="site-name">WHOISVAULT</div>
 <div class="site-desc">Domain · IP · ASN · Geolocation intelligence tool. Pulls WHOIS registration data, resolves IPs, queries ASN/network range, and maps geolocation coordinates. Three live APIs, four modules, JSON/TXT export. Part of the Dark Fire Intelligence Suite.</div>
 <div class="site-stack"><span class="tag">OSINT</span><span class="tag">RDAP</span><span class="tag">ip-api</span><span class="tag">Vercel</span></div>
-<a href="https://who-is-vault.vercel.app" class="site-link" target="_blank" rel="noopener">who-is-vault.vercel.app <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+<a class="site-link" href="https://who-is-vault.vercel.app" rel="noopener" target="_blank">who-is-vault.vercel.app <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"></path></svg></a>
 </div>
-<div class="site-card reveal" onmousemove="spotlight(event,this)">
+<div class="site-card reveal" data-category="security" onmousemove="spotlight(event,this)">
 <div class="site-category">Security Tool · Live</div>
-<div class="site-icon">🎯</div>
+<div class="site-icon">⌖</div>
 <div class="site-name">HEADHUNTER</div>
 <div class="site-desc">HTTP Security Header Intelligence Analyzer. Runs 15 automated checks against any public URL, calculates a threat score and security grade, surfaces missing headers and misconfigurations, and exports a full findings report. All analysis runs locally in-browser.</div>
 <div class="site-stack"><span class="tag">Header Analysis</span><span class="tag">15 Checks</span><span class="tag">Vercel</span><span class="tag">No Backend</span></div>
-<a href="https://headhunter-beige.vercel.app" class="site-link" target="_blank" rel="noopener">headhunter-beige.vercel.app <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+<a class="site-link" href="https://headhunter-beige.vercel.app" rel="noopener" target="_blank">headhunter-beige.vercel.app <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"></path></svg></a>
 </div>
-<div class="site-card reveal" onmousemove="spotlight(event,this)">
+<div class="site-card reveal" data-category="security" onmousemove="spotlight(event,this)">
 <div class="site-category">Security Awareness · Live</div>
-<div class="site-icon">🎣</div>
+<div class="site-icon">@</div>
 <div class="site-name">PhishGuard</div>
 <div class="site-desc">Interactive phishing simulation trainer with a "hunt-the-tells" mechanic. 12+ scenarios across email, SMS, QR quishing, calendar-invite, and vishing. Gauntlet mode, cross-session mastery tracking, and per-element feedback on reveal.</div>
 <div class="site-stack"><span class="tag">Vanilla JS</span><span class="tag">Vercel</span><span class="tag">No Dependencies</span></div>
-<a href="https://phishguard-bay.vercel.app" class="site-link" target="_blank" rel="noopener">phishguard-bay.vercel.app <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+<a class="site-link" href="https://phishguard-bay.vercel.app" rel="noopener" target="_blank">phishguard-bay.vercel.app <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"></path></svg></a>
 </div>
-<div class="site-card reveal" onmousemove="spotlight(event,this)">
+<div class="site-card reveal" data-category="security" onmousemove="spotlight(event,this)">
 <div class="site-category">DFIR Tool · Live</div>
-<div class="site-icon">🍳</div>
+<div class="site-icon">{ }</div>
 <div class="site-name">DarkChef</div>
 <div class="site-desc">CyberChef-style data transformation toolkit for encoding, decoding, hashing, and IR-style data manipulation workflows. Built for SOC and DFIR use cases — runs entirely in the browser.</div>
 <div class="site-stack"><span class="tag">DFIR</span><span class="tag">SOC</span><span class="tag">Cloud Run</span></div>
-<a href="https://darkchef-professional-data-alchemy-1044572571760.us-west1.run.app" class="site-link" target="_blank" rel="noopener">Open DarkChef <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+<a class="site-link" href="https://darkchef-professional-data-alchemy-1044572571760.us-west1.run.app" rel="noopener" target="_blank">Open DarkChef <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"></path></svg></a>
 </div>
-<div class="site-card reveal" onmousemove="spotlight(event,this)">
+<div class="site-card reveal" data-category="security" onmousemove="spotlight(event,this)">
 <div class="site-category">Consulting Tool · Live</div>
-<div class="site-icon">📋</div>
+<div class="site-icon">▤</div>
 <div class="site-name">Small Business Risk Report</div>
 <div class="site-desc">Client intake and risk scoring flow that generates a structured security posture report for small businesses. Designed for non-technical stakeholders — plain-English findings with actionable recommendations.</div>
 <div class="site-stack"><span class="tag">Consulting</span><span class="tag">Risk Scoring</span><span class="tag">Cloud Run</span></div>
-<a href="https://small-business-security-intake-risk-report-293799863337.us-west1.run.app" class="site-link" target="_blank" rel="noopener">Open Tool <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg></a>
+<a class="site-link" href="https://small-business-security-intake-risk-report-293799863337.us-west1.run.app" rel="noopener" target="_blank">Open Tool <svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24"><path d="M7 17L17 7M7 7h10v10"></path></svg></a>
 </div>
-</div>
+</div><p class="empty-state" hidden="">No matching projects. Try another search or category.</p>
 </div>
 </section>
-<hr class="divider" />
+<hr class="divider"/>
 <!-- DARK FIRE TOOLS -->
 <section id="tools" style="background:var(--bg);">
 <div class="container">
 <div class="tools-header">
 <div class="section-tag" style="margin-bottom:0;">03 / Dark Fire Security Tools</div>
-<a href="https://darkfiresecurity.com" class="tools-brand-link" target="_blank" rel="noopener">darkfiresecurity.com →</a>
+<a class="tools-brand-link" href="https://darkfiresecurity.com" rel="noopener" target="_blank">darkfiresecurity.com →</a>
 </div>
 <h2 class="section-title">Security tools I've shipped</h2>
 <p class="section-sub">Live platforms, browser-based utilities, and PowerShell tooling — all built under the Dark Fire Security brand for real defensive use.</p>
@@ -502,7 +524,7 @@ Resume PDF
 </div>
 <div class="tool-desc">Interactive phishing simulation trainer with an active "hunt-the-tells" mechanic. 12+ scenarios across email, SMS, QR quishing, calendar-invite, and vishing. Gauntlet mode, cross-session mastery tracking, and per-element feedback. Built in vanilla HTML/JS, deployed to Vercel.</div>
 <div class="tool-tags"><span class="tag">Security Awareness</span><span class="tag">Training</span><span class="tag">Vercel</span></div>
-<a href="https://phishguard-bay.vercel.app" class="tool-link" target="_blank" rel="noopener">phishguard-bay.vercel.app →</a>
+<a class="tool-link" href="https://phishguard-bay.vercel.app" rel="noopener" target="_blank">phishguard-bay.vercel.app →</a>
 </div>
 <div class="tool-card reveal">
 <div class="tool-header">
@@ -511,7 +533,7 @@ Resume PDF
 </div>
 <div class="tool-desc">Self-contained browser tool for generating and scanning QR codes. Supports Text/URL, Wi-Fi (SSID/password with special-char escaping), and vCard payloads. Live camera scanning and image upload. Zero dependencies, single HTML file.</div>
 <div class="tool-tags"><span class="tag">Browser Tool</span><span class="tag">No Dependencies</span><span class="tag">Dark Fire</span></div>
-<a href="https://darkfiresecurity.com" class="tool-link" target="_blank" rel="noopener">View on darkfiresecurity.com →</a>
+<a class="tool-link" href="https://darkfiresecurity.com" rel="noopener" target="_blank">View on darkfiresecurity.com →</a>
 </div>
 <div class="tool-card reveal">
 <div class="tool-header">
@@ -520,7 +542,7 @@ Resume PDF
 </div>
 <div class="tool-desc">Full EXIF read/write/strip for JPEG files including GPS coordinate mapping via Leaflet/OpenStreetMap. Custom JPEG segment-level stripper also removes XMP, IPTC, and COM segments. Deployed on Google Cloud Run as a Dark Fire showcase/lead-gen asset, plus a Python desktop GUI (piexif + customtkinter).</div>
 <div class="tool-tags"><span class="tag">DFIR</span><span class="tag">Privacy</span><span class="tag">Cloud Run</span></div>
-<a href="https://darkfiresecurity.com" class="tool-link" target="_blank" rel="noopener">View on darkfiresecurity.com →</a>
+<a class="tool-link" href="https://darkfiresecurity.com" rel="noopener" target="_blank">View on darkfiresecurity.com →</a>
 </div>
 <div class="tool-card reveal">
 <div class="tool-header">
@@ -529,7 +551,7 @@ Resume PDF
 </div>
 <div class="tool-desc">Dependency-free browser tool using Canvas API and WebCrypto. Embeds/extracts messages via LSB encoding across R/G/B channels with optional AES-256-GCM encryption (PBKDF2). 2-byte magic header prevents false positives. Zero external libraries.</div>
 <div class="tool-tags"><span class="tag">Cryptography</span><span class="tag">Browser</span><span class="tag">Canvas API</span></div>
-<a href="https://darkfiresecurity.com" class="tool-link" target="_blank" rel="noopener">View on darkfiresecurity.com →</a>
+<a class="tool-link" href="https://darkfiresecurity.com" rel="noopener" target="_blank">View on darkfiresecurity.com →</a>
 </div>
 <div class="tool-card reveal">
 <div class="tool-header">
@@ -538,7 +560,7 @@ Resume PDF
 </div>
 <div class="tool-desc">CyberChef-style browser-based data transformation toolkit for encoding, decoding, hashing, and IR-style data manipulation workflows. Built for SOC and DFIR use cases.</div>
 <div class="tool-tags"><span class="tag">DFIR</span><span class="tag">Data Transform</span><span class="tag">SOC</span></div>
-<a href="https://darkchef-professional-data-alchemy-1044572571760.us-west1.run.app" class="tool-link" target="_blank" rel="noopener">Open DarkChef →</a>
+<a class="tool-link" href="https://darkchef-professional-data-alchemy-1044572571760.us-west1.run.app" rel="noopener" target="_blank">Open DarkChef →</a>
 </div>
 <div class="tool-card reveal">
 <div class="tool-header">
@@ -547,7 +569,7 @@ Resume PDF
 </div>
 <div class="tool-desc">Client intake and risk scoring flow that outputs a structured security posture report for small businesses. Designed for non-technical stakeholders — plain-English findings, no jargon.</div>
 <div class="tool-tags"><span class="tag">Consulting</span><span class="tag">Risk Assessment</span><span class="tag">SMB</span></div>
-<a href="https://small-business-security-intake-risk-report-293799863337.us-west1.run.app" class="tool-link" target="_blank" rel="noopener">Open Tool →</a>
+<a class="tool-link" href="https://small-business-security-intake-risk-report-293799863337.us-west1.run.app" rel="noopener" target="_blank">Open Tool →</a>
 </div>
 <div class="tool-card reveal">
 <div class="tool-header">
@@ -556,7 +578,7 @@ Resume PDF
 </div>
 <div class="tool-desc">Python/customtkinter desktop GUI using multi-pass overwrite (Quick / DoD 3-pass / 7-pass / Gutmann 35-pass), fsync after each pass, random filename obscuring before deletion, recursive folder support, and a SHRED confirmation dialog.</div>
 <div class="tool-tags"><span class="tag">Python</span><span class="tag">Desktop</span><span class="tag">Data Destruction</span></div>
-<a href="https://github.com/jazzy216" class="tool-link" target="_blank" rel="noopener">View on GitHub →</a>
+<a class="tool-link" href="https://github.com/jazzy216" rel="noopener" target="_blank">View on GitHub →</a>
 </div>
 <div class="tool-card reveal">
 <div class="tool-header">
@@ -565,7 +587,7 @@ Resume PDF
 </div>
 <div class="tool-desc">Five PowerShell WPF GUI tools in a USB-portable suite: Password Audit Scanner · WiFi Security Checker · USB Device History Viewer · Open Ports Snapshot · Phishing Email Header Analyzer. Runs from a USB drive during on-site SMB assessments. Plain-English output designed for non-technical clients.</div>
 <div class="tool-tags"><span class="tag">PowerShell WPF</span><span class="tag">USB-Portable</span><span class="tag">SMB Assessments</span></div>
-<a href="https://github.com/jazzy216" class="tool-link" target="_blank" rel="noopener">View on GitHub →</a>
+<a class="tool-link" href="https://github.com/jazzy216" rel="noopener" target="_blank">View on GitHub →</a>
 </div>
 <div class="tool-card reveal">
 <div class="tool-header">
@@ -574,7 +596,7 @@ Resume PDF
 </div>
 <div class="tool-desc">Passive DNS subdomain enumerator — discovers subdomains without active scanning, useful for reconnaissance and attack surface mapping during security assessments.</div>
 <div class="tool-tags"><span class="tag">Recon</span><span class="tag">DNS</span><span class="tag">OSINT</span></div>
-<a href="https://darkfiresecurity.com" class="tool-link" target="_blank" rel="noopener">View on darkfiresecurity.com →</a>
+<a class="tool-link" href="https://darkfiresecurity.com" rel="noopener" target="_blank">View on darkfiresecurity.com →</a>
 </div>
 <div class="tool-card reveal">
 <div class="tool-header">
@@ -583,7 +605,7 @@ Resume PDF
 </div>
 <div class="tool-desc">Original security research addressing LAN discovery vulnerabilities. Packaged as an RFC-style specification, SMB-accessible whitepaper, and interactive demo. Published to GitHub and darkfiresecurity.com as a portfolio anchor.</div>
 <div class="tool-tags"><span class="tag">Research</span><span class="tag">Zero Trust</span><span class="tag">RFC-Style</span></div>
-<a href="https://darkfiresecurity.com" class="tool-link" target="_blank" rel="noopener">Read Research →</a>
+<a class="tool-link" href="https://darkfiresecurity.com" rel="noopener" target="_blank">Read Research →</a>
 </div>
 <div class="tool-card reveal">
 <div class="tool-header">
@@ -592,7 +614,7 @@ Resume PDF
 </div>
 <div class="tool-desc">SOC analyst study platform with spaced-repetition flashcards (53 cards), 14 triage scenarios, and MITRE ATT&amp;CK-mapped lab exercises covering reconnaissance, exploitation, post-exploitation, and reporting.</div>
 <div class="tool-tags"><span class="tag">SOC Training</span><span class="tag">Spaced Repetition</span><span class="tag">MITRE ATT&amp;CK</span></div>
-<a href="https://darkfiresecurity.com" class="tool-link" target="_blank" rel="noopener">View on darkfiresecurity.com →</a>
+<a class="tool-link" href="https://darkfiresecurity.com" rel="noopener" target="_blank">View on darkfiresecurity.com →</a>
 </div>
 <div class="tool-card reveal">
 <div class="tool-header">
@@ -601,12 +623,12 @@ Resume PDF
 </div>
 <div class="tool-desc">Cloud-hosted Python execution environment for safe scripting labs, security automation prototyping, and quick experiments. Deployed on Google Cloud Run.</div>
 <div class="tool-tags"><span class="tag">Python</span><span class="tag">Cloud Run</span><span class="tag">Automation</span></div>
-<a href="https://pyforge-ai-advanced-python-sandbox-810187719410.us-west1.run.app/" class="tool-link" target="_blank" rel="noopener">Open Sandbox →</a>
+<a class="tool-link" href="https://pyforge-ai-advanced-python-sandbox-810187719410.us-west1.run.app/" rel="noopener" target="_blank">Open Sandbox →</a>
 </div>
 </div>
 </div>
 </section>
-<hr class="divider" />
+<hr class="divider"/>
 <!-- DARK FIRE BRAND -->
 <section id="darkfire" style="background:var(--bg2);">
 <div class="container">
@@ -618,21 +640,21 @@ Resume PDF
 <p class="darkfire-desc">Cybersecurity consulting for small businesses, farms, and tradespeople in Middle Tennessee — real security without enterprise-sized budgets. The "Business Security Checkup" brings a trades-inspection analogy that clients already understand and trust.</p>
 <div class="darkfire-services">
 <div class="df-service">
-<div class="df-icon">🛡️</div>
+<div class="df-icon">◇</div>
 <div>
 <div class="df-service-name">Business Security Checkup — $299 / $899 / $149mo</div>
 <div class="df-service-desc">Tiered offering: The Checkup (1 machine + network + report card), The Lockdown (5 machines + on-site remediation), The Watch (quarterly re-checks + priority access).</div>
 </div>
 </div>
 <div class="df-service">
-<div class="df-icon">🎣</div>
+<div class="df-icon">⌘</div>
 <div>
 <div class="df-service-name">Phishing Simulations &amp; Awareness Training</div>
 <div class="df-service-desc">PhishGuard-powered email triage training and awareness campaigns tailored to non-technical staff.</div>
 </div>
 </div>
 <div class="df-service">
-<div class="df-icon">📋</div>
+<div class="df-icon">◎</div>
 <div>
 <div class="df-service-name">Risk Assessments &amp; Policy Guidance</div>
 <div class="df-service-desc">HIPAA awareness, access controls, and security documentation for SMBs that need to look credible to clients and insurers.</div>
@@ -640,8 +662,8 @@ Resume PDF
 </div>
 </div>
 <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
-<a href="https://darkfiresecurity.com" class="btn-primary" target="_blank" rel="noopener">Visit darkfiresecurity.com</a>
-<a href="assets/Cybersecurity Essentials for Small Businesses.pdf" class="btn-ghost" download>Free eBook</a>
+<a class="btn-primary" href="https://darkfiresecurity.com" rel="noopener" target="_blank">Visit darkfiresecurity.com</a>
+<a class="btn-ghost" download="" href="assets/Cybersecurity Essentials for Small Businesses.pdf">Free eBook</a>
 </div>
 </div>
 <div class="reveal" style="transition-delay:.1s">
@@ -657,7 +679,7 @@ Resume PDF
 </div>
 </div>
 </section>
-<hr class="divider" />
+<hr class="divider"/>
 <!-- SKILLS -->
 <section id="skills" style="background:var(--bg);">
 <div class="container">
@@ -729,7 +751,7 @@ Resume PDF
 </div>
 </div>
 </section>
-<hr class="divider" />
+<hr class="divider"/>
 <!-- CERTS -->
 <section id="certs" style="background:var(--bg2);">
 <div class="container">
@@ -738,64 +760,64 @@ Resume PDF
 <p class="section-sub">Active certifications and what's in the pipeline.</p>
 <div class="certs-grid reveal">
 <div class="cert-card">
-<div class="cert-icon active">🏅</div>
+<div class="cert-icon active">A+</div>
 <div><div class="cert-name">CompTIA A+</div><div class="cert-detail">Valid 2024–2027</div><div class="cert-status active">ACTIVE</div></div>
 </div>
 <div class="cert-card">
-<div class="cert-icon active">🌐</div>
+<div class="cert-icon active">N+</div>
 <div><div class="cert-name">CompTIA Network+</div><div class="cert-detail">Passed March 2025 · Active</div><div class="cert-status active">ACTIVE</div></div>
 </div>
 <div class="cert-card">
-<div class="cert-icon progress">🔐</div>
+<div class="cert-icon progress">S+</div>
 <div><div class="cert-name">CompTIA Security+ SY0-701</div><div class="cert-detail">Actively studying · ~80% quiz avg</div><div class="cert-status progress">IN PROGRESS</div></div>
 </div>
 <div class="cert-card">
-<div class="cert-icon active">🎓</div>
+<div class="cert-icon active">G</div>
 <div><div class="cert-name">Google IT Support Pro</div><div class="cert-detail">2024 · Tech Support · Sys Admin · Networking</div><div class="cert-status active">ACTIVE</div></div>
 </div>
 <div class="cert-card">
-<div class="cert-icon other">🚛</div>
+<div class="cert-icon other">A</div>
 <div><div class="cert-name">CDL Class A</div><div class="cert-detail">Commercial Driver's License</div><div class="cert-status active">ACTIVE</div></div>
 </div>
 <div class="cert-card">
-<div class="cert-icon progress">🎓</div>
+<div class="cert-icon progress">W</div>
 <div><div class="cert-name">B.S. Cybersecurity</div><div class="cert-detail">Western Governors University · ~50% complete</div><div class="cert-status progress">IN PROGRESS</div></div>
 </div>
 </div>
 </div>
 </section>
-<hr class="divider" />
+<hr class="divider"/>
 <!-- CONTACT -->
 <section id="contact" style="background:var(--bg);">
 <div class="container">
 <div class="section-tag">07 / Contact</div>
 <div class="contact-inner">
 <div class="reveal">
-<h2 class="contact-heading">Let's work<br><span>together.</span></h2>
+<h2 class="contact-heading">Let's work<br/><span>together.</span></h2>
 <p class="contact-note">Open to IT roles, cybersecurity opportunities, SOC analyst positions, and consulting engagements in Nashville / Middle Tennessee — or remote with a strong security mission.</p>
 <div class="contact-links">
-<a href="mailto:thechancecummings@gmail.com?subject=Interview%20Request" class="contact-link">
-<div class="contact-link-icon">✉️</div>
+<a class="contact-link" href="mailto:thechancecummings@gmail.com?subject=Interview%20Request">
+<div class="contact-link-icon">@</div>
 <div><div class="contact-link-label">Email</div><div class="contact-link-val">thechancecummings@gmail.com</div></div>
 </a>
-<a href="tel:+16156931113" class="contact-link">
-<div class="contact-link-icon">📞</div>
+<a class="contact-link" href="tel:+16156931113">
+<div class="contact-link-icon">↗</div>
 <div><div class="contact-link-label">Phone</div><div class="contact-link-val">615-693-1113</div></div>
 </a>
-<a href="https://github.com/jazzy216" class="contact-link" target="_blank" rel="noopener">
-<div class="contact-link-icon">🐙</div>
+<a class="contact-link" href="https://github.com/jazzy216" rel="noopener" target="_blank">
+<div class="contact-link-icon">&lt;&gt;</div>
 <div><div class="contact-link-label">GitHub</div><div class="contact-link-val">github.com/jazzy216</div></div>
 </a>
-<a href="https://linkedin.com/in/chance-cummings" class="contact-link" target="_blank" rel="noopener">
-<div class="contact-link-icon">💼</div>
+<a class="contact-link" href="https://linkedin.com/in/chance-cummings" rel="noopener" target="_blank">
+<div class="contact-link-icon">in</div>
 <div><div class="contact-link-label">LinkedIn</div><div class="contact-link-val">linkedin.com/in/chance-cummings</div></div>
 </a>
-<a href="https://darkfiresecurity.com" class="contact-link" target="_blank" rel="noopener">
-<div class="contact-link-icon">🔥</div>
+<a class="contact-link" href="https://darkfiresecurity.com" rel="noopener" target="_blank">
+<div class="contact-link-icon">DF</div>
 <div><div class="contact-link-label">Security Brand</div><div class="contact-link-val">darkfiresecurity.com</div></div>
 </a>
-<a href="assets/Chance_Cummings_Resume.pdf" class="contact-link" download>
-<div class="contact-link-icon">📄</div>
+<a class="contact-link" download="" href="assets/Chance_Cummings_Resume.pdf">
+<div class="contact-link-icon">↓</div>
 <div><div class="contact-link-label">Resume</div><div class="contact-link-val">Download PDF</div></div>
 </a>
 </div>
@@ -813,7 +835,7 @@ Resume PDF
 <div class="avail-row"><span class="avail-key">In Progress</span><span class="avail-val">Security+ SY0-701 · WGU B.S.</span></div>
 <div class="avail-row"><span class="avail-key">Tools Shipped</span><span class="avail-val">12+ security tools / platforms</span></div>
 </div>
-<a href="mailto:thechancecummings@gmail.com?subject=Interview%20Request" class="btn-primary" style="width:100%;justify-content:center;">Send Interview Request</a>
+<a class="btn-primary" href="mailto:thechancecummings@gmail.com?subject=Interview%20Request" style="width:100%;justify-content:center;">Send Interview Request</a>
 </div>
 </div>
 </div>
@@ -823,24 +845,27 @@ Resume PDF
 <div class="footer-inner">
 <div class="footer-copy">© Chance Cummings · Nashville, TN · Built with Dark Fire · Faith · Technology · Protection</div>
 <div class="footer-links">
-<a href="https://darkfiresecurity.com" target="_blank" rel="noopener">darkfiresecurity.com</a>
-<a href="https://github.com/jazzy216" target="_blank" rel="noopener">GitHub</a>
-<a href="assets/Chance_Cummings_Resume.pdf" download>Resume PDF</a>
+<a href="https://darkfiresecurity.com" rel="noopener" target="_blank">darkfiresecurity.com</a>
+<a href="https://github.com/jazzy216" rel="noopener" target="_blank">GitHub</a>
+<a download="" href="assets/Chance_Cummings_Resume.pdf">Resume PDF</a>
 </div>
 </div>
 </footer>
+
 <script>
-function toggleTheme(){const h=document.documentElement;h.setAttribute('data-theme',h.getAttribute('data-theme')==='dark'?'light':'dark');}
-function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open');}
-function spotlight(e,el){const r=el.getBoundingClientRect();el.style.setProperty('--mx',((e.clientX-r.left)/r.width*100).toFixed(1)+'%');el.style.setProperty('--my',((e.clientY-r.top)/r.height*100).toFixed(1)+'%');}
-const obs=new IntersectionObserver((entries)=>{entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('visible');obs.unobserve(en.target);}});},{threshold:.06,rootMargin:'0px 0px -30px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-// Stagger grid children
-document.querySelectorAll('.sites-grid,.tools-grid,.certs-grid').forEach(g=>{g.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i*.06)+'s';});});
-// Active nav highlight
-const sections=document.querySelectorAll('section[id]');
-const navLinks=document.querySelectorAll('.nav-links a');
-window.addEventListener('scroll',()=>{let cur='';sections.forEach(s=>{if(window.scrollY>=s.offsetTop-130)cur=s.id;});navLinks.forEach(a=>{a.style.color=a.getAttribute('href')==='#'+cur?'var(--accent)':'';});},{passive:true});
-</script>
-</body>
+const root=document.documentElement, themeButton=document.querySelector('.theme-toggle');
+function applyTheme(theme){root.dataset.theme=theme;themeButton.setAttribute('aria-label',`Switch to ${theme==='dark'?'light':'dark'} theme`);themeButton.textContent=theme==='dark'?'☼':'◑';}
+try{applyTheme(localStorage.getItem('portfolio-theme')==='light'?'light':'dark')}catch{applyTheme('dark')}
+function toggleTheme(){const t=root.dataset.theme==='dark'?'light':'dark';applyTheme(t);try{localStorage.setItem('portfolio-theme',t)}catch{}}
+function toggleMenu(){const open=document.getElementById('mobileMenu').classList.toggle('open');const b=document.querySelector('.hamburger');b.setAttribute('aria-expanded',String(open));b.setAttribute('aria-label',open?'Close navigation':'Open navigation')}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.getElementById('mobileMenu').classList.contains('open')){toggleMenu();document.querySelector('.hamburger').focus()}});
+matchMedia('(min-width:801px)').addEventListener('change',e=>{if(e.matches&&document.getElementById('mobileMenu').classList.contains('open'))toggleMenu()});
+function spotlight(e,el){const r=el.getBoundingClientRect();el.style.setProperty('--mx',(e.clientX-r.left)+'px');el.style.setProperty('--my',(e.clientY-r.top)+'px')}
+let filter='all';const search=document.querySelector('.project-search'),cards=[...document.querySelectorAll('.site-card')];
+function filterProjects(){let count=0;cards.forEach(c=>{const visible=(filter==='all'||c.dataset.category===filter)&&c.textContent.toLowerCase().includes(search.value.trim().toLowerCase());c.hidden=!visible;if(visible)count++});document.querySelector('.project-count').textContent=`${String(count).padStart(2,'0')} / ${String(cards.length).padStart(2,'0')} projects`;document.querySelector('.empty-state').hidden=count!==0}
+document.querySelectorAll('.filter').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.filter;document.querySelectorAll('.filter').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));filterProjects()}));search.addEventListener('input',filterProjects);filterProjects();
+const sections=[...document.querySelectorAll('section[id]')],navLinks=document.querySelectorAll('.nav-links a');let scheduled=false;
+function updateScroll(){const height=root.scrollHeight-innerHeight;document.querySelector('.scroll-progress').style.width=(height>0?scrollY/height*100:0)+'%';let current='top';sections.forEach(s=>{if(s.getBoundingClientRect().top<=160)current=s.id});navLinks.forEach(a=>{if(a.hash==='#'+current)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')});scheduled=false}
+addEventListener('scroll',()=>{if(!scheduled){scheduled=true;requestAnimationFrame(updateScroll)}},{passive:true});updateScroll();
+</script></body>
 </html>
